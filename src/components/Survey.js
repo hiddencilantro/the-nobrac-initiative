@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import React, { useState } from 'react';
-import Travel from './Travel';
-import Energy from './Energy';
+import Travel from './survey/Travel';
+import Energy from './survey/Energy';
 
 function Survey(props) {
   // const [travel, setTravel] = useState({});

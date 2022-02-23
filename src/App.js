@@ -2,7 +2,7 @@ import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Landing from './components/Landing';
-import Survey from './components/survey/Survey';
+import Survey from './components/Survey';
 
 function App() {
   return (
