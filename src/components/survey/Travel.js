@@ -1,11 +1,21 @@
-import { Link } from 'react-router-dom';
+// import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Travel() {
+    // const [data, setData] = useState({});
+    const navigate = useNavigate();
+
+    const handleSubmit = (e) => {
+        // e.preventDefault();
+        // setTravel(data)
+        navigate("/survey/energy")
+    };
+
     return (
         <div>
             TRAVEL SURVEY
             <br />
-            <Link to="/survey/energy">Next {">>"}</Link>
+            <button onClick={handleSubmit}>Next {">>"}</button>
         </div>
     );
 }
