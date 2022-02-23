@@ -3,16 +3,31 @@ import React, { useState } from 'react';
 import Travel from './Travel';
 import Energy from './Energy';
 
-function Survey() {
-  const [travel, setTravel] = useState({});
-  const [energy, setEnergy] = useState({});
+function Survey(props) {
+  // const [travel, setTravel] = useState({});
+  // const [energy, setEnergy] = useState({});
+  
+  // const userData = {
+  //   travel,
+  //   energy
+  // };
+
+  // const fireDispatch = () => {
+  //   props.sendData(userData)
+  // }
 
   return (
     <Routes>
-        <Route path="travel" element={<Travel setTravel={setTravel} />} />
-        <Route path="energy" element={<Energy setEnergy={setEnergy} />} />
+        <Route path="travel" element={<Travel />} />
+        <Route path="energy" element={<Energy />} />
     </Routes>
   );
 }
+
+// mapDispatchToProps = dispatch => {
+//   return {
+//     sendData: data => dispatch(calculateFootprint(data))
+//   }
+// }
 
 export default Survey;
