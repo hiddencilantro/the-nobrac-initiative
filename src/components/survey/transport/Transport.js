@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
-import Car from './Car';
+import Car from './subcategories/Car';
 
 function Transport({car, setCar}) {
     return (

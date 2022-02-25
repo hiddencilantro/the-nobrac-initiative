@@ -1,4 +1,4 @@
-import CarForm from "./forms/CarForm";
+import CarForm from "../forms/CarForm";
 import { useState } from "react";
 
 function Car({car, setCar}) {
