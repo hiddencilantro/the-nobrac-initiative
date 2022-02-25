@@ -15,7 +15,7 @@ function Travel() {
         <div>
             TRAVEL SURVEY
             <br />
-            <button onClick={handleSubmit}>Next {">>"}</button>
+            <button onClick={handleSubmit}>Next</button>
         </div>
     );
 }

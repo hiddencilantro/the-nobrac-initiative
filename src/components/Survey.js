@@ -1,33 +1,38 @@
+import Categories from './survey/Categories'
 import { Routes, Route } from 'react-router-dom';
-import React, { useState } from 'react';
 import Travel from './survey/Travel';
 import Energy from './survey/Energy';
+// import React, { useState } from 'react';
+// import { useDispatch } from 'react-redux';
 
 function Survey(props) {
-  // const [travel, setTravel] = useState({});
-  // const [energy, setEnergy] = useState({});
+  // const [bus, setBus] = useState({
+  //   "emission_factor": "passenger_vehicle-vehicle_type_bus-fuel_source_na-distance_na-engine_size_na",
+  //   "parameters": {
+  //     "passengers": 1,
+  //     "distance": 0,
+  //     "distance_unit": "mi"
+  //   }
+  // });
+
+  // const dispatch = useDispatch();
   
-  // const userData = {
-  //   travel,
-  //   energy
+  // const userData = [bus, ];
+
+  // const sendDispatch = () => {
+  //   dispatch(calculateFootprint(userData));
   // };
 
-  // const fireDispatch = () => {
-  //   props.sendData(userData)
-  // }
-
   return (
-    <Routes>
-        <Route path="travel" element={<Travel />} />
-        <Route path="energy" element={<Energy />} />
-    </Routes>
+    <div>
+      {/* <Categories /> */}
+      <br />
+      <Routes>
+          <Route path="travel" element={<Travel />} />
+          <Route path="energy" element={<Energy />} />
+      </Routes>
+    </div>
   );
 }
-
-// mapDispatchToProps = dispatch => {
-//   return {
-//     sendData: data => dispatch(calculateFootprint(data))
-//   }
-// }
 
 export default Survey;

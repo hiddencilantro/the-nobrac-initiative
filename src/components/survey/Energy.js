@@ -5,7 +5,7 @@ function Energy() {
         <div>
             ENERGY SURVEY
             <br />
-            <Link to="/survey/travel">{"<<"} Back</Link>
+            <Link to="/survey/travel">Previous</Link>
         </div>
     );
 }
