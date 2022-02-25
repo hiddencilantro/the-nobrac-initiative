@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 function Categories() {
     return (
         <div>
-            <Link to="/survey/travel">Travel</Link>
+            <Link to="/survey/transport">Transport</Link>
             <Link to="/survey/energy">Energy</Link>
         </div>
     );
