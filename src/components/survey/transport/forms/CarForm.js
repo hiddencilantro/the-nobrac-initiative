@@ -11,9 +11,13 @@ function CarForm({display, car, setCar}) {
     if (display === "true") {
         return (
             <form onSubmit={handleNext}>
-                <label htmlFor="car">How many miles do you drive per year?</label>
+                <label htmlFor="car-miles-input">How many miles do you drive per year?</label>
                 <br />
-                <input type="text" id="car" value={car} onChange={e => isNaN(e.target.value) ? e.target.value="" : setCar(pS => ({...pS, parameters: {...pS.parameters, distance: e.target.value}}))} /> miles
+                <input 
+                    type="text" 
+                    id="car-miles-input" 
+                    value={car} 
+                    onChange={e => isNaN(e.target.value) ? e.target.value="" : setCar(pS => ({...pS, parameters: {...pS.parameters, distance: e.target.value}}))} /> miles
                 <br />
                 <input type="submit" value="Next"/>
             </form>
