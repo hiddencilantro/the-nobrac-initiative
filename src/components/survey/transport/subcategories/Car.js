@@ -1,4 +1,4 @@
-import CarForm from "../forms/CarForm";
+import CarForm from '../forms/CarForm';
 import { useState } from "react";
 
 function Car({car, setCar}) {
@@ -11,6 +11,7 @@ function Car({car, setCar}) {
                 <input type="radio" name="car" value={true} /> Yes
                 <input type="radio" name="car" value={false} /> No
             </div>
+            <br />
             <CarForm display={toggle} car={car} setCar={setCar} />
         </>
     );

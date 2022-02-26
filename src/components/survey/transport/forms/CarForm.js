@@ -1,29 +1,34 @@
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function CarForm({display, car, setCar}) {
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
 
-    const handleNext = e => {
+    const handleSubmit = e => {
         e.preventDefault();
-        // navigate('/survey/transport/bus')
+        navigate('/survey/transport/public-transit')
+    };
+
+    const handleNext = () => {
+        setCar(pS => ({...pS, parameters: {...pS.parameters, distance: 0}}))
+        navigate('/survey/transport/public-transit')
     };
 
     if (display === "true") {
         return (
-            <form onSubmit={handleNext}>
+            <form onSubmit={handleSubmit}>
                 <label htmlFor="car-miles-input">How many miles do you drive per year?</label>
-                <br />
+                <br /><br />
                 <input 
                     type="text" 
                     id="car-miles-input" 
                     value={car} 
                     onChange={e => isNaN(e.target.value) ? e.target.value="" : setCar(pS => ({...pS, parameters: {...pS.parameters, distance: e.target.value}}))} /> miles
-                <br />
+                <br /><br />
                 <input type="submit" value="Next"/>
             </form>
         );
     } else if (display === "false") {
-        return <button onClick={handleNext}>Next</button>;
+        return <button type="button" onClick={handleNext}>Next</button>;
     } else {
         return null;
     };
