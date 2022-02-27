@@ -3,11 +3,12 @@ function BusForm({display, checked, bus, setBus}) {
         return (
             <form>
                 <label htmlFor="bus-miles-input">How much do you ride the bus per year?</label>
-                <br /><br />
+                <br />
                 <input 
                     type="text" 
                     id="bus-miles-input" 
-                    value={bus} 
+                    placeholder="0"
+                    value={bus === 0 ? null : bus} 
                     onChange={e => isNaN(e.target.value) ? e.target.value="" : setBus(pS => ({...pS, parameters: {...pS.parameters, distance: e.target.value}}))} /> miles
             </form>
         );

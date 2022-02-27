@@ -14,9 +14,32 @@ function Survey() {
             "distance_unit": "mi"
         }
     });
-
     const [bus, setBus] = useState({
         "emission_factor": "passenger_vehicle-vehicle_type_bus-fuel_source_na-distance_na-engine_size_na",
+        "parameters": {
+            "passengers": 1,
+            "distance": 0,
+            "distance_unit": "mi"
+        }
+    });
+    const [rapid, setRapid] = useState({
+        "emission_factor": "passenger_train-route_type_transit_rail-fuel_source_na",
+        "parameters": {
+            "passengers": 1,
+            "distance": 0,
+            "distance_unit": "mi"
+        }
+    });
+    const [commuter, setCommuter] = useState({
+        "emission_factor": "passenger_train-route_type_commuter_rail-fuel_source_na",
+        "parameters": {
+            "passengers": 1,
+            "distance": 0,
+            "distance_unit": "mi"
+        }
+    });
+    const [intercity, setIntercity] = useState({
+        "emission_factor": "passenger_train-route_type_intercity-fuel_source_na",
         "parameters": {
             "passengers": 1,
             "distance": 0,
@@ -37,13 +60,14 @@ function Survey() {
             {/* <Categories /> */}
             <br />
             <Routes>
-                <Route
-                    path="transport/*"
+                <Route 
+                    path="transport/*" 
                     element={<Transport 
-                        car={car.parameters.distance}
-                        setCar={setCar}
-                        bus={bus.parameters.distance}
-                        setBus={setBus} />} />
+                        car={car.parameters.distance} setCar={setCar} 
+                        bus={bus.parameters.distance} setBus={setBus} 
+                        rapid={rapid.parameters.distance} setRapid={setRapid} 
+                        commuter={commuter.parameters.distance} setCommuter={setCommuter} 
+                        intercity={intercity.parameters.distance} setIntercity={setIntercity} />} />
                 {/* <Route path="energy" element={<Energy />} /> */}
             </Routes>
         </div>
