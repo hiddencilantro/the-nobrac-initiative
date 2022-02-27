@@ -34,8 +34,8 @@ function PublicTransit({bus, setBus, rapid, setRapid, commuter, setCommuter, int
         <>
             <p>Do you ride public transit?</p>
             <div onChange={e => setToggle(e.target.value)} >
-                <input type="radio" name="car" value={true} /> Yes
-                <input type="radio" name="car" value={false} /> No
+                <input type="radio" name="public-transit" value={true} /> Yes
+                <input type="radio" name="public-transit" value={false} /> No
             </div>
             <br />
             {toggle === "true" ? (<form>
