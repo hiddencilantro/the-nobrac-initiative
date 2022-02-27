@@ -15,17 +15,21 @@ function PublicTransit({bus, setBus, rapid, setRapid, commuter, setCommuter, int
     });
     const navigate = useNavigate();
 
-    const handleNext = e => {
+    const handleCheckbox = e => {
+        setChecked(pS => ({...pS, [e.target.name]: e.target.checked}))
+    };
+
+    const handleNext = () => {
         if(toggle === "false") {
             setBus(pS => ({...pS, parameters: {...pS.parameters, distance: 0}}));
             setRapid(pS => ({...pS, parameters: {...pS.parameters, distance: 0}}));
             setCommuter(pS => ({...pS, parameters: {...pS.parameters, distance: 0}}));
             setIntercity(pS => ({...pS, parameters: {...pS.parameters, distance: 0}}));
         } else {
-            (!checked.bus || bus.parameters.distance === "") ? setBus(pS => ({...pS, parameters: {...pS.parameters, distance: 0}})) : null;
-            (!checked.rapid || rapid.parameters.distance == "") ? setRapid(pS => ({...pS, parameters: {...pS.parameters, distance: 0}})) : null;
-            (!checked.commuter || commuter.parameters.distance == "") ? setCommuter(pS => ({...pS, parameters: {...pS.parameters, distance: 0}})) : null;
-            (!checked.intercity || intercity.parameters.distance === "") ? setIntercity(pS => ({...pS, parameters: {...pS.parameters, distance: 0}})) : null;
+            (!checked.bus || bus === "") ? setBus(pS => ({...pS, parameters: {...pS.parameters, distance: 0}})) : null;
+            (!checked.rapid || rapid === "") ? setRapid(pS => ({...pS, parameters: {...pS.parameters, distance: 0}})) : null;
+            (!checked.commuter || commuter === "") ? setCommuter(pS => ({...pS, parameters: {...pS.parameters, distance: 0}})) : null;
+            (!checked.intercity || intercity === "") ? setIntercity(pS => ({...pS, parameters: {...pS.parameters, distance: 0}})) : null;
         };
         navigate('/survey/transport/flight');
     };
@@ -40,10 +44,10 @@ function PublicTransit({bus, setBus, rapid, setRapid, commuter, setCommuter, int
             <br />
             {toggle === "true" ? (<form>
                 <label>Which public transit do you use? (Select all that apply)</label>
-                <br /><input type="checkbox" name="bus" checked={checked.bus} onChange={e => setChecked(pS => ({...pS, bus: e.target.checked}))} /> Bus
-                <br /><input type="checkbox" name="rapid" checked={checked.rapid} onChange={e => setChecked(pS => ({...pS, rapid: e.target.checked}))} /> Rapid Transit (Subway/Metro/Tram)
-                <br /><input type="checkbox" name="commuter" checked={checked.commuter} onChange={e => setChecked(pS => ({...pS, commuter: e.target.checked}))} /> Commuter Rail (Train)
-                <br /><input type="checkbox" name="intercity" checked={checked.intercity} onChange={e => setChecked(pS => ({...pS, intercity: e.target.checked}))} /> Intercity Rail (Amtrak)
+                <br /><input type="checkbox" name="bus" checked={checked.bus} onChange={handleCheckbox} /> Bus
+                <br /><input type="checkbox" name="rapid" checked={checked.rapid} onChange={handleCheckbox} /> Rapid Transit (Subway/Metro/Tram)
+                <br /><input type="checkbox" name="commuter" checked={checked.commuter} onChange={handleCheckbox} /> Commuter Rail (Train)
+                <br /><input type="checkbox" name="intercity" checked={checked.intercity} onChange={handleCheckbox} /> Intercity Rail (Amtrak)
             </form>) : null}
             <BusForm display={toggle} checked={checked.bus} bus={bus} setBus={setBus} />
             <RapidForm display={toggle} checked={checked.rapid} rapid={rapid} setRapid={setRapid} />
