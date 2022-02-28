@@ -77,6 +77,13 @@ function Survey() {
             "money_unit": "usd"
         }
     });
+    const [naturalGas, setNaturalGas] = useState({
+        "emission_factor": "fuel_type_natural_gas-fuel_use_na",
+        "parameters": {
+            "money": 0,
+            "money_unit": "usd"
+        }
+    });
 
     // const dispatch = useDispatch();
 
@@ -105,7 +112,8 @@ function Survey() {
                 <Route 
                     path="utility/*" 
                     element={<Utility 
-                        electricity={electricity.parameters.money} setElectricity={setElectricity} />} />
+                        electricity={electricity.parameters.money} setElectricity={setElectricity} 
+                        naturalGas={naturalGas.parameters.money} setNaturalGas={setNaturalGas} />} />
             </Routes>
         </div>
     );
