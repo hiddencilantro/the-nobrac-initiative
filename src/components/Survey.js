@@ -84,6 +84,13 @@ function Survey() {
             "money_unit": "usd"
         }
     });
+    const [water, setWater] = useState({
+        "emission_factor": "water-supply_wastewater_treatment",
+        "parameters": {
+            "money": 0,
+            "money_unit": "usd"
+        }
+    });
 
     // const dispatch = useDispatch();
 
@@ -113,7 +120,8 @@ function Survey() {
                     path="utility/*" 
                     element={<Utility 
                         electricity={electricity.parameters.money} setElectricity={setElectricity} 
-                        naturalGas={naturalGas.parameters.money} setNaturalGas={setNaturalGas} />} />
+                        naturalGas={naturalGas.parameters.money} setNaturalGas={setNaturalGas} 
+                        water={water.parameters.money} setWater={setWater} />} />
             </Routes>
         </div>
     );
