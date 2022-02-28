@@ -25,8 +25,8 @@ function CarForm({display, car, setCar}) {
                     type="text" 
                     id="car-miles-input" 
                     placeholder="0"
-                    value={car === 0 ? null : car} 
-                    onChange={e => isNaN(e.target.value) ? e.target.value="" : setCar(pS => ({...pS, parameters: {...pS.parameters, distance: e.target.value}}))} /> miles
+                    value={car === 0 ? "" : car} 
+                    onChange={e => isNaN(e.target.value) ? e.target.value="" : setCar(pS => ({...pS, parameters: {...pS.parameters, distance: parseInt(e.target.value)}}))} /> miles
                 <br /><br />
                 <input type="submit" value="Next"/>
             </form>

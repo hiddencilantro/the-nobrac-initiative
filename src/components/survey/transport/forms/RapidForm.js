@@ -8,8 +8,8 @@ function RapidForm({display, checked, rapid, setRapid}) {
                     type="text" 
                     id="rapid-miles-input" 
                     placeholder="0"
-                    value={rapid === 0 ? null : rapid} 
-                    onChange={e => isNaN(e.target.value) ? e.target.value="" : setRapid(pS => ({...pS, parameters: {...pS.parameters, distance: e.target.value}}))} /> miles
+                    value={rapid === 0 ? "" : rapid} 
+                    onChange={e => isNaN(e.target.value) ? e.target.value="" : setRapid(pS => ({...pS, parameters: {...pS.parameters, distance: parseInt(e.target.value)}}))} /> miles
             </form>
         );
     } else {

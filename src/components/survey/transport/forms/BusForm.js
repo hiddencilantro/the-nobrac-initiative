@@ -8,8 +8,8 @@ function BusForm({display, checked, bus, setBus}) {
                     type="text" 
                     id="bus-miles-input" 
                     placeholder="0"
-                    value={bus === 0 ? null : bus} 
-                    onChange={e => isNaN(e.target.value) ? e.target.value="" : setBus(pS => ({...pS, parameters: {...pS.parameters, distance: e.target.value}}))} /> miles
+                    value={bus === 0 ? "" : bus} 
+                    onChange={e => isNaN(e.target.value) ? e.target.value="" : setBus(pS => ({...pS, parameters: {...pS.parameters, distance: parseInt(e.target.value)}}))} /> miles
             </form>
         );
     } else {

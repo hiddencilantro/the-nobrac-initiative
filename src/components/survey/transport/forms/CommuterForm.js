@@ -8,8 +8,8 @@ function CommuterForm({display, checked, commuter, setCommuter}) {
                     type="text" 
                     id="commuter-miles-input" 
                     placeholder="0"
-                    value={commuter === 0 ? null : commuter} 
-                    onChange={e => isNaN(e.target.value) ? e.target.value="" : setCommuter(pS => ({...pS, parameters: {...pS.parameters, distance: e.target.value}}))} /> miles
+                    value={commuter === 0 ? "" : commuter} 
+                    onChange={e => isNaN(e.target.value) ? e.target.value="" : setCommuter(pS => ({...pS, parameters: {...pS.parameters, distance: parseInt(e.target.value)}}))} /> miles
             </form>
         );
     } else {

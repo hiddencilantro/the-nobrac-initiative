@@ -8,8 +8,8 @@ function IntercityForm({display, checked, intercity, setIntercity}) {
                     type="text" 
                     id="intercity-miles-input" 
                     placeholder="0"
-                    value={intercity === 0 ? null : intercity} 
-                    onChange={e => isNaN(e.target.value) ? e.target.value="" : setIntercity(pS => ({...pS, parameters: {...pS.parameters, distance: e.target.value}}))} /> miles
+                    value={intercity === 0 ? "" : intercity} 
+                    onChange={e => isNaN(e.target.value) ? e.target.value="" : setIntercity(pS => ({...pS, parameters: {...pS.parameters, distance: parseInt(e.target.value)}}))} /> miles
             </form>
         );
     } else {
