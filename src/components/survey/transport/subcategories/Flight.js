@@ -27,7 +27,7 @@ function Flight({shortFlight, setShortFlight, mediumFlight, setMediumFlight, lon
             (!checked.medium || isNaN(mediumFlight)) ? setMediumFlight(pS => ({...pS, parameters: {...pS.parameters, distance: 0}})) : null;
             (!checked.long || isNaN(longFlight)) ? setLongFlight(pS => ({...pS, parameters: {...pS.parameters, distance: 0}})) : null;
         };
-        navigate('/survey/energy/electricity');
+        navigate('/survey/utility/electricity');
     };
 
     return (
