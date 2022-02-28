@@ -42,18 +42,22 @@ function PublicTransit({bus, setBus, rapid, setRapid, commuter, setCommuter, int
                 <input type="radio" name="public-transit" value={false} /> No
             </div>
             <br />
-            {toggle === "true" ? (<form>
-                <label>Which public transit do you use? (Select all that apply)</label>
-                <br /><input type="checkbox" name="bus" checked={checked.bus} onChange={handleCheckbox} /> Bus
-                <br /><input type="checkbox" name="rapid" checked={checked.rapid} onChange={handleCheckbox} /> Rapid Transit (Subway/Metro/Tram)
-                <br /><input type="checkbox" name="commuter" checked={checked.commuter} onChange={handleCheckbox} /> Commuter Rail (Train)
-                <br /><input type="checkbox" name="intercity" checked={checked.intercity} onChange={handleCheckbox} /> Intercity Rail (Amtrak)
-            </form>) : null}
+            {toggle === "true" ? 
+                (<form>
+                    <label>Which public transit do you use? (Select all that apply)</label>
+                    <br /><input type="checkbox" name="bus" checked={checked.bus} onChange={handleCheckbox} /> Bus
+                    <br /><input type="checkbox" name="rapid" checked={checked.rapid} onChange={handleCheckbox} /> Rapid Transit (Subway/Metro/Tram)
+                    <br /><input type="checkbox" name="commuter" checked={checked.commuter} onChange={handleCheckbox} /> Commuter Rail (Train)
+                    <br /><input type="checkbox" name="intercity" checked={checked.intercity} onChange={handleCheckbox} /> Intercity Rail (Amtrak)
+                </form>) 
+                : null}
             <BusForm display={toggle} checked={checked.bus} bus={bus} setBus={setBus} />
             <RapidForm display={toggle} checked={checked.rapid} rapid={rapid} setRapid={setRapid} />
             <CommuterForm display={toggle} checked={checked.commuter} commuter={commuter} setCommuter={setCommuter} />
             <IntercityForm display={toggle} checked={checked.intercity} intercity={intercity} setIntercity={setIntercity} />
-            {toggle !== null ? <button onClick={handleNext}>Next</button> : null}
+            {toggle !== null ? 
+                <button onClick={handleNext}>Next</button> 
+                : null}
         </>
     );
 }
