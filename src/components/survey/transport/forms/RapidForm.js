@@ -5,11 +5,11 @@ function RapidForm({display, checked, rapid, setRapid}) {
                 <label htmlFor="rapid-miles-input">How much do you ride rapid transit (subway/metro/tram) per year?</label>
                 <br />
                 <input 
-                    type="text" 
+                    type="number" 
                     id="rapid-miles-input" 
                     placeholder="0"
-                    value={rapid === 0 ? "" : rapid} 
-                    onChange={e => isNaN(e.target.value) ? e.target.value="" : setRapid(pS => ({...pS, parameters: {...pS.parameters, distance: parseInt(e.target.value)}}))} /> miles
+                    value={(rapid === 0 || isNaN(rapid)) ? "" : rapid} 
+                    onChange={e => setRapid(pS => ({...pS, parameters: {...pS.parameters, distance: e.target.valueAsNumber}}))} /> miles
             </form>
         );
     } else {

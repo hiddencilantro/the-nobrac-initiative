@@ -26,10 +26,10 @@ function PublicTransit({bus, setBus, rapid, setRapid, commuter, setCommuter, int
             setCommuter(pS => ({...pS, parameters: {...pS.parameters, distance: 0}}));
             setIntercity(pS => ({...pS, parameters: {...pS.parameters, distance: 0}}));
         } else {
-            (!checked.bus || bus === "") ? setBus(pS => ({...pS, parameters: {...pS.parameters, distance: 0}})) : null;
-            (!checked.rapid || rapid === "") ? setRapid(pS => ({...pS, parameters: {...pS.parameters, distance: 0}})) : null;
-            (!checked.commuter || commuter === "") ? setCommuter(pS => ({...pS, parameters: {...pS.parameters, distance: 0}})) : null;
-            (!checked.intercity || intercity === "") ? setIntercity(pS => ({...pS, parameters: {...pS.parameters, distance: 0}})) : null;
+            (!checked.bus || isNaN(bus)) ? setBus(pS => ({...pS, parameters: {...pS.parameters, distance: 0}})) : null;
+            (!checked.rapid || isNaN(rapid)) ? setRapid(pS => ({...pS, parameters: {...pS.parameters, distance: 0}})) : null;
+            (!checked.commuter || isNaN(commuter)) ? setCommuter(pS => ({...pS, parameters: {...pS.parameters, distance: 0}})) : null;
+            (!checked.intercity || isNaN(intercity)) ? setIntercity(pS => ({...pS, parameters: {...pS.parameters, distance: 0}})) : null;
         };
         navigate('/survey/transport/flight');
     };

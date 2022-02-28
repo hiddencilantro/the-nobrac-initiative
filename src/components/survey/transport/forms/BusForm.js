@@ -5,11 +5,11 @@ function BusForm({display, checked, bus, setBus}) {
                 <label htmlFor="bus-miles-input">How much do you ride the bus per year?</label>
                 <br />
                 <input 
-                    type="text" 
+                    type="number" 
                     id="bus-miles-input" 
                     placeholder="0"
-                    value={bus === 0 ? "" : bus} 
-                    onChange={e => isNaN(e.target.value) ? e.target.value="" : setBus(pS => ({...pS, parameters: {...pS.parameters, distance: parseInt(e.target.value)}}))} /> miles
+                    value={(bus === 0 || isNaN(bus)) ? "" : bus} 
+                    onChange={e => setBus(pS => ({...pS, parameters: {...pS.parameters, distance: e.target.valueAsNumber}}))} /> miles
             </form>
         );
     } else {

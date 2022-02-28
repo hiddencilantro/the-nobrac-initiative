@@ -5,11 +5,11 @@ function MediumFlightForm({display, checked, mediumFlight, setMediumFlight}) {
                 <label htmlFor="medium-flight-miles-input">How many approximate miles of medium distance air travel do you do?</label>
                 <br />
                 <input 
-                    type="text" 
+                    type="number" 
                     id="medium-flight-miles-input" 
                     placeholder="0"
-                    value={mediumFlight === 0 ? "" : mediumFlight} 
-                    onChange={e => isNaN(e.target.value) ? e.target.value="" : setMediumFlight(pS => ({...pS, parameters: {...pS.parameters, distance: parseInt(e.target.value)}}))} /> miles
+                    value={(mediumFlight === 0 || isNaN(mediumFlight)) ? "" : mediumFlight} 
+                    onChange={e => setMediumFlight(pS => ({...pS, parameters: {...pS.parameters, distance: e.target.valueAsNumber}}))} /> miles
             </form>
         );
     } else {

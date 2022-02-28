@@ -23,9 +23,9 @@ function Flight({shortFlight, setShortFlight, mediumFlight, setMediumFlight, lon
             setMediumFlight(pS => ({...pS, parameters: {...pS.parameters, distance: 0}}));
             setLongFlight(pS => ({...pS, parameters: {...pS.parameters, distance: 0}}));
         } else {
-            (!checked.short || shortFlight === "") ? setShortFlight(pS => ({...pS, parameters: {...pS.parameters, distance: 0}})) : null;
-            (!checked.medium || mediumFlight === "") ? setMediumFlight(pS => ({...pS, parameters: {...pS.parameters, distance: 0}})) : null;
-            (!checked.long || longFlight === "") ? setLongFlight(pS => ({...pS, parameters: {...pS.parameters, distance: 0}})) : null;
+            (!checked.short || isNaN(shortFlight)) ? setShortFlight(pS => ({...pS, parameters: {...pS.parameters, distance: 0}})) : null;
+            (!checked.medium || isNaN(mediumFlight)) ? setMediumFlight(pS => ({...pS, parameters: {...pS.parameters, distance: 0}})) : null;
+            (!checked.long || isNaN(longFlight)) ? setLongFlight(pS => ({...pS, parameters: {...pS.parameters, distance: 0}})) : null;
         };
         navigate('/survey/energy/electricity');
     };

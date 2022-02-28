@@ -5,7 +5,7 @@ function CarForm({display, car, setCar}) {
 
     const handleSubmit = e => {
         e.preventDefault();
-        if(car === "") {
+        if(isNaN(car)) {
             setCar(pS => ({...pS, parameters: {...pS.parameters, distance: 0}}));
         };
         navigate('/survey/transport/public-transit');
@@ -22,11 +22,11 @@ function CarForm({display, car, setCar}) {
                 <label htmlFor="car-miles-input">How many miles do you drive per year?</label>
                 <br /><br />
                 <input 
-                    type="text" 
+                    type="number" 
                     id="car-miles-input" 
                     placeholder="0"
-                    value={car === 0 ? "" : car} 
-                    onChange={e => isNaN(e.target.value) ? e.target.value="" : setCar(pS => ({...pS, parameters: {...pS.parameters, distance: parseInt(e.target.value)}}))} /> miles
+                    value={(car === 0 || isNaN(car)) ? "" : car} 
+                    onChange={e => setCar(pS => ({...pS, parameters: {...pS.parameters, distance: e.target.valueAsNumber}}))} /> miles
                 <br /><br />
                 <input type="submit" value="Next"/>
             </form>

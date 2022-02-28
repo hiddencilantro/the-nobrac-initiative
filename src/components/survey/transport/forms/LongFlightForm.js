@@ -5,11 +5,11 @@ function LongFlightForm({display, checked, longFlight, setLongFlight}) {
                 <label htmlFor="long-flight-miles-input">How many approximate miles of long distance air travel do you do?</label>
                 <br />
                 <input 
-                    type="text" 
+                    type="number" 
                     id="long-flight-miles-input" 
                     placeholder="0"
-                    value={longFlight === 0 ? "" : longFlight} 
-                    onChange={e => isNaN(e.target.value) ? e.target.value="" : setLongFlight(pS => ({...pS, parameters: {...pS.parameters, distance: parseInt(e.target.value)}}))} /> miles
+                    value={(longFlight === 0 || isNaN(longFlight)) ? "" : longFlight} 
+                    onChange={e => setLongFlight(pS => ({...pS, parameters: {...pS.parameters, distance: e.target.valueAsNumber}}))} /> miles
             </form>
         );
     } else {

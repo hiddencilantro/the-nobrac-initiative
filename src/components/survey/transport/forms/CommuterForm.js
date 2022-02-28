@@ -5,11 +5,11 @@ function CommuterForm({display, checked, commuter, setCommuter}) {
                 <label htmlFor="commuter-miles-input">How much do you ride the commuter rail (train) per year?</label>
                 <br />
                 <input 
-                    type="text" 
+                    type="number" 
                     id="commuter-miles-input" 
                     placeholder="0"
-                    value={commuter === 0 ? "" : commuter} 
-                    onChange={e => isNaN(e.target.value) ? e.target.value="" : setCommuter(pS => ({...pS, parameters: {...pS.parameters, distance: parseInt(e.target.value)}}))} /> miles
+                    value={(commuter === 0 || isNaN(commuter)) ? "" : commuter} 
+                    onChange={e => setCommuter(pS => ({...pS, parameters: {...pS.parameters, distance: e.target.valueAsNumber}}))} /> miles
             </form>
         );
     } else {

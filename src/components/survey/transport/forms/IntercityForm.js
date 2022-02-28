@@ -5,11 +5,11 @@ function IntercityForm({display, checked, intercity, setIntercity}) {
                 <label htmlFor="intercity-miles-input">How much do you ride the intercity rail (Amtrak) per year?</label>
                 <br />
                 <input 
-                    type="text" 
+                    type="number" 
                     id="intercity-miles-input" 
                     placeholder="0"
-                    value={intercity === 0 ? "" : intercity} 
-                    onChange={e => isNaN(e.target.value) ? e.target.value="" : setIntercity(pS => ({...pS, parameters: {...pS.parameters, distance: parseInt(e.target.value)}}))} /> miles
+                    value={(intercity === 0 || isNaN(intercity)) ? "" : intercity} 
+                    onChange={e => setIntercity(pS => ({...pS, parameters: {...pS.parameters, distance: e.target.valueAsNumber}}))} /> miles
             </form>
         );
     } else {
