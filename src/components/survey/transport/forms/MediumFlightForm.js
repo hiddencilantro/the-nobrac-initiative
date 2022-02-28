@@ -2,7 +2,7 @@ function MediumFlightForm({display, checked, mediumFlight, setMediumFlight}) {
     if (display === "true" && checked) {
         return (
             <form>
-                <label htmlFor="medium-flight-miles-input">How many approximate miles of medium distance air travel do you do?</label>
+                <label htmlFor="medium-flight-miles-input">How many total approximate miles of medium distance flying do you do?</label>
                 <br />
                 <input 
                     type="number" 

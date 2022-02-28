@@ -2,7 +2,7 @@ function LongFlightForm({display, checked, longFlight, setLongFlight}) {
     if (display === "true" && checked) {
         return (
             <form>
-                <label htmlFor="long-flight-miles-input">How many approximate miles of long distance air travel do you do?</label>
+                <label htmlFor="long-flight-miles-input">How many total approximate miles of long distance flying do you do?</label>
                 <br />
                 <input 
                     type="number" 

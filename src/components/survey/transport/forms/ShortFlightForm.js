@@ -2,7 +2,7 @@ function ShortFlightForm({display, checked, shortFlight, setShortFlight}) {
     if (display === "true" && checked) {
         return (
             <form>
-                <label htmlFor="short-flight-miles-input">How many approximate miles of short distance air travel do you do?</label>
+                <label htmlFor="short-flight-miles-input">How many total approximate miles of short distance flying do you do?</label>
                 <br />
                 <input 
                     type="number" 
