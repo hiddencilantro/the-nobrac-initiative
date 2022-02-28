@@ -5,12 +5,15 @@ function CarForm({display, car, setCar}) {
 
     const handleSubmit = e => {
         e.preventDefault();
-        navigate('/survey/transport/public-transit')
+        if(car === "") {
+            setCar(pS => ({...pS, parameters: {...pS.parameters, distance: 0}}));
+        };
+        navigate('/survey/transport/public-transit');
     };
 
     const handleNext = () => {
-        setCar(pS => ({...pS, parameters: {...pS.parameters, distance: 0}}))
-        navigate('/survey/transport/public-transit')
+        setCar(pS => ({...pS, parameters: {...pS.parameters, distance: 0}}));
+        navigate('/survey/transport/public-transit');
     };
 
     if (display === "true") {
