@@ -17,7 +17,7 @@ function Flight({shortFlight, setShortFlight, mediumFlight, setMediumFlight, lon
         setChecked(pS => ({...pS, [e.target.name]: e.target.checked}));
     };
 
-    const handleNext = e => {
+    const handleNext = () => {
         if(toggle === "false") {
             setShortFlight(pS => ({...pS, parameters: {...pS.parameters, distance: 0}}));
             setMediumFlight(pS => ({...pS, parameters: {...pS.parameters, distance: 0}}));
