@@ -16,7 +16,7 @@ function PublicTransit({bus, setBus, rapid, setRapid, commuter, setCommuter, int
     const navigate = useNavigate();
 
     const handleCheckbox = e => {
-        setChecked(pS => ({...pS, [e.target.name]: e.target.checked}))
+        setChecked(pS => ({...pS, [e.target.name]: e.target.checked}));
     };
 
     const handleNext = () => {
