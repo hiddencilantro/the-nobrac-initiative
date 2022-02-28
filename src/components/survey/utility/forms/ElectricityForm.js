@@ -13,7 +13,7 @@ function ElectricityForm({electricity, setElectricity}) {
 
     return (
         <form onSubmit={handleSubmit}>
-            <label htmlFor="electricity-money-input">How much is your average monthly electricity bill?</label>
+            <label htmlFor="electricity-money-input">How much is your average electricity bill?</label>
             <br /><br />
             $<input 
                 type="number" 
