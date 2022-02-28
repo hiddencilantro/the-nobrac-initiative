@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 // import Categories from './survey/Categories'
 import Transport from './survey/transport/Transport';
-import Energy from './survey/energy/Energy';
+import Utility from './survey/utility/Utility.js';
 import { useState } from 'react';
 // import { useDispatch } from 'react-redux';
 
@@ -70,6 +70,13 @@ function Survey() {
             "distance_unit": "mi"
         }
     });
+    const [electricity, setElectricity] = useState({
+        "emission_factor": "electricity-energy_source_electricity",
+        "parameters": {
+            "money": 0,
+            "money_unit": "usd"
+        }
+    });
 
     // const dispatch = useDispatch();
 
@@ -96,8 +103,9 @@ function Survey() {
                         mediumFlight={mediumFlight.parameters.distance} setMediumFlight={setMediumFlight} 
                         longFlight={longFlight.parameters.distance} setLongFlight={setLongFlight} />} />
                 <Route 
-                    path="energy/*" 
-                    element={<Energy />} />
+                    path="utility/*" 
+                    element={<Utility 
+                        electricity={electricity.parameters.money} setElectricity={setElectricity} />} />
             </Routes>
         </div>
     );
