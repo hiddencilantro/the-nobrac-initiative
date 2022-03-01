@@ -20,7 +20,7 @@ function NaturalGasForm({naturalGas, setNaturalGas}) {
                 id="natural-gas-money-input" 
                 placeholder="0"
                 value={(naturalGas === 0 || isNaN(naturalGas)) ? "" : naturalGas} 
-                onChange={e => setNaturalGas(pS => ({...pS, parameters: {...pS.parameters, money: (e.target.valueAsNumber*12)}}))} /> per month
+                onChange={e => setNaturalGas(pS => ({...pS, parameters: {...pS.parameters, money: (e.target.valueAsNumber)}}))} /> per month
             <br /><br />
             <input type="submit" value="Next"/>
         </form>

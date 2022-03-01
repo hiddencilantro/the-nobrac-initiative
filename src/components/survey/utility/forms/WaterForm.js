@@ -20,7 +20,7 @@ function WaterForm({water, setWater}) {
                 id="water-money-input" 
                 placeholder="0"
                 value={(water === 0 || isNaN(water)) ? "" : water} 
-                onChange={e => setWater(pS => ({...pS, parameters: {...pS.parameters, money: (e.target.valueAsNumber*12)}}))} /> per month
+                onChange={e => setWater(pS => ({...pS, parameters: {...pS.parameters, money: (e.target.valueAsNumber)}}))} /> per month
             <br /><br />
             <input type="submit" value="Next"/>
         </form>
