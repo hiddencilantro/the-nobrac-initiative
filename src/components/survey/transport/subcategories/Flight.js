@@ -1,8 +1,8 @@
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import ShortFlightForm from '../forms/ShortFlightForm';
 import MediumFlightForm from '../forms/MediumFlightForm';
 import LongFlightForm from '../forms/LongFlightForm';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 function Flight({shortFlight, setShortFlight, mediumFlight, setMediumFlight, longFlight, setLongFlight}) {
     const [toggle, setToggle] = useState(null);

@@ -1,9 +1,9 @@
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import BusForm from '../forms/BusForm';
 import RapidForm from '../forms/RapidForm';
 import CommuterForm from '../forms/CommuterForm';
 import IntercityForm from '../forms/IntercityForm';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 function PublicTransit({bus, setBus, rapid, setRapid, commuter, setCommuter, intercity, setIntercity}) {
     const [toggle, setToggle] = useState(null);

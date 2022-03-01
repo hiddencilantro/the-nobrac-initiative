@@ -1,9 +1,9 @@
 import { Routes, Route } from 'react-router-dom';
+import { useState } from 'react';
+// import { useDispatch } from 'react-redux';
 // import Categories from './survey/Categories'
 import Transport from './survey/transport/Transport';
 import Utility from './survey/utility/Utility.js';
-import { useState } from 'react';
-// import { useDispatch } from 'react-redux';
 
 function Survey() {
     const [car, setCar] = useState({
