@@ -8,7 +8,7 @@ function WaterForm({water, setWater}) {
         if(isNaN(water)) {
             setWater(pS => ({...pS, parameters: {...pS.parameters, money: 0}}));
         };
-        navigate('/survey/utility/natural-gas');
+        navigate('/survey/consumption/food');
     };
 
     return (
