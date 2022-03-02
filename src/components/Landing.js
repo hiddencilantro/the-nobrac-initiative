@@ -4,7 +4,8 @@ function Landing() {
     return (
         <div>
             <h1>The NOBRAC Initiative</h1>
-            <Link to="/survey/transport/car">Take survey!</Link>
+            <p>Take a quick survey to calculate your carbon footprint!</p>
+            <Link to="/survey/transport/car">Start</Link>
         </div>
     );
 }
