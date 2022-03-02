@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import BusForm from '../forms/BusForm';
-import RapidForm from '../forms/RapidForm';
-import CommuterForm from '../forms/CommuterForm';
-import IntercityForm from '../forms/IntercityForm';
+import BusInput from '../forms/BusInput';
+import RapidInput from '../forms/RapidInput';
+import CommuterInput from '../forms/CommuterInput';
+import IntercityInput from '../forms/IntercityInput';
 
 function PublicTransit({bus, setBus, rapid, setRapid, commuter, setCommuter, intercity, setIntercity}) {
     const [toggle, setToggle] = useState(null);
@@ -41,22 +41,22 @@ function PublicTransit({bus, setBus, rapid, setRapid, commuter, setCommuter, int
                 <input type="radio" name="public-transit" value={true} /> Yes
                 <input type="radio" name="public-transit" value={false} /> No
             </div>
-            <br />
             {toggle === "true" ? 
-                (<form>
-                    <label>Which public transit do you use? (Select all that apply)</label>
-                    <br /><input type="checkbox" name="bus" checked={checked.bus} onChange={handleCheckbox} /> Bus
-                    <br /><input type="checkbox" name="rapid" checked={checked.rapid} onChange={handleCheckbox} /> Rapid Transit (Subway/Metro/Tram)
-                    <br /><input type="checkbox" name="commuter" checked={checked.commuter} onChange={handleCheckbox} /> Commuter Rail (Train)
-                    <br /><input type="checkbox" name="intercity" checked={checked.intercity} onChange={handleCheckbox} /> Intercity Rail (Amtrak)
-                </form>) 
+                (<div>
+                    <p>Which public transit do you use? (Select all that apply)</p>
+                    <input type="checkbox" name="bus" checked={checked.bus} onChange={handleCheckbox} /> Bus<br />
+                    <input type="checkbox" name="rapid" checked={checked.rapid} onChange={handleCheckbox} /> Rapid Transit (Subway/Metro/Tram)<br />
+                    <input type="checkbox" name="commuter" checked={checked.commuter} onChange={handleCheckbox} /> Commuter Rail (Train)<br />
+                    <input type="checkbox" name="intercity" checked={checked.intercity} onChange={handleCheckbox} /> Intercity Rail (Amtrak)
+                </div>) 
                 : null}
-            <BusForm display={toggle} checked={checked.bus} bus={bus} setBus={setBus} />
-            <RapidForm display={toggle} checked={checked.rapid} rapid={rapid} setRapid={setRapid} />
-            <CommuterForm display={toggle} checked={checked.commuter} commuter={commuter} setCommuter={setCommuter} />
-            <IntercityForm display={toggle} checked={checked.intercity} intercity={intercity} setIntercity={setIntercity} />
+            <br />
+            <BusInput display={toggle} checked={checked.bus} bus={bus} setBus={setBus} />
+            <RapidInput display={toggle} checked={checked.rapid} rapid={rapid} setRapid={setRapid} />
+            <CommuterInput display={toggle} checked={checked.commuter} commuter={commuter} setCommuter={setCommuter} />
+            <IntercityInput display={toggle} checked={checked.intercity} intercity={intercity} setIntercity={setIntercity} />
             {toggle !== null ? 
-                <button onClick={handleNext}>Next</button> 
+                <button type="button" onClick={handleNext}>Next</button> 
                 : null}
         </>
     );

@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import ShortFlightForm from '../forms/ShortFlightForm';
-import MediumFlightForm from '../forms/MediumFlightForm';
-import LongFlightForm from '../forms/LongFlightForm';
+import ShortFlightInput from '../forms/ShortFlightInput';
+import MediumFlightInput from '../forms/MediumFlightInput';
+import LongFlightInput from '../forms/LongFlightInput';
 
 function Flight({shortFlight, setShortFlight, mediumFlight, setMediumFlight, longFlight, setLongFlight}) {
     const [toggle, setToggle] = useState(null);
@@ -37,20 +37,20 @@ function Flight({shortFlight, setShortFlight, mediumFlight, setMediumFlight, lon
                 <input type="radio" name="flight" value={true} /> Yes
                 <input type="radio" name="flight" value={false} /> No
             </div>
-            <br />
             {toggle === "true" ? 
-                (<form>
-                    <label>What type of flights do you take? (Select all that apply)</label>
-                    <br /><input type="checkbox" name="short" checked={checked.short} onChange={handleCheckbox} /> {"Short (< 300 miles)"}
-                    <br /><input type="checkbox" name="medium" checked={checked.medium} onChange={handleCheckbox} /> {"Medium (>= 300 miles, < 2300 miles)"}
-                    <br /><input type="checkbox" name="long" checked={checked.long} onChange={handleCheckbox} /> {"Long (>= 2300 miles)"}
-                </form>) 
+                (<div>
+                    <p>What type of flights do you take? (Select all that apply)</p>
+                    <input type="checkbox" name="short" checked={checked.short} onChange={handleCheckbox} /> {"Short (< 300 miles)"}<br />
+                    <input type="checkbox" name="medium" checked={checked.medium} onChange={handleCheckbox} /> {"Medium (>= 300 miles, < 2300 miles)"}<br />
+                    <input type="checkbox" name="long" checked={checked.long} onChange={handleCheckbox} /> {"Long (>= 2300 miles)"}<br />
+                </div>) 
                 : null}
-            <ShortFlightForm display={toggle} checked={checked.short} shortFlight={shortFlight} setShortFlight={setShortFlight} />
-            <MediumFlightForm display={toggle} checked={checked.medium} mediumFlight={mediumFlight} setMediumFlight={setMediumFlight} />
-            <LongFlightForm display={toggle} checked={checked.long} longFlight={longFlight} setLongFlight={setLongFlight} />
+            <br />
+            <ShortFlightInput display={toggle} checked={checked.short} shortFlight={shortFlight} setShortFlight={setShortFlight} />
+            <MediumFlightInput display={toggle} checked={checked.medium} mediumFlight={mediumFlight} setMediumFlight={setMediumFlight} />
+            <LongFlightInput display={toggle} checked={checked.long} longFlight={longFlight} setLongFlight={setLongFlight} />
             {toggle !== null ? 
-                <button onClick={handleNext}>Next</button> 
+                <button type="button" onClick={handleNext}>Next</button> 
                 : null}
         </>
     );
