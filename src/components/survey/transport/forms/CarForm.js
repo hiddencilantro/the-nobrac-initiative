@@ -20,14 +20,14 @@ function CarForm({display, car, setCar}) {
         return (
             <form onSubmit={handleSubmit}>
                 <label htmlFor="car-miles-input">How many miles do you drive per year?</label>
-                <br /><br />
+                <br />
                 <input 
                     type="number" 
                     id="car-miles-input" 
                     placeholder="0"
                     value={(car === 0 || isNaN(car)) ? "" : car} 
                     onChange={e => setCar(pS => ({...pS, parameters: {...pS.parameters, distance: e.target.valueAsNumber}}))} /> miles
-                <br /><br />
+                <br />
                 <input type="submit" value="Next"/>
             </form>
         );

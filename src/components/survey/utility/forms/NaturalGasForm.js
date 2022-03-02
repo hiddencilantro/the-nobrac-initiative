@@ -13,15 +13,16 @@ function NaturalGasForm({naturalGas, setNaturalGas}) {
 
     return (
         <form onSubmit={handleSubmit}>
+            <br />
             <label htmlFor="natural-gas-money-input">How much is your average gas bill?</label>
-            <br /><br />
+            <br />
             $<input 
                 type="number" 
                 id="natural-gas-money-input" 
                 placeholder="0"
                 value={(naturalGas === 0 || isNaN(naturalGas)) ? "" : naturalGas} 
                 onChange={e => setNaturalGas(pS => ({...pS, parameters: {...pS.parameters, money: (e.target.valueAsNumber)}}))} /> per month
-            <br /><br />
+            <br />
             <input type="submit" value="Next"/>
         </form>
     );

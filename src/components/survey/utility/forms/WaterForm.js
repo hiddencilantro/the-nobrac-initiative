@@ -13,15 +13,16 @@ function WaterForm({water, setWater}) {
 
     return (
         <form onSubmit={handleSubmit}>
+            <br />
             <label htmlFor="water-money-input">How much is your average water bill?</label>
-            <br /><br />
+            <br />
             $<input 
                 type="number" 
                 id="water-money-input" 
                 placeholder="0"
                 value={(water === 0 || isNaN(water)) ? "" : water} 
                 onChange={e => setWater(pS => ({...pS, parameters: {...pS.parameters, money: (e.target.valueAsNumber)}}))} /> per month
-            <br /><br />
+            <br />
             <input type="submit" value="Next"/>
         </form>
     );

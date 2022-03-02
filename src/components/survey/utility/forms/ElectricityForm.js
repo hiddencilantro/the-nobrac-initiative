@@ -13,15 +13,16 @@ function ElectricityForm({electricity, setElectricity}) {
 
     return (
         <form onSubmit={handleSubmit}>
+            <br />
             <label htmlFor="electricity-money-input">How much is your average electricity bill?</label>
-            <br /><br />
+            <br />
             $<input 
                 type="number" 
                 id="electricity-money-input" 
                 placeholder="0"
                 value={(electricity === 0 || isNaN(electricity)) ? "" : electricity} 
                 onChange={e => setElectricity(pS => ({...pS, parameters: {...pS.parameters, money: (e.target.valueAsNumber)}}))} /> per month
-            <br /><br />
+            <br />
             <input type="submit" value="Next"/>
         </form>
     );
