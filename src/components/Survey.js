@@ -3,7 +3,8 @@ import { useState } from 'react';
 // import { useDispatch } from 'react-redux';
 // import Categories from './survey/Categories'
 import Transport from './survey/transport/Transport';
-import Utility from './survey/utility/Utility.js';
+import Utility from './survey/utility/Utility';
+import Consumption from './survey/consumption/Consumption';
 
 function Survey() {
     const [car, setCar] = useState({
@@ -91,6 +92,106 @@ function Survey() {
             "money_unit": "usd"
         }
     });
+    const [foods, setFoods] = useState({
+        meat: {
+            "emission_factor": "consumer_goods-type_packaged_meat_except_poultry",
+            "parameters": {
+                "money": 0,
+                "money_unit": "usd"
+            }
+        },
+        poultry: {
+            "emission_factor": "consumer_goods-type_packaged_poultry",
+            "parameters": {
+                "money": 0,
+                "money_unit": "usd"
+            }
+        },
+        seafood: {
+            "emission_factor": "consumer_goods-type_seafood",
+            "parameters": {
+                "money": 0,
+                "money_unit": "usd"
+            }
+        },
+        bread: {
+            "emission_factor": "consumer_goods-type_bread_other_baked_goods",
+            "parameters": {
+                "money": 0,
+                "money_unit": "usd"
+            }
+        },
+        cereal: {
+            "emission_factor": "consumer_goods-type_breakfast_cereals",
+            "parameters": {
+                "money": 0,
+                "money_unit": "usd"
+            }
+        },
+        cheese: {
+            "emission_factor": "consumer_goods-type_cheese",
+            "parameters": {
+                "money": 0,
+                "money_unit": "usd"
+            }
+        },
+        pasta: {
+            "emission_factor": "consumer_goods-type_cookies_crackers_pastas_tortillas",
+            "parameters": {
+                "money": 0,
+                "money_unit": "usd"
+            }
+        },
+        milkAndButter: {
+            "emission_factor": "consumer_goods-type_fluid_milk_butter",
+            "parameters": {
+                "money": 0,
+                "money_unit": "usd"
+            }
+        },
+        oils: {
+            "emission_factor": "consumer_goods-type_refined_vegetable_olive_seed_oils",
+            "parameters": {
+                "money": 0,
+                "money_unit": "usd"
+            }
+        },
+        seasonings: {
+            "emission_factor": "consumer_goods-type_seasonings_dressings",
+            "parameters": {
+                "money": 0,
+                "money_unit": "usd"
+            }
+        },
+        frozenFood: {
+            "emission_factor": "consumer_goods-type_frozen_food",
+            "parameters": {
+                "money": 0,
+                "money_unit": "usd"
+            }
+        },
+        iceCream: {
+            "emission_factor": "consumer_goods-type_ice_cream_frozen_desserts",
+            "parameters": {
+                "money": 0,
+                "money_unit": "usd"
+            }
+        },
+        snacks: {
+            "emission_factor": "consumer_goods-type_snack_foods",
+            "parameters": {
+                "money": 0,
+                "money_unit": "usd"
+            }
+        },
+        other: {
+            "emission_factor": "consumer_goods-type_all_other_foods",
+            "parameters": {
+                "money": 0,
+                "money_unit": "usd"
+            }
+        }
+    })
 
     // const dispatch = useDispatch();
 
@@ -103,7 +204,6 @@ function Survey() {
     return (
         <div>
             {/* <Categories /> */}
-            <br />
             <Routes>
                 <Route 
                     path="transport/*" 
@@ -122,6 +222,10 @@ function Survey() {
                         electricity={electricity.parameters.money} setElectricity={setElectricity} 
                         naturalGas={naturalGas.parameters.money} setNaturalGas={setNaturalGas} 
                         water={water.parameters.money} setWater={setWater} />} />
+                <Route 
+                    path="consumption/*" 
+                    element={<Consumption 
+                        foods={foods} setFoods={setFoods} />} />
             </Routes>
         </div>
     );
