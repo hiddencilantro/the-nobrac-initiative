@@ -1,4 +1,4 @@
-function LongFlightInput({display, checked, longFlight, setLongFlight}) {
+function LongFlightInput({display, checked, distance, setFlight}) {
     if (display === "true" && checked) {
         return (
             <div>
@@ -8,8 +8,20 @@ function LongFlightInput({display, checked, longFlight, setLongFlight}) {
                     type="number" 
                     id="long-flight-miles-input" 
                     placeholder="0"
-                    value={(longFlight === 0 || isNaN(longFlight)) ? "" : longFlight} 
-                    onChange={e => setLongFlight(pS => ({...pS, parameters: {...pS.parameters, distance: e.target.valueAsNumber}}))} /> miles
+                    value={(distance === 0 || isNaN(distance)) ? "" : distance} 
+                    onChange={e => {
+                        setFlight(pS => (
+                            {...pS, 
+                            long: {
+                                ...pS.long,
+                                parameters: {
+                                    ...pS.long.parameters, 
+                                    distance: e.target.valueAsNumber
+                                    }
+                                }
+                            }
+                        ));
+                    }} /> miles
             </div>
         );
     } else {

@@ -3,7 +3,7 @@ import Car from './subcategories/Car';
 import PublicTransit from './subcategories/PublicTransit';
 import Flight from './subcategories/Flight'
 
-function Transport({car, setCar, publicTransit, setPublicTransit, shortFlight, setShortFlight, mediumFlight, setMediumFlight, longFlight, setLongFlight}) {
+function Transport({car, setCar, publicTransit, setPublicTransit, flight, setFlight}) {
     return (
         <Routes>
             <Route 
@@ -13,14 +13,11 @@ function Transport({car, setCar, publicTransit, setPublicTransit, shortFlight, s
             <Route 
                 path="public-transit" 
                 element={<PublicTransit 
-                    publicTransit={publicTransit} 
-                    setPublicTransit={setPublicTransit} />} />
+                    publicTransit={publicTransit} setPublicTransit={setPublicTransit} />} />
             <Route 
                 path="flight"
                 element={<Flight 
-                    shortFlight={shortFlight} setShortFlight={setShortFlight} 
-                    mediumFlight={mediumFlight} setMediumFlight={setMediumFlight} 
-                    longFlight={longFlight} setLongFlight={setLongFlight} />} />
+                    flight={flight} setFlight={setFlight} />} />
         </Routes>
     );
 }

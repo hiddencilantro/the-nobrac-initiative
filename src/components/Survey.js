@@ -49,28 +49,30 @@ function Survey() {
             }
         }
     });
-    const [shortFlight, setShortFlight] = useState({
-        "emission_factor": "passenger_flight-route_type_na-aircraft_type_na-distance_lt_300mi-class_na-rf_na",
-        "parameters": {
-            "passengers": 1,
-            "distance": 0,
-            "distance_unit": "mi"
-        }
-    });
-    const [mediumFlight, setMediumFlight] = useState({
-        "emission_factor": "passenger_flight-route_type_na-aircraft_type_na-distance_gt_300mi_lt_2300mi-class_na-rf_na",
-        "parameters": {
-            "passengers": 1,
-            "distance": 0,
-            "distance_unit": "mi"
-        }
-    });
-    const [longFlight, setLongFlight] = useState({
-        "emission_factor": "passenger_flight-route_type_na-aircraft_type_na-distance_gt_2300mi-class_na-rf_na",
-        "parameters": {
-            "passengers": 1,
-            "distance": 0,
-            "distance_unit": "mi"
+    const [flight, setFlight] = useState({
+        short: {
+            "emission_factor": "passenger_flight-route_type_na-aircraft_type_na-distance_lt_300mi-class_na-rf_na",
+            "parameters": {
+                "passengers": 1,
+                "distance": 0,
+                "distance_unit": "mi"
+            }
+        },
+        medium: {
+            "emission_factor": "passenger_flight-route_type_na-aircraft_type_na-distance_gt_300mi_lt_2300mi-class_na-rf_na",
+            "parameters": {
+                "passengers": 1,
+                "distance": 0,
+                "distance_unit": "mi"
+            }
+        },
+        long: {
+            "emission_factor": "passenger_flight-route_type_na-aircraft_type_na-distance_gt_2300mi-class_na-rf_na",
+            "parameters": {
+                "passengers": 1,
+                "distance": 0,
+                "distance_unit": "mi"
+            }
         }
     });
     const [electricity, setElectricity] = useState({
@@ -212,9 +214,7 @@ function Survey() {
                     element={<Transport 
                         car={car.parameters.distance} setCar={setCar} 
                         publicTransit={publicTransit} setPublicTransit={setPublicTransit} 
-                        shortFlight={shortFlight.parameters.distance} setShortFlight={setShortFlight} 
-                        mediumFlight={mediumFlight.parameters.distance} setMediumFlight={setMediumFlight} 
-                        longFlight={longFlight.parameters.distance} setLongFlight={setLongFlight} />} />
+                        flight={flight} setFlight={setFlight} />} />
                 <Route 
                     path="utility/*" 
                     element={<Utility 

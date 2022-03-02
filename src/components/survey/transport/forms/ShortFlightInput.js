@@ -1,4 +1,4 @@
-function ShortFlightInput({display, checked, shortFlight, setShortFlight}) {
+function ShortFlightInput({display, checked, distance, setFlight}) {
     if (display === "true" && checked) {
         return (
             <div>
@@ -8,8 +8,20 @@ function ShortFlightInput({display, checked, shortFlight, setShortFlight}) {
                     type="number" 
                     id="short-flight-miles-input" 
                     placeholder="0"
-                    value={(shortFlight === 0 || isNaN(shortFlight)) ? "" : shortFlight} 
-                    onChange={e => setShortFlight(pS => ({...pS, parameters: {...pS.parameters, distance: e.target.valueAsNumber}}))} /> miles
+                    value={(distance === 0 || isNaN(distance)) ? "" : distance} 
+                    onChange={e => {
+                        setFlight(pS => (
+                            {...pS, 
+                            short: {
+                                ...pS.short,
+                                parameters: {
+                                    ...pS.short.parameters, 
+                                    distance: e.target.valueAsNumber
+                                    }
+                                }
+                            }
+                        ));
+                    }} /> miles
             </div>
         );
     } else {

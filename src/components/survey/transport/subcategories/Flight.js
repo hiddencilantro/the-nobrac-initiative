@@ -4,7 +4,7 @@ import ShortFlightInput from '../forms/ShortFlightInput';
 import MediumFlightInput from '../forms/MediumFlightInput';
 import LongFlightInput from '../forms/LongFlightInput';
 
-function Flight({shortFlight, setShortFlight, mediumFlight, setMediumFlight, longFlight, setLongFlight}) {
+function Flight({flight, setFlight}) {
     const [toggle, setToggle] = useState(null);
     const [checked, setChecked] = useState({
         short: false,
@@ -19,15 +19,45 @@ function Flight({shortFlight, setShortFlight, mediumFlight, setMediumFlight, lon
 
     const handleNext = () => {
         if(toggle === "false") {
-            setShortFlight(pS => ({...pS, parameters: {...pS.parameters, distance: 0}}));
-            setMediumFlight(pS => ({...pS, parameters: {...pS.parameters, distance: 0}}));
-            setLongFlight(pS => ({...pS, parameters: {...pS.parameters, distance: 0}}));
+            sanitizeInputWithoutCheck();
         } else {
-            (!checked.short || isNaN(shortFlight)) ? setShortFlight(pS => ({...pS, parameters: {...pS.parameters, distance: 0}})) : null;
-            (!checked.medium || isNaN(mediumFlight)) ? setMediumFlight(pS => ({...pS, parameters: {...pS.parameters, distance: 0}})) : null;
-            (!checked.long || isNaN(longFlight)) ? setLongFlight(pS => ({...pS, parameters: {...pS.parameters, distance: 0}})) : null;
+            sanitizeInputWithCheck();
         };
         navigate('/survey/utility/electricity');
+    };
+
+    const sanitizeInputWithoutCheck = () => {
+        Object.keys(flight).forEach(flightType => {
+            setFlight(pS => (
+                {...pS, 
+                [flightType]: {
+                    ...pS[flightType], 
+                    parameters: {
+                        ...pS[flightType].parameters, 
+                        distance: 0
+                        }
+                    }
+                }
+            ));
+        });
+    };
+
+    const sanitizeInputWithCheck = () => {
+        Object.entries(flight).forEach(([flightType, obj]) => {
+            if(!checked[flightType] || isNaN(obj.parameters.distance)) {
+                setFlight(pS => (
+                    {...pS, 
+                    [flightType]: {
+                        ...pS[flightType], 
+                        parameters: {
+                            ...pS[flightType].parameters, 
+                            distance: 0
+                            }
+                        }
+                    }
+                ));
+            };
+        });
     };
 
     return (
@@ -46,9 +76,9 @@ function Flight({shortFlight, setShortFlight, mediumFlight, setMediumFlight, lon
                 </div>) 
                 : null}
             <br />
-            <ShortFlightInput display={toggle} checked={checked.short} shortFlight={shortFlight} setShortFlight={setShortFlight} />
-            <MediumFlightInput display={toggle} checked={checked.medium} mediumFlight={mediumFlight} setMediumFlight={setMediumFlight} />
-            <LongFlightInput display={toggle} checked={checked.long} longFlight={longFlight} setLongFlight={setLongFlight} />
+            <ShortFlightInput display={toggle} checked={checked.short} distance={flight.short.parameters.distance} setFlight={setFlight} />
+            <MediumFlightInput display={toggle} checked={checked.medium} distance={flight.medium.parameters.distance} setFlight={setFlight} />
+            <LongFlightInput display={toggle} checked={checked.long} distance={flight.long.parameters.distance} setFlight={setFlight} />
             {toggle !== null ? 
                 <button type="button" onClick={handleNext}>Next</button> 
                 : null}

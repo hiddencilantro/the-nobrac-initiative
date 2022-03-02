@@ -1,4 +1,4 @@
-function MediumFlightInput({display, checked, mediumFlight, setMediumFlight}) {
+function MediumFlightInput({display, checked, distance, setFlight}) {
     if (display === "true" && checked) {
         return (
             <div>
@@ -8,8 +8,20 @@ function MediumFlightInput({display, checked, mediumFlight, setMediumFlight}) {
                     type="number" 
                     id="medium-flight-miles-input" 
                     placeholder="0"
-                    value={(mediumFlight === 0 || isNaN(mediumFlight)) ? "" : mediumFlight} 
-                    onChange={e => setMediumFlight(pS => ({...pS, parameters: {...pS.parameters, distance: e.target.valueAsNumber}}))} /> miles
+                    value={(distance === 0 || isNaN(distance)) ? "" : distance} 
+                    onChange={e => {
+                        setFlight(pS => (
+                            {...pS, 
+                            medium: {
+                                ...pS.medium,
+                                parameters: {
+                                    ...pS.medium.parameters, 
+                                    distance: e.target.valueAsNumber
+                                    }
+                                }
+                            }
+                        ));
+                    }} /> miles
             </div>
         );
     } else {
