@@ -1,4 +1,4 @@
-function BusInput({display, checked, bus, setBus}) {
+function BusInput({display, checked, distance, setPublicTransit}) {
     if (display === "true" && checked) {
         return (
             <div>
@@ -8,8 +8,20 @@ function BusInput({display, checked, bus, setBus}) {
                     type="number" 
                     id="bus-miles-input" 
                     placeholder="0"
-                    value={(bus === 0 || isNaN(bus)) ? "" : bus} 
-                    onChange={e => setBus(pS => ({...pS, parameters: {...pS.parameters, distance: e.target.valueAsNumber}}))} /> miles
+                    value={(distance === 0 || isNaN(distance)) ? "" : distance} 
+                    onChange={e => {
+                        setPublicTransit(pS => (
+                            {...pS, 
+                            bus: {
+                                ...pS.bus,
+                                parameters: {
+                                    ...pS.bus.parameters, 
+                                    distance: e.target.valueAsNumber
+                                    }
+                                }
+                            }
+                        ));
+                    }} /> miles
             </div>
         );
     } else {

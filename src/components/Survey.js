@@ -15,36 +15,38 @@ function Survey() {
             "distance_unit": "mi"
         }
     });
-    const [bus, setBus] = useState({
-        "emission_factor": "passenger_vehicle-vehicle_type_bus-fuel_source_na-distance_na-engine_size_na",
-        "parameters": {
-            "passengers": 1,
-            "distance": 0,
-            "distance_unit": "mi"
-        }
-    });
-    const [rapid, setRapid] = useState({
-        "emission_factor": "passenger_train-route_type_transit_rail-fuel_source_na",
-        "parameters": {
-            "passengers": 1,
-            "distance": 0,
-            "distance_unit": "mi"
-        }
-    });
-    const [commuter, setCommuter] = useState({
-        "emission_factor": "passenger_train-route_type_commuter_rail-fuel_source_na",
-        "parameters": {
-            "passengers": 1,
-            "distance": 0,
-            "distance_unit": "mi"
-        }
-    });
-    const [intercity, setIntercity] = useState({
-        "emission_factor": "passenger_train-route_type_intercity-fuel_source_na",
-        "parameters": {
-            "passengers": 1,
-            "distance": 0,
-            "distance_unit": "mi"
+    const [publicTransit, setPublicTransit] = useState({
+        bus: {
+            "emission_factor": "passenger_vehicle-vehicle_type_bus-fuel_source_na-distance_na-engine_size_na",
+            "parameters": {
+                "passengers": 1,
+                "distance": 0,
+                "distance_unit": "mi"
+            }
+        },
+        rapid: {
+            "emission_factor": "passenger_train-route_type_transit_rail-fuel_source_na",
+            "parameters": {
+                "passengers": 1,
+                "distance": 0,
+                "distance_unit": "mi"
+            }
+        },
+        commuter: {
+            "emission_factor": "passenger_train-route_type_commuter_rail-fuel_source_na",
+            "parameters": {
+                "passengers": 1,
+                "distance": 0,
+                "distance_unit": "mi"
+            }
+        },
+        intercity: {
+            "emission_factor": "passenger_train-route_type_intercity-fuel_source_na",
+            "parameters": {
+                "passengers": 1,
+                "distance": 0,
+                "distance_unit": "mi"
+            }
         }
     });
     const [shortFlight, setShortFlight] = useState({
@@ -191,7 +193,7 @@ function Survey() {
                 "money_unit": "usd"
             }
         }
-    })
+    });
 
     // const dispatch = useDispatch();
 
@@ -209,10 +211,7 @@ function Survey() {
                     path="transport/*" 
                     element={<Transport 
                         car={car.parameters.distance} setCar={setCar} 
-                        bus={bus.parameters.distance} setBus={setBus} 
-                        rapid={rapid.parameters.distance} setRapid={setRapid} 
-                        commuter={commuter.parameters.distance} setCommuter={setCommuter} 
-                        intercity={intercity.parameters.distance} setIntercity={setIntercity} 
+                        publicTransit={publicTransit} setPublicTransit={setPublicTransit} 
                         shortFlight={shortFlight.parameters.distance} setShortFlight={setShortFlight} 
                         mediumFlight={mediumFlight.parameters.distance} setMediumFlight={setMediumFlight} 
                         longFlight={longFlight.parameters.distance} setLongFlight={setLongFlight} />} />

@@ -1,4 +1,4 @@
-function IntercityInput({display, checked, intercity, setIntercity}) {
+function IntercityInput({display, checked, distance, setPublicTransit}) {
     if (display === "true" && checked) {
         return (
             <div>
@@ -8,8 +8,20 @@ function IntercityInput({display, checked, intercity, setIntercity}) {
                     type="number" 
                     id="intercity-miles-input" 
                     placeholder="0"
-                    value={(intercity === 0 || isNaN(intercity)) ? "" : intercity} 
-                    onChange={e => setIntercity(pS => ({...pS, parameters: {...pS.parameters, distance: e.target.valueAsNumber}}))} /> miles
+                    value={(distance === 0 || isNaN(distance)) ? "" : distance} 
+                    onChange={e => {
+                        setPublicTransit(pS => (
+                            {...pS, 
+                            intercity: {
+                                ...pS.intercity,
+                                parameters: {
+                                    ...pS.intercity.parameters, 
+                                    distance: e.target.valueAsNumber
+                                    }
+                                }
+                            }
+                        ));
+                    }} /> miles
             </div>
         );
     } else {

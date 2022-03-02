@@ -5,7 +5,7 @@ import RapidInput from '../forms/RapidInput';
 import CommuterInput from '../forms/CommuterInput';
 import IntercityInput from '../forms/IntercityInput';
 
-function PublicTransit({bus, setBus, rapid, setRapid, commuter, setCommuter, intercity, setIntercity}) {
+function PublicTransit({publicTransit, setPublicTransit}) {
     const [toggle, setToggle] = useState(null);
     const [checked, setChecked] = useState({
         bus: false,
@@ -21,17 +21,45 @@ function PublicTransit({bus, setBus, rapid, setRapid, commuter, setCommuter, int
 
     const handleNext = () => {
         if(toggle === "false") {
-            setBus(pS => ({...pS, parameters: {...pS.parameters, distance: 0}}));
-            setRapid(pS => ({...pS, parameters: {...pS.parameters, distance: 0}}));
-            setCommuter(pS => ({...pS, parameters: {...pS.parameters, distance: 0}}));
-            setIntercity(pS => ({...pS, parameters: {...pS.parameters, distance: 0}}));
+            sanitizeInputWithoutCheck();
         } else {
-            (!checked.bus || isNaN(bus)) ? setBus(pS => ({...pS, parameters: {...pS.parameters, distance: 0}})) : null;
-            (!checked.rapid || isNaN(rapid)) ? setRapid(pS => ({...pS, parameters: {...pS.parameters, distance: 0}})) : null;
-            (!checked.commuter || isNaN(commuter)) ? setCommuter(pS => ({...pS, parameters: {...pS.parameters, distance: 0}})) : null;
-            (!checked.intercity || isNaN(intercity)) ? setIntercity(pS => ({...pS, parameters: {...pS.parameters, distance: 0}})) : null;
+            sanitizeInputWithCheck();
         };
         navigate('/survey/transport/flight');
+    };
+
+    const sanitizeInputWithoutCheck = () => {
+        Object.keys(publicTransit).forEach(transit => {
+            setPublicTransit(pS => (
+                {...pS, 
+                [transit]: {
+                    ...pS[transit], 
+                    parameters: {
+                        ...pS[transit].parameters, 
+                        distance: 0
+                        }
+                    }
+                }
+            ));
+        });
+    };
+
+    const sanitizeInputWithCheck = () => {
+        Object.entries(publicTransit).forEach(([transit, object]) => {
+            if(!checked[transit] || isNaN(object.parameters.distance)) {
+                setPublicTransit(pS => (
+                    {...pS, 
+                    [transit]: {
+                        ...pS[transit], 
+                        parameters: {
+                            ...pS[transit].parameters, 
+                            distance: 0
+                            }
+                        }
+                    }
+                ));
+            };
+        });
     };
 
     return (
@@ -51,10 +79,10 @@ function PublicTransit({bus, setBus, rapid, setRapid, commuter, setCommuter, int
                 </div>) 
                 : null}
             <br />
-            <BusInput display={toggle} checked={checked.bus} bus={bus} setBus={setBus} />
-            <RapidInput display={toggle} checked={checked.rapid} rapid={rapid} setRapid={setRapid} />
-            <CommuterInput display={toggle} checked={checked.commuter} commuter={commuter} setCommuter={setCommuter} />
-            <IntercityInput display={toggle} checked={checked.intercity} intercity={intercity} setIntercity={setIntercity} />
+            <BusInput display={toggle} checked={checked.bus} distance={publicTransit.bus.parameters.distance} setPublicTransit={setPublicTransit} />
+            <RapidInput display={toggle} checked={checked.rapid} distance={publicTransit.rapid.parameters.distance} setPublicTransit={setPublicTransit} />
+            <CommuterInput display={toggle} checked={checked.commuter} distance={publicTransit.commuter.parameters.distance} setPublicTransit={setPublicTransit} />
+            <IntercityInput display={toggle} checked={checked.intercity} distance={publicTransit.intercity.parameters.distance} setPublicTransit={setPublicTransit} />
             {toggle !== null ? 
                 <button type="button" onClick={handleNext}>Next</button> 
                 : null}

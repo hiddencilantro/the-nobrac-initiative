@@ -1,4 +1,4 @@
-function CommuterInput({display, checked, commuter, setCommuter}) {
+function CommuterInput({display, checked, distance, setPublicTransit}) {
     if (display === "true" && checked) {
         return (
             <div>
@@ -8,8 +8,20 @@ function CommuterInput({display, checked, commuter, setCommuter}) {
                     type="number" 
                     id="commuter-miles-input" 
                     placeholder="0"
-                    value={(commuter === 0 || isNaN(commuter)) ? "" : commuter} 
-                    onChange={e => setCommuter(pS => ({...pS, parameters: {...pS.parameters, distance: e.target.valueAsNumber}}))} /> miles
+                    value={(distance === 0 || isNaN(distance)) ? "" : distance} 
+                    onChange={e => {
+                        setPublicTransit(pS => (
+                            {...pS, 
+                            commuter: {
+                                ...pS.commuter,
+                                parameters: {
+                                    ...pS.commuter.parameters, 
+                                    distance: e.target.valueAsNumber
+                                    }
+                                }
+                            }
+                        ));
+                    }} /> miles
             </div>
         );
     } else {

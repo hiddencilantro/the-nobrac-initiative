@@ -1,4 +1,4 @@
-function RapidInput({display, checked, rapid, setRapid}) {
+function RapidInput({display, checked, distance, setPublicTransit}) {
     if (display === "true" && checked) {
         return (
             <div>
@@ -8,8 +8,20 @@ function RapidInput({display, checked, rapid, setRapid}) {
                     type="number" 
                     id="rapid-miles-input" 
                     placeholder="0"
-                    value={(rapid === 0 || isNaN(rapid)) ? "" : rapid} 
-                    onChange={e => setRapid(pS => ({...pS, parameters: {...pS.parameters, distance: e.target.valueAsNumber}}))} /> miles
+                    value={(distance === 0 || isNaN(distance)) ? "" : distance} 
+                    onChange={e => {
+                        setPublicTransit(pS => (
+                            {...pS, 
+                            rapid: {
+                                ...pS.rapid,
+                                parameters: {
+                                    ...pS.rapid.parameters, 
+                                    distance: e.target.valueAsNumber
+                                    }
+                                }
+                            }
+                        ));
+                    }} /> miles
             </div>
         );
     } else {
