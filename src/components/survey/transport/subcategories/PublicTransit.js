@@ -29,13 +29,13 @@ function PublicTransit({publicTransit, setPublicTransit}) {
     };
 
     const sanitizeInputWithoutCheck = () => {
-        Object.keys(publicTransit).forEach(transit => {
+        Object.keys(publicTransit).forEach(transitType => {
             setPublicTransit(pS => (
                 {...pS, 
-                [transit]: {
-                    ...pS[transit], 
+                [transitType]: {
+                    ...pS[transitType], 
                     parameters: {
-                        ...pS[transit].parameters, 
+                        ...pS[transitType].parameters, 
                         distance: 0
                         }
                     }
@@ -45,14 +45,14 @@ function PublicTransit({publicTransit, setPublicTransit}) {
     };
 
     const sanitizeInputWithCheck = () => {
-        Object.entries(publicTransit).forEach(([transit, object]) => {
-            if(!checked[transit] || isNaN(object.parameters.distance)) {
+        Object.entries(publicTransit).forEach(([transitType, obj]) => {
+            if(!checked[transitType] || isNaN(obj.parameters.distance)) {
                 setPublicTransit(pS => (
                     {...pS, 
-                    [transit]: {
-                        ...pS[transit], 
+                    [transitType]: {
+                        ...pS[transitType], 
                         parameters: {
-                            ...pS[transit].parameters, 
+                            ...pS[transitType].parameters, 
                             distance: 0
                             }
                         }
