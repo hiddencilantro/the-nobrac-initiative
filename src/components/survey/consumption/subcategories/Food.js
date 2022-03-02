@@ -31,14 +31,14 @@ function Food({foods, setFoods}) {
     };
 
     const sanitizeInput = () => {
-        Object.entries(foods).forEach(([food, object]) => {
-            if(!checked[food] || isNaN(object.parameters.money)) {
+        Object.entries(foods).forEach(([foodType, obj]) => {
+            if(!checked[foodType] || isNaN(obj.parameters.money)) {
                 setFoods(pS => (
                     {...pS, 
-                    [food]: {
-                        ...pS[food], 
+                    [foodType]: {
+                        ...pS[foodType], 
                         parameters: {
-                            ...pS[food].parameters, 
+                            ...pS[foodType].parameters, 
                             money: 0
                             }
                         }
