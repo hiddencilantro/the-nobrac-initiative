@@ -1,32 +1,32 @@
 import { useNavigate } from 'react-router-dom';
 
-function CarForm({display, car, setCar}) {
+function VehicleForm({display, vehicle, setVehicle}) {
     const navigate = useNavigate();
 
     const handleSubmit = e => {
         e.preventDefault();
-        if(isNaN(car)) {
-            setCar(pS => ({...pS, parameters: {...pS.parameters, distance: 0}}));
+        if(isNaN(vehicle)) {
+            setVehicle(pS => ({...pS, parameters: {...pS.parameters, distance: 0}}));
         };
         navigate('/survey/transport/public-transit');
     };
 
     const handleNext = () => {
-        setCar(pS => ({...pS, parameters: {...pS.parameters, distance: 0}}));
+        setVehicle(pS => ({...pS, parameters: {...pS.parameters, distance: 0}}));
         navigate('/survey/transport/public-transit');
     };
 
     if (display === "true") {
         return (
             <form onSubmit={handleSubmit}>
-                <label htmlFor="car-miles-input">How many miles do you drive per year?</label>
+                <label htmlFor="vehicle-miles-input">How many miles do you drive per year?</label>
                 <br />
                 <input 
                     type="number" 
-                    id="car-miles-input" 
+                    id="vehicle-miles-input" 
                     placeholder="0"
-                    value={(car === 0 || isNaN(car)) ? "" : car} 
-                    onChange={e => setCar(pS => ({...pS, parameters: {...pS.parameters, distance: e.target.valueAsNumber}}))} /> miles
+                    value={(vehicle === 0 || isNaN(vehicle)) ? "" : vehicle} 
+                    onChange={e => setVehicle(pS => ({...pS, parameters: {...pS.parameters, distance: e.target.valueAsNumber}}))} /> miles
                 <br />
                 <input type="submit" value="Next"/>
             </form>
@@ -38,4 +38,4 @@ function CarForm({display, car, setCar}) {
     };
 }
 
-export default CarForm;
+export default VehicleForm;

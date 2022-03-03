@@ -7,7 +7,7 @@ import Utility from './survey/utility/Utility';
 import Consumption from './survey/consumption/Consumption';
 
 function Survey() {
-    const [car, setCar] = useState({
+    const [vehicle, setVehicle] = useState({
         "emission_factor": "passenger_vehicle-vehicle_type_car-fuel_source_na-engine_size_na-vehicle_age_na-vehicle_weight_na",
         "parameters": {
             "passengers": 1,
@@ -266,7 +266,7 @@ function Survey() {
 
     // const dispatch = useDispatch();
 
-    // const userInput = [car, bus, rapid, commuter, intercity, shortFlight, mediumFlight, longFlight];
+    // const userInput = [vehicle, bus, rapid, commuter, intercity, shortFlight, mediumFlight, longFlight];
 
     // const sendDispatch = () => {
     //   dispatch(calculateFootprint(userInput));
@@ -279,7 +279,7 @@ function Survey() {
                 <Route 
                     path="transport/*" 
                     element={<Transport 
-                        car={car.parameters.distance} setCar={setCar} 
+                        vehicle={vehicle.parameters.distance} setVehicle={setVehicle} 
                         publicTransit={publicTransit} setPublicTransit={setPublicTransit} 
                         flight={flight} setFlight={setFlight} />} />
                 <Route 

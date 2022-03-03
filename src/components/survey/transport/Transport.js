@@ -1,15 +1,15 @@
 import { Routes, Route } from 'react-router-dom';
-import Car from './subcategories/Car';
+import Vehicle from './subcategories/Vehicle';
 import PublicTransit from './subcategories/PublicTransit';
 import Flight from './subcategories/Flight'
 
-function Transport({car, setCar, publicTransit, setPublicTransit, flight, setFlight}) {
+function Transport({vehicle, setVehicle, publicTransit, setPublicTransit, flight, setFlight}) {
     return (
         <Routes>
             <Route 
-                path="car" 
-                element={<Car 
-                    car={car} setCar={setCar} />} />
+                path="vehicle" 
+                element={<Vehicle 
+                    vehicle={vehicle} setVehicle={setVehicle} />} />
             <Route 
                 path="public-transit" 
                 element={<PublicTransit 
