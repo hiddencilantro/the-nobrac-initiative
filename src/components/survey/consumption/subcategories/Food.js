@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import FoodInput from '../forms/FoodInput';
+import ItemInput from '../forms/ItemInput';
 
 function Food({foods, setFoods}) {
     const [checked, setChecked] = useState({
@@ -47,7 +47,7 @@ function Food({foods, setFoods}) {
         });
     };
 
-    const inputFields = Object.entries(foods).map(([food, object]) => <FoodInput key={food} checked={checked[food]} food={food} money={object.parameters.money} setFoods={setFoods} />)
+    const inputFields = Object.entries(foods).map(([food, object]) => <ItemInput key={food} checked={checked[food]} item={food} money={object.parameters.money} setState={setFoods} />)
 
     return (
         <>

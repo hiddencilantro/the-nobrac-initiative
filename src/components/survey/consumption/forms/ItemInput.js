@@ -1,20 +1,20 @@
-function FoodInput({checked, food, money, setFoods}) {
+function ItemInput({checked, item, money, setState}) {
     if (checked) {
         return (
             <div>
-                <label htmlFor={food}>{food.replace(/([A-Z])/g, ' $1').replace(/^./, (str) => str.toUpperCase())}: $</label>
+                <label htmlFor={item}>{item.replace(/([A-Z])/g, ' $1').replace(/^./, (str) => str.toUpperCase())}: $</label>
                 <input 
-                    id={food}
+                    id={item}
                     type="number" 
                     placeholder="0"
                     value={(money === 0 || isNaN(money)) ? "" : money} 
                     onChange={e => {
-                        setFoods(pS => ({
+                        setState(pS => ({
                             ...pS, 
-                            [food]: {
-                                ...pS[food], 
+                            [item]: {
+                                ...pS[item], 
                                 parameters: {
-                                    ...pS[food].parameters, 
+                                    ...pS[item].parameters, 
                                     money: e.target.valueAsNumber
                                 }
                             }
@@ -27,4 +27,4 @@ function FoodInput({checked, food, money, setFoods}) {
     };
 }
 
-export default FoodInput;
+export default ItemInput;
