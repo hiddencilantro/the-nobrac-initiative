@@ -196,6 +196,43 @@ function Survey() {
             }
         }
     });
+    const [beverages, setBeverages] = useState({
+        coffeeAndTea: {
+            "emission_factor": "consumer_goods-type_coffee_tea",
+            "parameters": {
+                "money": 0,
+                "money_unit": "usd"
+            }
+        },
+        softDrinksAndBottledWater: {
+            "emission_factor": "consumer_goods-type_soft_drinks_bottled_water_ice",
+            "parameters": {
+                "money": 0,
+                "money_unit": "usd"
+            }
+        },
+        beer: {
+            "emission_factor": "consumer_goods-type_breweries_beer",
+            "parameters": {
+                "money": 0,
+                "money_unit": "usd"
+            }
+        },
+        spirits: {
+            "emission_factor": "consumer_goods-type_distilleries_spirits",
+            "parameters": {
+                "money": 0,
+                "money_unit": "usd"
+            }
+        },
+        wine: {
+            "emission_factor": "consumer_goods-type_wineries_wine",
+            "parameters": {
+                "money": 0,
+                "money_unit": "usd"
+            }
+        }
+    });
 
     // const dispatch = useDispatch();
 
@@ -224,7 +261,8 @@ function Survey() {
                 <Route 
                     path="consumption/*" 
                     element={<Consumption 
-                        foods={foods} setFoods={setFoods} />} />
+                        foods={foods} setFoods={setFoods} 
+                        beverages={beverages} setBeverages={setBeverages} />} />
             </Routes>
         </div>
     );

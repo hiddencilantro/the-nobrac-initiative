@@ -1,25 +1,25 @@
 import { Routes, Route } from 'react-router-dom';
 import Food from './subcategories/Food';
-// import Beverage from './subcategories/Beverage';
+import Beverage from './subcategories/Beverage';
 // import Dining from './subcategories/Dining';
 // import Tobacco from './subcategories/Tobacco';
 
-function Consumption({foods, setFoods}) {
+function Consumption({foods, setFoods, beverages, setBeverages}) {
     return (
         <Routes>
             <Route 
                 path="food" 
                 element={<Food 
                     foods={foods} setFoods={setFoods} />} />
-            {/* <Route 
+            <Route 
                 path="beverage" 
                 element={<Beverage 
-                     />} />
-            <Route 
+                    beverages={beverages} setBeverages={setBeverages} />} />
+            {/* <Route 
                 path="dining"
                 element={<Dining 
-                        />} />
-            <Route 
+                        />} /> */}
+            {/* <Route 
                 path="tobacco" 
                 element={<Tobacco 
                      />} /> */}
