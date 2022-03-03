@@ -10,17 +10,16 @@ function ShortFlightInput({display, checked, distance, setFlight}) {
                     placeholder="0"
                     value={(distance === 0 || isNaN(distance)) ? "" : distance} 
                     onChange={e => {
-                        setFlight(pS => (
-                            {...pS, 
+                        setFlight(pS => ({
+                            ...pS, 
                             short: {
                                 ...pS.short,
                                 parameters: {
                                     ...pS.short.parameters, 
                                     distance: e.target.valueAsNumber
-                                    }
                                 }
                             }
-                        ));
+                        }));
                     }} /> miles
             </div>
         );

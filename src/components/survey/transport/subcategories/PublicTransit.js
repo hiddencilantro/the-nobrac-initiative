@@ -30,17 +30,16 @@ function PublicTransit({publicTransit, setPublicTransit}) {
 
     const sanitizeInputWithoutCheck = () => {
         Object.keys(publicTransit).forEach(transitType => {
-            setPublicTransit(pS => (
-                {...pS, 
+            setPublicTransit(pS => ({
+                ...pS, 
                 [transitType]: {
                     ...pS[transitType], 
                     parameters: {
                         ...pS[transitType].parameters, 
                         distance: 0
-                        }
                     }
                 }
-            ));
+            }));
         });
     };
 

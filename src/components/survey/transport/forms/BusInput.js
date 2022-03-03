@@ -10,17 +10,16 @@ function BusInput({display, checked, distance, setPublicTransit}) {
                     placeholder="0"
                     value={(distance === 0 || isNaN(distance)) ? "" : distance} 
                     onChange={e => {
-                        setPublicTransit(pS => (
-                            {...pS, 
+                        setPublicTransit(pS => ({
+                            ...pS, 
                             bus: {
                                 ...pS.bus,
                                 parameters: {
                                     ...pS.bus.parameters, 
                                     distance: e.target.valueAsNumber
-                                    }
                                 }
                             }
-                        ));
+                        }));
                     }} /> miles
             </div>
         );

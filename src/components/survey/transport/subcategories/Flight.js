@@ -28,34 +28,32 @@ function Flight({flight, setFlight}) {
 
     const sanitizeInputWithoutCheck = () => {
         Object.keys(flight).forEach(flightType => {
-            setFlight(pS => (
-                {...pS, 
+            setFlight(pS => ({
+                ...pS, 
                 [flightType]: {
                     ...pS[flightType], 
                     parameters: {
                         ...pS[flightType].parameters, 
                         distance: 0
-                        }
                     }
                 }
-            ));
+            }));
         });
     };
 
     const sanitizeInputWithCheck = () => {
         Object.entries(flight).forEach(([flightType, obj]) => {
             if(!checked[flightType] || isNaN(obj.parameters.distance)) {
-                setFlight(pS => (
-                    {...pS, 
+                setFlight(pS => ({
+                    ...pS, 
                     [flightType]: {
                         ...pS[flightType], 
                         parameters: {
                             ...pS[flightType].parameters, 
                             distance: 0
-                            }
                         }
                     }
-                ));
+                }));
             };
         });
     };

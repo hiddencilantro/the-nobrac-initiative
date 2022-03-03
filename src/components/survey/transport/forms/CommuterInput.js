@@ -10,17 +10,16 @@ function CommuterInput({display, checked, distance, setPublicTransit}) {
                     placeholder="0"
                     value={(distance === 0 || isNaN(distance)) ? "" : distance} 
                     onChange={e => {
-                        setPublicTransit(pS => (
-                            {...pS, 
+                        setPublicTransit(pS => ({
+                            ...pS, 
                             commuter: {
                                 ...pS.commuter,
                                 parameters: {
                                     ...pS.commuter.parameters, 
                                     distance: e.target.valueAsNumber
-                                    }
                                 }
                             }
-                        ));
+                        }));
                     }} /> miles
             </div>
         );

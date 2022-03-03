@@ -10,17 +10,16 @@ function RapidInput({display, checked, distance, setPublicTransit}) {
                     placeholder="0"
                     value={(distance === 0 || isNaN(distance)) ? "" : distance} 
                     onChange={e => {
-                        setPublicTransit(pS => (
-                            {...pS, 
+                        setPublicTransit(pS => ({
+                            ...pS, 
                             rapid: {
                                 ...pS.rapid,
                                 parameters: {
                                     ...pS.rapid.parameters, 
                                     distance: e.target.valueAsNumber
-                                    }
                                 }
                             }
-                        ));
+                        }));
                     }} /> miles
             </div>
         );

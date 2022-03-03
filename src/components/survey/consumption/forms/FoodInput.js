@@ -9,17 +9,16 @@ function FoodInput({checked, food, money, setFoods}) {
                     placeholder="0"
                     value={(money === 0 || isNaN(money)) ? "" : money} 
                     onChange={e => {
-                        setFoods(pS => (
-                            {...pS, 
+                        setFoods(pS => ({
+                            ...pS, 
                             [food]: {
                                 ...pS[food], 
                                 parameters: {
                                     ...pS[food].parameters, 
                                     money: e.target.valueAsNumber
-                                    }
                                 }
                             }
-                        ));
+                        }));
                     }} /> per month
             </div>
         );
