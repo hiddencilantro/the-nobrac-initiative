@@ -9,6 +9,7 @@ function Goods({goods, setGoods}) {
         toysAndGames: false,
         sportingGoods: false,
         dogAndCatFood: false,
+        health: false,
         generalMerchandise: false,
         nonstoreRetailers: false,
         otherRetail: false
@@ -56,6 +57,7 @@ function Goods({goods, setGoods}) {
                                 <input type="checkbox" name="toysAndGames" checked={checked.toysAndGames} onChange={handleCheckbox} /> <label htmlFor='toysAndGames'>Toys/Games</label><br />
                                 <input type="checkbox" name="sportingGoods" checked={checked.sportingGoods} onChange={handleCheckbox} /> <label htmlFor='sportingGoods'>Sporting/Athletic Goods</label><br />
                                 <input type="checkbox" name="dogAndCatFood" checked={checked.dogAndCatFood} onChange={handleCheckbox} /> <label htmlFor='dogAndCatFood'>Dog/Cat Food</label><br />
+                                <input type="checkbox" name="health" checked={checked.health} onChange={handleCheckbox} /> <label htmlFor='health'>Health/Personal Care</label><br />
                                 <input type="checkbox" name="generalMerchandise" checked={checked.generalMerchandise} onChange={handleCheckbox} /> <label htmlFor='generalMerchandise'>General Merchandise</label><br />
                                 <input type="checkbox" name="nonstoreRetailers" checked={checked.nonstoreRetailers} onChange={handleCheckbox} /> <label htmlFor='nonstoreRetailers'>Nonstore Retailers (i.e. e-commerce, street vendors)</label><br />
                                 <input type="checkbox" name="otherRetail" checked={checked.otherRetail} onChange={handleCheckbox} /> <label htmlFor='otherRetail'>All Other Retail</label><br />

@@ -300,6 +300,13 @@ function Survey() {
                 "money_unit": "usd"
             }
         },
+        health: {
+            "emission_factor": "health_care-type_health_personal_care_stores",
+            "parameters": {
+                "money": 0,
+                "money_unit": "usd"
+            }
+        },
         generalMerchandise: {
             "emission_factor": "general_retail-type_general_merchandise_stores",
             "parameters": {
