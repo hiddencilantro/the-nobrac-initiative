@@ -233,6 +233,29 @@ function Survey() {
             }
         }
     });
+    const [dining, setDining] = useState({
+        limited: {
+            "emission_factor": "consumer_services-type_limited_service_restaurants",
+            "parameters": {
+                "money": 0,
+                "money_unit": "usd"
+            }
+        },
+        full: {
+            "emission_factor": "consumer_services-type_full_service_restaurants",
+            "parameters": {
+                "money": 0,
+                "money_unit": "usd"
+            }
+        },
+        other: {
+            "emission_factor": "consumer_services-type_all_other_food_drinking_places",
+            "parameters": {
+                "money": 0,
+                "money_unit": "usd"
+            }
+        }
+    });
 
     // const dispatch = useDispatch();
 
@@ -262,7 +285,8 @@ function Survey() {
                     path="consumption/*" 
                     element={<Consumption 
                         foods={foods} setFoods={setFoods} 
-                        beverages={beverages} setBeverages={setBeverages} />} />
+                        beverages={beverages} setBeverages={setBeverages} 
+                        dining={dining} setDining={setDining} />} />
             </Routes>
         </div>
     );
