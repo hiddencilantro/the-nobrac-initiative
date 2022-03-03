@@ -5,6 +5,7 @@ import { useState } from 'react';
 import Transport from './survey/transport/Transport';
 import Utility from './survey/utility/Utility';
 import Consumption from './survey/consumption/Consumption';
+import Shopping from './survey/shopping/Shopping';
 
 function Survey() {
     const [vehicle, setVehicle] = useState({
@@ -263,6 +264,64 @@ function Survey() {
             "money_unit": "usd"
         }
     });
+    const [goods, setGoods] = useState({
+        clothing: {
+            "emission_factor": "consumer_goods-type_clothing",
+            "parameters": {
+                "money": 0,
+                "money_unit": "usd"
+            }
+        },
+        booksAndOtherPrint: {
+            "emission_factor": "consumer_goods-type_books_newspapers_magazines_other_print_media",
+            "parameters": {
+                "money": 0,
+                "money_unit": "usd"
+            }
+        },
+        toysAndGames: {
+            "emission_factor": "consumer_goods-type_dolls_toys_games",
+            "parameters": {
+                "money": 0,
+                "money_unit": "usd"
+            }
+        },
+        sportingGoods: {
+            "emission_factor": "consumer_goods-type_sporting_athletic_goods",
+            "parameters": {
+                "money": 0,
+                "money_unit": "usd"
+            }
+        },
+        dogAndCatFood: {
+            "emission_factor": "consumer_goods-type_dog_cat_food",
+            "parameters": {
+                "money": 0,
+                "money_unit": "usd"
+            }
+        },
+        generalMerchandise: {
+            "emission_factor": "general_retail-type_general_merchandise_stores",
+            "parameters": {
+                "money": 0,
+                "money_unit": "usd"
+            }
+        },
+        nonstoreRetailers: {
+            "emission_factor": "general_retail-type_nonstore_retailers",
+            "parameters": {
+                "money": 0,
+                "money_unit": "usd"
+            }
+        },
+        otherRetail: {
+            "emission_factor": "general_retail-type_all_other_retail",
+            "parameters": {
+                "money": 0,
+                "money_unit": "usd"
+            }
+        }
+    });
 
     // const dispatch = useDispatch();
 
@@ -295,6 +354,10 @@ function Survey() {
                         beverages={beverages} setBeverages={setBeverages} 
                         dining={dining} setDining={setDining} 
                         tobacco={tobacco.parameters.money} setTobacco={setTobacco} />} />
+                <Route 
+                    path="shopping/*" 
+                    element={<Shopping 
+                        goods={goods} setGoods={setGoods} />} />
             </Routes>
         </div>
     );
