@@ -46,7 +46,7 @@ function Beverage({beverages, setBeverages}) {
             <table style={{width: '60%', marginLeft: '20%', marginRight: '20%'}}>
                 <tbody>
                     <tr>
-                        <td style={{width: '35%'}}>
+                        <td style={{width: '45%'}}>
                             <div>
                                 <input type="checkbox" name="coffeeAndTea" checked={checked.coffeeAndTea} onChange={handleCheckbox} /> <label htmlFor='coffeeAndTea'>Coffee And Tea</label><br />
                                 <input type="checkbox" name="softDrinksAndBottledWater" checked={checked.softDrinksAndBottledWater} onChange={handleCheckbox} /> <label htmlFor='softDrinksAndBottledWater'>Soft Drinks and Bottled Water</label><br />
@@ -55,7 +55,7 @@ function Beverage({beverages, setBeverages}) {
                                 <input type="checkbox" name="wine" checked={checked.wine} onChange={handleCheckbox} /> <label htmlFor='wine'>Wine</label><br />
                             </div>
                         </td>
-                        <td style={{width: '65%', verticalAlign: 'top'}}>
+                        <td style={{width: '55%', verticalAlign: 'top'}}>
                             {inputFields}
                         </td>
                     </tr>

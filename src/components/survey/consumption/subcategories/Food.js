@@ -55,7 +55,7 @@ function Food({foods, setFoods}) {
             <table style={{width: '60%', marginLeft: '20%', marginRight: '20%'}}>
                 <tbody>
                     <tr>
-                        <td style={{width: '35%'}}>
+                        <td style={{width: '50%'}}>
                             <div>
                                 <input type="checkbox" name="meat" checked={checked.meat} onChange={handleCheckbox} /> <label htmlFor='meat'>Meat</label><br />
                                 <input type="checkbox" name="poultry" checked={checked.poultry} onChange={handleCheckbox} /> <label htmlFor='poultry'>Poultry</label><br />
@@ -73,7 +73,7 @@ function Food({foods, setFoods}) {
                                 <input type="checkbox" name="other" checked={checked.other} onChange={handleCheckbox} /> <label htmlFor='other'>All Other</label><br />
                             </div>
                         </td>
-                        <td style={{width: '65%', verticalAlign: 'top'}}>
+                        <td style={{width: '50%', verticalAlign: 'top'}}>
                             {inputFields}
                         </td>
                     </tr>
