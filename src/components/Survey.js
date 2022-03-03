@@ -256,6 +256,13 @@ function Survey() {
             }
         }
     });
+    const [tobacco, setTobacco] = useState({
+        "emission_factor": "consumer_goods-type_tobacco_products",
+        "parameters": {
+            "money": 0,
+            "money_unit": "usd"
+        }
+    });
 
     // const dispatch = useDispatch();
 
@@ -286,7 +293,8 @@ function Survey() {
                     element={<Consumption 
                         foods={foods} setFoods={setFoods} 
                         beverages={beverages} setBeverages={setBeverages} 
-                        dining={dining} setDining={setDining} />} />
+                        dining={dining} setDining={setDining} 
+                        tobacco={tobacco.parameters.money} setTobacco={setTobacco} />} />
             </Routes>
         </div>
     );

@@ -2,9 +2,9 @@ import { Routes, Route } from 'react-router-dom';
 import Food from './subcategories/Food';
 import Beverage from './subcategories/Beverage';
 import Dining from './subcategories/Dining';
-// import Tobacco from './subcategories/Tobacco';
+import Tobacco from './subcategories/Tobacco';
 
-function Consumption({foods, setFoods, beverages, setBeverages, dining, setDining}) {
+function Consumption({foods, setFoods, beverages, setBeverages, dining, setDining, tobacco, setTobacco}) {
     return (
         <Routes>
             <Route 
@@ -19,10 +19,10 @@ function Consumption({foods, setFoods, beverages, setBeverages, dining, setDinin
                 path="dining"
                 element={<Dining 
                     dining={dining} setDining={setDining} />} />
-            {/* <Route 
+            <Route 
                 path="tobacco" 
                 element={<Tobacco 
-                     />} /> */}
+                    tobacco={tobacco} setTobacco={setTobacco} />} />
         </Routes>
     );
 }
