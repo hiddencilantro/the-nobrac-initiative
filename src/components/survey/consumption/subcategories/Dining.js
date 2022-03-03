@@ -60,7 +60,7 @@ function Dining({dining, setDining}) {
 
     return (
         <>
-            <p>Do you dine out?</p>
+            <p>Do you ever eat out?</p>
             <div onChange={e => setToggle(e.target.value)} >
                 <input type="radio" name="dining" value={true} /> Yes
                 <input type="radio" name="dining" value={false} /> No
