@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import Goods from './subcategories/Goods';
-// import Services from './subcategories/Services';
+import Services from './subcategories/Services';
 // import Recreation from './subcategories/Recreation';
 
 function Shopping({goods, setGoods, services, setServices, recreation, setRecreation}) {
@@ -10,10 +10,10 @@ function Shopping({goods, setGoods, services, setServices, recreation, setRecrea
                 path="goods" 
                 element={<Goods 
                     goods={goods} setGoods={setGoods} />} />
-            {/* <Route 
+            <Route 
                 path="services" 
                 element={<Services 
-                    services={services} setServices={setServices} />} /> */}
+                    services={services} setServices={setServices} />} />
             {/* <Route 
                 path="recreation" 
                 element={<Recreation 

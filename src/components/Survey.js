@@ -322,6 +322,36 @@ function Survey() {
             }
         }
     });
+    const [services, setServices] = useState({
+        dryCleaning: {
+            "emission_factor": "consumer_goods-type_dry_cleaning_laundry",
+            "parameters": {
+                "money": 0,
+                "money_unit": "usd"
+            }
+        },
+        subscriptions: {
+            "emission_factor": "consumer_goods-type_cable_subscription_programming",
+            "parameters": {
+                "money": 0,
+                "money_unit": "usd"
+            }
+        },
+        vehicleRepair: {
+            "emission_factor": "consumer_goods-type_vehicle_repair",
+            "parameters": {
+                "money": 0,
+                "money_unit": "usd"
+            }
+        },
+        otherServices: {
+            "emission_factor": "domestic_services-type_pet_care_photofinishing_parking_other_sundry_services",
+            "parameters": {
+                "money": 0,
+                "money_unit": "usd"
+            }
+        }
+    });
 
     // const dispatch = useDispatch();
 
@@ -357,7 +387,8 @@ function Survey() {
                 <Route 
                     path="shopping/*" 
                     element={<Shopping 
-                        goods={goods} setGoods={setGoods} />} />
+                        goods={goods} setGoods={setGoods}
+                        services={services} setServices={setServices} />} />
             </Routes>
         </div>
     );
