@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import Goods from './subcategories/Goods';
 import Services from './subcategories/Services';
-// import Recreation from './subcategories/Recreation';
+import Recreation from './subcategories/Recreation';
 
 function Shopping({goods, setGoods, services, setServices, recreation, setRecreation}) {
     return (
@@ -14,10 +14,10 @@ function Shopping({goods, setGoods, services, setServices, recreation, setRecrea
                 path="services" 
                 element={<Services 
                     services={services} setServices={setServices} />} />
-            {/* <Route 
+            <Route 
                 path="recreation" 
                 element={<Recreation 
-                    recreation={recreation} setRecreation={setRecreation} />} /> */}
+                    recreation={recreation} setRecreation={setRecreation} />} />
         </Routes>
     );
 }

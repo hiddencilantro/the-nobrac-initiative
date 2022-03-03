@@ -352,6 +352,50 @@ function Survey() {
             }
         }
     });
+    const [recreation, setRecreation] = useState({
+        moviesAndFilm: {
+            "emission_factor": "consumer_goods-type_movies_film",
+            "parameters": {
+                "money": 0,
+                "money_unit": "usd"
+            }
+        },
+        performances: {
+            "emission_factor": "consumer_goods-type_performances",
+            "parameters": {
+                "money": 0,
+                "money_unit": "usd"
+            }
+        },
+        museumsAndZoos: {
+            "emission_factor": "consumer_goods-type_museums_historical_sites_zoos_parks",
+            "parameters": {
+                "money": 0,
+                "money_unit": "usd"
+            }
+        },
+        amusementParksAndArcades: {
+            "emission_factor": "consumer_goods-type_amusement_parks_arcades",
+            "parameters": {
+                "money": 0,
+                "money_unit": "usd"
+            }
+        },
+        casinos: {
+            "emission_factor": "consumer_goods-type_gambling_establishments_except_casino_hotels",
+            "parameters": {
+                "money": 0,
+                "money_unit": "usd"
+            }
+        },
+        variousRecreation: {
+            "emission_factor": "consumer_goods-type_golf_courses_marinas_ski_resorts_fitness_other_rec_centers_industries",
+            "parameters": {
+                "money": 0,
+                "money_unit": "usd"
+            }
+        }
+    });
 
     // const dispatch = useDispatch();
 
@@ -387,8 +431,9 @@ function Survey() {
                 <Route 
                     path="shopping/*" 
                     element={<Shopping 
-                        goods={goods} setGoods={setGoods}
-                        services={services} setServices={setServices} />} />
+                        goods={goods} setGoods={setGoods} 
+                        services={services} setServices={setServices} 
+                        recreation={recreation} setRecreation={setRecreation} />} />
             </Routes>
         </div>
     );
