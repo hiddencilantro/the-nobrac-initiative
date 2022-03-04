@@ -8,12 +8,12 @@ function TobaccoForm({display, tobacco, setTobacco}) {
         if(isNaN(tobacco)) {
             setTobacco(pS => ({...pS, parameters: {...pS.parameters, money: 0}}));
         };
-        navigate('/survey/shopping/goods');
+        navigate('/survey/goods');
     };
 
     const handleNext = () => {
         setTobacco(pS => ({...pS, parameters: {...pS.parameters, money: 0}}));
-        navigate('/survey/shopping/goods');
+        navigate('/survey/goods');
     };
 
     if (display === "true") {

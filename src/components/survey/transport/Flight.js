@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import ShortFlightInput from '../forms/ShortFlightInput';
-import MediumFlightInput from '../forms/MediumFlightInput';
-import LongFlightInput from '../forms/LongFlightInput';
+import ShortFlightInput from './forms/ShortFlightInput';
+import MediumFlightInput from './forms/MediumFlightInput';
+import LongFlightInput from './forms/LongFlightInput';
 
 function Flight({flight, setFlight}) {
     const [toggle, setToggle] = useState(null);
@@ -23,7 +23,7 @@ function Flight({flight, setFlight}) {
         } else {
             sanitizeInputWithCheck();
         };
-        navigate('/survey/utility/electricity');
+        navigate('/survey/electricity');
     };
 
     const sanitizeInputWithoutCheck = () => {

@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 
-function ElectricityForm({electricity, setElectricity}) {
+function Electricity({electricity, setElectricity}) {
     const navigate = useNavigate();
 
     const handleSubmit = e => {
@@ -8,7 +8,7 @@ function ElectricityForm({electricity, setElectricity}) {
         if(isNaN(electricity)) {
             setElectricity(pS => ({...pS, parameters: {...pS.parameters, money: 0}}));
         };
-        navigate('/survey/utility/natural-gas');
+        navigate('/survey/natural-gas');
     };
 
     return (
@@ -28,4 +28,4 @@ function ElectricityForm({electricity, setElectricity}) {
     );
 }
 
-export default ElectricityForm;
+export default Electricity;

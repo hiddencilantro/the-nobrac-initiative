@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import ItemInput from '../../consumption/forms/ItemInput';
+import ItemInput from '../consumption/forms/ItemInput';
 
 function Services({services, setServices}) {
     const [checked, setChecked] = useState({
@@ -17,7 +17,7 @@ function Services({services, setServices}) {
 
     const handleNext = () => {
         sanitizeInput();
-        navigate('/survey/shopping/recreation');
+        navigate('/survey/recreation');
     };
 
     const sanitizeInput = () => {

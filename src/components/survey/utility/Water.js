@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 
-function WaterForm({water, setWater}) {
+function Water({water, setWater}) {
     const navigate = useNavigate();
 
     const handleSubmit = e => {
@@ -8,7 +8,7 @@ function WaterForm({water, setWater}) {
         if(isNaN(water)) {
             setWater(pS => ({...pS, parameters: {...pS.parameters, money: 0}}));
         };
-        navigate('/survey/consumption/food');
+        navigate('/survey/food');
     };
 
     return (
@@ -28,4 +28,4 @@ function WaterForm({water, setWater}) {
     );
 }
 
-export default WaterForm;
+export default Water;

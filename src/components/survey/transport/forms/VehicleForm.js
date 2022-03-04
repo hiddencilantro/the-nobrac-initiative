@@ -8,12 +8,12 @@ function VehicleForm({display, vehicle, setVehicle}) {
         if(isNaN(vehicle)) {
             setVehicle(pS => ({...pS, parameters: {...pS.parameters, distance: 0}}));
         };
-        navigate('/survey/transport/public-transit');
+        navigate('/survey/public-transit');
     };
 
     const handleNext = () => {
         setVehicle(pS => ({...pS, parameters: {...pS.parameters, distance: 0}}));
-        navigate('/survey/transport/public-transit');
+        navigate('/survey/public-transit');
     };
 
     if (display === "true") {

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import ItemInput from '../../consumption/forms/ItemInput';
+import ItemInput from '../consumption/forms/ItemInput';
 
 function Recreation({recreation, setRecreation}) {
     const [checked, setChecked] = useState({

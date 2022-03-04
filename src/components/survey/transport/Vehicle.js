@@ -1,5 +1,5 @@
 import { useState } from "react";
-import VehicleForm from '../forms/VehicleForm';
+import VehicleForm from './forms/VehicleForm';
 
 function Vehicle({vehicle, setVehicle}) {
     const [toggle, setToggle] = useState(null);

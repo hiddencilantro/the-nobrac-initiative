@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import BusInput from '../forms/BusInput';
-import RapidInput from '../forms/RapidInput';
-import CommuterInput from '../forms/CommuterInput';
-import IntercityInput from '../forms/IntercityInput';
+import BusInput from './forms/BusInput';
+import RapidInput from './forms/RapidInput';
+import CommuterInput from './forms/CommuterInput';
+import IntercityInput from './forms/IntercityInput';
 
 function PublicTransit({publicTransit, setPublicTransit}) {
     const [toggle, setToggle] = useState(null);
@@ -25,7 +25,7 @@ function PublicTransit({publicTransit, setPublicTransit}) {
         } else {
             sanitizeInputWithCheck();
         };
-        navigate('/survey/transport/flight');
+        navigate('/survey/flight');
     };
 
     const sanitizeInputWithoutCheck = () => {

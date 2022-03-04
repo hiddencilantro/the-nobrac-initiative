@@ -2,10 +2,21 @@ import { Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
 // import { useDispatch } from 'react-redux';
 // import Categories from './survey/Categories'
-import Transport from './survey/transport/Transport';
-import Utility from './survey/utility/Utility';
-import Consumption from './survey/consumption/Consumption';
-import Shopping from './survey/shopping/Shopping';
+import Landing from './Landing';
+import Vehicle from './survey/transport/Vehicle';
+import PublicTransit from './survey/transport/PublicTransit';
+import Flight from './survey/transport/Flight';
+import Electricity from './survey/utility/Electricity';
+import NaturalGas from './survey/utility/NaturalGas';
+import Water from './survey/utility/Water';
+import Food from './survey/consumption/Food';
+import Beverage from './survey/consumption/Beverage';
+import Dining from './survey/consumption/Dining';
+import Tobacco from './survey/consumption/Tobacco';
+import Goods from './survey/shopping/Goods';
+import Services from './survey/shopping/Services';
+import Recreation from './survey/shopping/Recreation';
+import NotFound from './NotFound';
 
 function Survey() {
     const [vehicle, setVehicle] = useState({
@@ -413,36 +424,26 @@ function Survey() {
     // };
 
     return (
-        <div>
+        <>
             {/* <Categories /> */}
             <Routes>
-                <Route 
-                    path="transport/*" 
-                    element={<Transport 
-                        vehicle={vehicle.parameters.distance} setVehicle={setVehicle} 
-                        publicTransit={publicTransit} setPublicTransit={setPublicTransit} 
-                        flight={flight} setFlight={setFlight} />} />
-                <Route 
-                    path="utility/*" 
-                    element={<Utility 
-                        electricity={electricity.parameters.money} setElectricity={setElectricity} 
-                        naturalGas={naturalGas.parameters.money} setNaturalGas={setNaturalGas} 
-                        water={water.parameters.money} setWater={setWater} />} />
-                <Route 
-                    path="consumption/*" 
-                    element={<Consumption 
-                        foods={foods} setFoods={setFoods} 
-                        beverages={beverages} setBeverages={setBeverages} 
-                        dining={dining} setDining={setDining} 
-                        tobacco={tobacco.parameters.money} setTobacco={setTobacco} />} />
-                <Route 
-                    path="shopping/*" 
-                    element={<Shopping 
-                        goods={goods} setGoods={setGoods} 
-                        services={services} setServices={setServices} 
-                        recreation={recreation} setRecreation={setRecreation} />} />
+                <Route index element={<Landing />} />
+                <Route path="vehicle" element={<Vehicle vehicle={vehicle} setVehicle={setVehicle} />} />
+                <Route path="public-transit" element={<PublicTransit publicTransit={publicTransit} setPublicTransit={setPublicTransit} />} />
+                <Route path="flight" element={<Flight flight={flight} setFlight={setFlight} />} />
+                <Route path="electricity" element={<Electricity electricity={electricity.parameters.money} setElectricity={setElectricity} />} />
+                <Route path="natural-gas" element={<NaturalGas naturalGas={naturalGas.parameters.money} setNaturalGas={setNaturalGas} />} />
+                <Route path="water" element={<Water water={water.parameters.money} setWater={setWater} />} />
+                <Route path="food" element={<Food foods={foods} setFoods={setFoods} />} />
+                <Route path="beverage" element={<Beverage beverages={beverages} setBeverages={setBeverages} />} />
+                <Route path="dining" element={<Dining dining={dining} setDining={setDining} />} />
+                <Route path="tobacco" element={<Tobacco tobacco={tobacco.parameters.money} setTobacco={setTobacco} />} />
+                <Route path="goods" element={<Goods goods={goods} setGoods={setGoods} />} />
+                <Route path="services" element={<Services services={services} setServices={setServices} />} />
+                <Route path="recreation" element={<Recreation recreation={recreation} setRecreation={setRecreation} />} />
+                <Route path="*" element={<NotFound />} />
             </Routes>
-        </div>
+        </>
     );
 }
 

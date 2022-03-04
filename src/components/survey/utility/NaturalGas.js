@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 
-function NaturalGasForm({naturalGas, setNaturalGas}) {
+function NaturalGas({naturalGas, setNaturalGas}) {
     const navigate = useNavigate();
 
     const handleSubmit = e => {
@@ -8,7 +8,7 @@ function NaturalGasForm({naturalGas, setNaturalGas}) {
         if(isNaN(naturalGas)) {
             setNaturalGas(pS => ({...pS, parameters: {...pS.parameters, money: 0}}));
         };
-        navigate('/survey/utility/water');
+        navigate('/survey/water');
     };
 
     return (
@@ -28,4 +28,4 @@ function NaturalGasForm({naturalGas, setNaturalGas}) {
     );
 }
 
-export default NaturalGasForm;
+export default NaturalGas;

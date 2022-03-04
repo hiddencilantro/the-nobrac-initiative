@@ -1,5 +1,5 @@
 import { useState } from "react";
-import TobaccoForm from '../forms/TobaccoForm';
+import TobaccoForm from './forms/TobaccoForm';
 
 function Tobacco({tobacco, setTobacco}) {
     const [toggle, setToggle] = useState(null);

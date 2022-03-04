@@ -5,7 +5,7 @@ function Landing() {
         <div>
             <h1>The NOBRAC Initiative</h1>
             <p>Take a quick survey to calculate your carbon footprint!</p>
-            <Link to="/survey/transport/vehicle">Start</Link>
+            <Link to="/survey/vehicle">Start</Link>
         </div>
     );
 }

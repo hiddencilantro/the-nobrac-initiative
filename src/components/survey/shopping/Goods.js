@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import ItemInput from '../../consumption/forms/ItemInput';
+import ItemInput from '../consumption/forms/ItemInput';
 
 function Goods({goods, setGoods}) {
     const [checked, setChecked] = useState({
@@ -22,7 +22,7 @@ function Goods({goods, setGoods}) {
 
     const handleNext = () => {
         sanitizeInput();
-        navigate('/survey/shopping/services');
+        navigate('/survey/services');
     };
 
     const sanitizeInput = () => {

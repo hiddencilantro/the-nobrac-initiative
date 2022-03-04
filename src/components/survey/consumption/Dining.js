@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import LimitedServiceInput from '../forms/LimitedServiceInput';
-import FullServiceInput from '../forms/FullServiceInput.js';
-import OtherInput from '../forms/OtherInput';
+import LimitedServiceInput from './forms/LimitedServiceInput';
+import FullServiceInput from './forms/FullServiceInput.js';
+import OtherInput from './forms/OtherInput';
 
 function Dining({dining, setDining}) {
     const [toggle, setToggle] = useState(null);
@@ -23,7 +23,7 @@ function Dining({dining, setDining}) {
         } else {
             sanitizeInputWithCheck();
         };
-        navigate('/survey/consumption/tobacco');
+        navigate('/survey/tobacco');
     };
 
     const sanitizeInputWithoutCheck = () => {
