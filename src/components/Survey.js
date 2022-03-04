@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
 // import { useDispatch } from 'react-redux';
-// import Categories from './survey/Categories'
+import SurveyNav from './survey/SurveyNav'
 import Landing from './Landing';
 import Vehicle from './survey/transport/Vehicle';
 import PublicTransit from './survey/transport/PublicTransit';
@@ -425,10 +425,10 @@ function Survey() {
 
     return (
         <>
-            {/* <Categories /> */}
+            <SurveyNav />
             <Routes>
                 <Route index element={<Landing />} />
-                <Route path="vehicle" element={<Vehicle vehicle={vehicle} setVehicle={setVehicle} />} />
+                <Route path="vehicle" element={<Vehicle vehicle={vehicle.parameters.distance} setVehicle={setVehicle} />} />
                 <Route path="public-transit" element={<PublicTransit publicTransit={publicTransit} setPublicTransit={setPublicTransit} />} />
                 <Route path="flight" element={<Flight flight={flight} setFlight={setFlight} />} />
                 <Route path="electricity" element={<Electricity electricity={electricity.parameters.money} setElectricity={setElectricity} />} />
