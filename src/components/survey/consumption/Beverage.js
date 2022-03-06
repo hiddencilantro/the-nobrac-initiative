@@ -1,41 +1,20 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import ItemInput from './forms/ItemInput';
+import { useEffect } from 'react';
+import ItemInput from './inputs/ItemInput';
 
-function Beverage({beverages, setBeverages}) {
-    const [checked, setChecked] = useState({
-        coffeeAndTea: false,
-        softDrinksAndBottledWater: false,
-        beer: false,
-        spirits: false,
-        wine: false
-    });
-    const navigate = useNavigate();
+function Beverage({setActiveStep, checked, setChecked, beverages, setBeverages}) {
+    useEffect(() => {
+        setActiveStep(7);
+        setChecked({
+            coffeeAndTea: false,
+            softDrinksAndBottledWater: false,
+            beer: false,
+            spirits: false,
+            wine: false
+        });
+    }, []);
 
     const handleCheckbox = e => {
         setChecked(pS => ({...pS, [e.target.name]: e.target.checked}));
-    };
-
-    const handleNext = () => {
-        sanitizeInput();
-        navigate('/survey/dining');
-    };
-
-    const sanitizeInput = () => {
-        Object.entries(beverages).forEach(([beverageType, obj]) => {
-            if(!checked[beverageType] || isNaN(obj.parameters.money)) {
-                setBeverages(pS => ({
-                    ...pS, 
-                    [beverageType]: {
-                        ...pS[beverageType], 
-                        parameters: {
-                            ...pS[beverageType].parameters, 
-                            money: 0
-                        }
-                    }
-                }));
-            };
-        });
     };
 
     const inputFields = Object.entries(beverages).map(([beverage, object]) => <ItemInput key={beverage} checked={checked[beverage]} item={beverage} money={object.parameters.money} setState={setBeverages} />)
@@ -48,20 +27,15 @@ function Beverage({beverages, setBeverages}) {
                     <tr>
                         <td style={{width: '45%'}}>
                             <div>
-                                <input type="checkbox" name="coffeeAndTea" checked={checked.coffeeAndTea} onChange={handleCheckbox} /> <label htmlFor='coffeeAndTea'>Coffee And Tea</label><br />
-                                <input type="checkbox" name="softDrinksAndBottledWater" checked={checked.softDrinksAndBottledWater} onChange={handleCheckbox} /> <label htmlFor='softDrinksAndBottledWater'>Soft Drinks and Bottled Water</label><br />
-                                <input type="checkbox" name="beer" checked={checked.beer} onChange={handleCheckbox} /> <label htmlFor='beer'>Beer</label><br />
-                                <input type="checkbox" name="spirits" checked={checked.spirits} onChange={handleCheckbox} /> <label htmlFor='spirits'>Spirits</label><br />
-                                <input type="checkbox" name="wine" checked={checked.wine} onChange={handleCheckbox} /> <label htmlFor='wine'>Wine</label><br />
+                                <input type="checkbox" name="coffeeAndTea" onChange={handleCheckbox} /> <label htmlFor='coffeeAndTea'>Coffee And Tea</label><br />
+                                <input type="checkbox" name="softDrinksAndBottledWater" onChange={handleCheckbox} /> <label htmlFor='softDrinksAndBottledWater'>Soft Drinks and Bottled Water</label><br />
+                                <input type="checkbox" name="beer" onChange={handleCheckbox} /> <label htmlFor='beer'>Beer</label><br />
+                                <input type="checkbox" name="spirits" onChange={handleCheckbox} /> <label htmlFor='spirits'>Spirits</label><br />
+                                <input type="checkbox" name="wine" onChange={handleCheckbox} /> <label htmlFor='wine'>Wine</label><br />
                             </div>
                         </td>
                         <td style={{width: '55%', verticalAlign: 'top'}}>
                             {inputFields}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colSpan={'2'}>
-                            <button type="button" onClick={handleNext}>Next</button>
                         </td>
                     </tr>
                 </tbody>

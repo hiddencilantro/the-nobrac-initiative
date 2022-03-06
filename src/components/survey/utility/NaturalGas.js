@@ -1,18 +1,12 @@
-import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
-function NaturalGas({naturalGas, setNaturalGas}) {
-    const navigate = useNavigate();
-
-    const handleSubmit = e => {
-        e.preventDefault();
-        if(isNaN(naturalGas)) {
-            setNaturalGas(pS => ({...pS, parameters: {...pS.parameters, money: 0}}));
-        };
-        navigate('/survey/water');
-    };
+function NaturalGas({setActiveStep, naturalGas, setNaturalGas}) {
+    useEffect(() => {
+        setActiveStep(4);
+    }, []);
 
     return (
-        <form onSubmit={handleSubmit}>
+        <div>
             <br />
             <label htmlFor="natural-gas-money-input">How much is your average gas bill?</label>
             <br />
@@ -22,9 +16,7 @@ function NaturalGas({naturalGas, setNaturalGas}) {
                 placeholder="0"
                 value={(naturalGas === 0 || isNaN(naturalGas)) ? "" : naturalGas} 
                 onChange={e => setNaturalGas(pS => ({...pS, parameters: {...pS.parameters, money: (e.target.valueAsNumber)}}))} /> per month
-            <br />
-            <input type="submit" value="Next"/>
-        </form>
+        </div>
     );
 }
 

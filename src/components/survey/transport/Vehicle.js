@@ -1,8 +1,11 @@
-import { useState } from "react";
-import VehicleForm from './forms/VehicleForm';
+import { useEffect } from 'react';
+import VehicleInput from './inputs/VehicleInput';
 
-function Vehicle({vehicle, setVehicle}) {
-    const [toggle, setToggle] = useState(null);
+function Vehicle({setActiveStep, toggle, setToggle, vehicle, setVehicle}) {
+    useEffect(() => {
+        setActiveStep(0);
+        setToggle(null);
+    }, []);
 
     return (
         <>
@@ -12,7 +15,7 @@ function Vehicle({vehicle, setVehicle}) {
                 <input type="radio" name="vehicle" value={false} /> No
             </div>
             <br />
-            <VehicleForm display={toggle} vehicle={vehicle} setVehicle={setVehicle} />
+            <VehicleInput display={toggle} vehicle={vehicle} setVehicle={setVehicle} />
         </>
     );
 }

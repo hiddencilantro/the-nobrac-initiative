@@ -1,8 +1,9 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 // import { useDispatch } from 'react-redux';
-import SurveyNav from './survey/SurveyNav'
-import Landing from './Landing';
+import { MobileStepper, Button } from '@mui/material';
+import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
+import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import Vehicle from './survey/transport/Vehicle';
 import PublicTransit from './survey/transport/PublicTransit';
 import Flight from './survey/transport/Flight';
@@ -19,6 +20,10 @@ import Recreation from './survey/shopping/Recreation';
 import NotFound from './NotFound';
 
 function Survey() {
+    const navigate = useNavigate();
+    const [activeStep, setActiveStep] = useState(0);
+    const [toggle, setToggle] = useState(null);
+    const [checked, setChecked] = useState({});
     const [vehicle, setVehicle] = useState({
         "emission_factor": "passenger_vehicle-vehicle_type_car-fuel_source_na-engine_size_na-vehicle_age_na-vehicle_weight_na",
         "parameters": {
@@ -415,6 +420,163 @@ function Survey() {
         }
     });
 
+    const sanitizeInput = (state, setter, unit) => {
+        Object.keys(state).forEach(type => {
+            setter(pS => ({
+                ...pS, 
+                [type]: {
+                    ...pS[type], 
+                    parameters: {
+                        ...pS[type].parameters, 
+                        [unit]: 0
+                    }
+                }
+            }));
+        });
+    };
+
+    const sanitizeInputConditionally = (state, setter, unit) => {
+        Object.entries(state).forEach(([type, obj]) => {
+            if(!checked[type] || isNaN(obj.parameters[unit])) {
+                setter(pS => (
+                    {...pS, 
+                    [type]: {
+                        ...pS[type], 
+                        parameters: {
+                            ...pS[type].parameters, 
+                            [unit]: 0
+                            }
+                        }
+                    }
+                ));
+            };
+        });
+    };
+    
+    const handleNext = () => {
+        switch(activeStep) {
+            case 0:
+                if(toggle === "false" || isNaN(vehicle.parameters.distance)) {
+                    setVehicle(pS => ({...pS, parameters: {...pS.parameters, distance: 0}}));
+                };
+                navigate('/survey/public-transit');
+                break;
+            case 1:
+                if(toggle === "false") {
+                    sanitizeInput(publicTransit, setPublicTransit, "distance");
+                } else {
+                    sanitizeInputConditionally(publicTransit, setPublicTransit, "distance");
+                };
+                navigate('/survey/flight');
+                break;
+            case 2:
+                if(toggle === "false") {
+                    sanitizeInput(flight, setFlight, "distance");
+                } else {
+                    sanitizeInputConditionally(flight, setFlight, "distance");
+                };
+                navigate('/survey/electricity');
+                break;
+            case 3:
+                if(isNaN(electricity.parameters.money)) {
+                    setElectricity(pS => ({...pS, parameters: {...pS.parameters, money: 0}}));
+                };
+                navigate('/survey/natural-gas');
+                break;
+            case 4:
+                if(isNaN(naturalGas.parameters.money)) {
+                    setNaturalGas(pS => ({...pS, parameters: {...pS.parameters, money: 0}}));
+                };
+                navigate('/survey/water');
+                break;
+            case 5:
+                if(isNaN(water.parameters.money)) {
+                    setWater(pS => ({...pS, parameters: {...pS.parameters, money: 0}}));
+                };
+                navigate('/survey/food');
+                break;
+            case 6:
+                sanitizeInputConditionally(foods, setFoods, "money");
+                navigate('/survey/beverage');
+                break;
+            case 7:
+                sanitizeInputConditionally(beverages, setBeverages, "money");
+                navigate('/survey/dining');
+                break;
+            case 8:
+                if(toggle === "false") {
+                    sanitizeInput(dining, setDining, "money");
+                } else {
+                    sanitizeInputConditionally(dining, setDining, "money");
+                };
+                navigate('/survey/tobacco');
+                break;
+            case 9:
+                if(toggle === "false" || isNaN(tobacco.parameters.money)) {
+                    setTobacco(pS => ({...pS, parameters: {...pS.parameters, money: 0}}));
+                };
+                navigate('/survey/goods');
+                break;
+            case 10:
+                sanitizeInputConditionally(goods, setGoods, "money");
+                navigate('/survey/services');
+                break;
+            case 11:
+                sanitizeInputConditionally(services, setServices, "money");
+                navigate('/survey/recreation');
+                break;
+            case 12:
+                sanitizeInputConditionally(recreation, setRecreation, "money");
+                navigate('/survey/results');
+                break;
+            default:
+                break;
+        };
+    };
+    
+    const handleBack = () => {
+        switch(activeStep) {
+            case 1:
+                navigate('/survey/vehicle');
+                break;
+            case 2:
+                navigate('/survey/public-transit');
+                break;
+            case 3:
+                navigate('/survey/flight');
+                break;
+            case 4:
+                navigate('/survey/electricity');
+                break;
+            case 5:
+                navigate('/survey/natural-gas');
+                break;
+            case 6:
+                navigate('/survey/water');
+                break;
+            case 7:
+                navigate('/survey/food');
+                break;
+            case 8:
+                navigate('/survey/beverage');
+                break;
+            case 9:
+                navigate('/survey/dining');
+                break;
+            case 10:
+                navigate('/survey/tobacco');
+                break;
+            case 11:
+                navigate('/survey/goods');
+                break;
+            case 12:
+                navigate('/survey/services');
+                break;
+            default:
+                break;
+        };
+    };
+
     // const dispatch = useDispatch();
 
     // const userInput = [vehicle, bus, rapid, commuter, intercity, shortFlight, mediumFlight, longFlight];
@@ -425,24 +587,83 @@ function Survey() {
 
     return (
         <>
-            <SurveyNav />
             <Routes>
-                <Route index element={<Landing />} />
-                <Route path="vehicle" element={<Vehicle vehicle={vehicle.parameters.distance} setVehicle={setVehicle} />} />
-                <Route path="public-transit" element={<PublicTransit publicTransit={publicTransit} setPublicTransit={setPublicTransit} />} />
-                <Route path="flight" element={<Flight flight={flight} setFlight={setFlight} />} />
-                <Route path="electricity" element={<Electricity electricity={electricity.parameters.money} setElectricity={setElectricity} />} />
-                <Route path="natural-gas" element={<NaturalGas naturalGas={naturalGas.parameters.money} setNaturalGas={setNaturalGas} />} />
-                <Route path="water" element={<Water water={water.parameters.money} setWater={setWater} />} />
-                <Route path="food" element={<Food foods={foods} setFoods={setFoods} />} />
-                <Route path="beverage" element={<Beverage beverages={beverages} setBeverages={setBeverages} />} />
-                <Route path="dining" element={<Dining dining={dining} setDining={setDining} />} />
-                <Route path="tobacco" element={<Tobacco tobacco={tobacco.parameters.money} setTobacco={setTobacco} />} />
-                <Route path="goods" element={<Goods goods={goods} setGoods={setGoods} />} />
-                <Route path="services" element={<Services services={services} setServices={setServices} />} />
-                <Route path="recreation" element={<Recreation recreation={recreation} setRecreation={setRecreation} />} />
+                <Route index element={<Vehicle 
+                    setActiveStep={setActiveStep} 
+                    toggle={toggle} setToggle={setToggle} 
+                    vehicle={vehicle.parameters.distance} setVehicle={setVehicle} />} />
+                <Route path="vehicle" element={<Vehicle 
+                    setActiveStep={setActiveStep} 
+                    toggle={toggle} setToggle={setToggle} 
+                    vehicle={vehicle.parameters.distance} setVehicle={setVehicle} />} />
+                <Route path="public-transit" element={<PublicTransit 
+                    setActiveStep={setActiveStep} 
+                    toggle={toggle} setToggle={setToggle} 
+                    checked={checked} setChecked={setChecked} 
+                    publicTransit={publicTransit} setPublicTransit={setPublicTransit} />} />
+                <Route path="flight" element={<Flight 
+                    setActiveStep={setActiveStep} 
+                    toggle={toggle} setToggle={setToggle} 
+                    checked={checked} setChecked={setChecked} 
+                    flight={flight} setFlight={setFlight} />} />
+                <Route path="electricity" element={<Electricity 
+                    setActiveStep={setActiveStep} 
+                    electricity={electricity.parameters.money} setElectricity={setElectricity} />} />
+                <Route path="natural-gas" element={<NaturalGas 
+                    setActiveStep={setActiveStep} 
+                    naturalGas={naturalGas.parameters.money} setNaturalGas={setNaturalGas} />} />
+                <Route path="water" element={<Water 
+                    setActiveStep={setActiveStep} 
+                    water={water.parameters.money} setWater={setWater} />} />
+                <Route path="food" element={<Food 
+                    setActiveStep={setActiveStep} 
+                    checked={checked} setChecked={setChecked} 
+                    foods={foods} setFoods={setFoods} />} />
+                <Route path="beverage" element={<Beverage 
+                    setActiveStep={setActiveStep} 
+                    checked={checked} setChecked={setChecked} 
+                    beverages={beverages} setBeverages={setBeverages} />} />
+                <Route path="dining" element={<Dining 
+                    setActiveStep={setActiveStep} 
+                    toggle={toggle} setToggle={setToggle} 
+                    checked={checked} setChecked={setChecked} 
+                    dining={dining} setDining={setDining} />} />
+                <Route path="tobacco" element={<Tobacco 
+                    setActiveStep={setActiveStep} 
+                    toggle={toggle} setToggle={setToggle} 
+                    tobacco={tobacco.parameters.money} setTobacco={setTobacco} />} />
+                <Route path="goods" element={<Goods 
+                    setActiveStep={setActiveStep} 
+                    checked={checked} setChecked={setChecked} 
+                    goods={goods} setGoods={setGoods} />} />
+                <Route path="services" element={<Services 
+                    setActiveStep={setActiveStep} 
+                    checked={checked} setChecked={setChecked} 
+                    services={services} setServices={setServices} />} />
+                <Route path="recreation" element={<Recreation 
+                    setActiveStep={setActiveStep} 
+                    checked={checked} setChecked={setChecked} 
+                    recreation={recreation} setRecreation={setRecreation} />} />
                 <Route path="*" element={<NotFound />} />
             </Routes>
+            <MobileStepper 
+                variant="dots" 
+                steps={13} 
+                position="static" 
+                activeStep={activeStep} 
+                nextButton={
+                    toggle !== null ? 
+                    <Button size="small" onClick={handleNext}>
+                        Next<KeyboardArrowRight />
+                    </Button> 
+                    : null
+                } 
+                backButton={
+                    <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
+                        <KeyboardArrowLeft />Back
+                    </Button>
+                } 
+            />
         </>
     );
 }

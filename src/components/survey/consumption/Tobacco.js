@@ -1,8 +1,11 @@
-import { useState } from "react";
-import TobaccoForm from './forms/TobaccoForm';
+import { useEffect } from "react";
+import TobaccoInput from './inputs/TobaccoInput';
 
-function Tobacco({tobacco, setTobacco}) {
-    const [toggle, setToggle] = useState(null);
+function Tobacco({setActiveStep, toggle, setToggle, tobacco, setTobacco}) {
+    useEffect(() => {
+        setActiveStep(9);
+        setToggle(null);
+    }, []);
 
     return (
         <>
@@ -12,7 +15,7 @@ function Tobacco({tobacco, setTobacco}) {
                 <input type="radio" name="car" value={false} /> No
             </div>
             <br />
-            <TobaccoForm display={toggle} tobacco={tobacco} setTobacco={setTobacco} />
+            <TobaccoInput display={toggle} tobacco={tobacco} setTobacco={setTobacco} />
         </>
     );
 }

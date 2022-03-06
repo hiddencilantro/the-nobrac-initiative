@@ -1,18 +1,12 @@
-import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
-function Water({water, setWater}) {
-    const navigate = useNavigate();
-
-    const handleSubmit = e => {
-        e.preventDefault();
-        if(isNaN(water)) {
-            setWater(pS => ({...pS, parameters: {...pS.parameters, money: 0}}));
-        };
-        navigate('/survey/food');
-    };
+function Water({setActiveStep, water, setWater}) {
+    useEffect(() => {
+        setActiveStep(5);
+    }, []);
 
     return (
-        <form onSubmit={handleSubmit}>
+        <div>
             <br />
             <label htmlFor="water-money-input">How much is your average water bill?</label>
             <br />
@@ -22,9 +16,7 @@ function Water({water, setWater}) {
                 placeholder="0"
                 value={(water === 0 || isNaN(water)) ? "" : water} 
                 onChange={e => setWater(pS => ({...pS, parameters: {...pS.parameters, money: (e.target.valueAsNumber)}}))} /> per month
-            <br />
-            <input type="submit" value="Next"/>
-        </form>
+        </div>
     );
 }
 
