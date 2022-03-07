@@ -8,7 +8,8 @@ function OtherServiceInput({display, checked, money, setDining}) {
                     type="number" 
                     id="other-service-money-input" 
                     placeholder="0"
-                    value={(money === 0 || isNaN(money)) ? "" : money} 
+                    min="0"
+                    value={money === 0 ? "" : Math.max(0, money)} 
                     onChange={e => {
                         setDining(pS => ({
                             ...pS, 
@@ -16,7 +17,7 @@ function OtherServiceInput({display, checked, money, setDining}) {
                                 ...pS.other,
                                 parameters: {
                                     ...pS.other.parameters, 
-                                    money: e.target.valueAsNumber
+                                    money: Number(e.target.value)
                                 }
                             }
                         }));

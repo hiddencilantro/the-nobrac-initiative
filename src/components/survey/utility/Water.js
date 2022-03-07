@@ -14,8 +14,9 @@ function Water({setActiveStep, water, setWater}) {
                 type="number" 
                 id="water-money-input" 
                 placeholder="0"
-                value={(water === 0 || isNaN(water)) ? "" : water} 
-                onChange={e => setWater(pS => ({...pS, parameters: {...pS.parameters, money: (e.target.valueAsNumber)}}))} /> per month
+                min="0"
+                value={water === 0 ? "" : Math.max(0, water)} 
+                onChange={e => setWater(pS => ({...pS, parameters: {...pS.parameters, money: Number(e.target.value)}}))} /> per month
         </div>
     );
 }

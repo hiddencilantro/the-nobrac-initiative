@@ -8,7 +8,8 @@ function RapidInput({display, checked, distance, setPublicTransit}) {
                     type="number" 
                     id="rapid-miles-input" 
                     placeholder="0"
-                    value={(distance === 0 || isNaN(distance)) ? "" : distance} 
+                    min="0"
+                    value={distance === 0 ? "" : Math.max(0, distance)} 
                     onChange={e => {
                         setPublicTransit(pS => ({
                             ...pS, 
@@ -16,7 +17,7 @@ function RapidInput({display, checked, distance, setPublicTransit}) {
                                 ...pS.rapid,
                                 parameters: {
                                     ...pS.rapid.parameters, 
-                                    distance: e.target.valueAsNumber
+                                    distance: Number(e.target.value)
                                 }
                             }
                         }));

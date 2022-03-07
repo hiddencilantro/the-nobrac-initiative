@@ -8,7 +8,8 @@ function MediumFlightInput({display, checked, distance, setFlight}) {
                     type="number" 
                     id="medium-flight-miles-input" 
                     placeholder="0"
-                    value={(distance === 0 || isNaN(distance)) ? "" : distance} 
+                    min="0"
+                    value={distance === 0 ? "" : Math.max(0, distance)} 
                     onChange={e => {
                         setFlight(pS => ({
                             ...pS, 
@@ -16,7 +17,7 @@ function MediumFlightInput({display, checked, distance, setFlight}) {
                                 ...pS.medium,
                                 parameters: {
                                     ...pS.medium.parameters, 
-                                    distance: e.target.valueAsNumber
+                                    distance: Number(e.target.value)
                                 }
                             }
                         }));

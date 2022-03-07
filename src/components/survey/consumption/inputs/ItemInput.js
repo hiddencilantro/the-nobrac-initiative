@@ -7,7 +7,8 @@ function ItemInput({checked, item, money, setState}) {
                     id={item}
                     type="number" 
                     placeholder="0"
-                    value={(money === 0 || isNaN(money)) ? "" : money} 
+                    min="0"
+                    value={money === 0 ? "" : Math.max(0, money)} 
                     onChange={e => {
                         setState(pS => ({
                             ...pS, 
@@ -15,7 +16,7 @@ function ItemInput({checked, item, money, setState}) {
                                 ...pS[item], 
                                 parameters: {
                                     ...pS[item].parameters, 
-                                    money: e.target.valueAsNumber
+                                    money: Number(e.target.value)
                                 }
                             }
                         }));

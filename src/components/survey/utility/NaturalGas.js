@@ -14,8 +14,9 @@ function NaturalGas({setActiveStep, naturalGas, setNaturalGas}) {
                 type="number" 
                 id="natural-gas-money-input" 
                 placeholder="0"
-                value={(naturalGas === 0 || isNaN(naturalGas)) ? "" : naturalGas} 
-                onChange={e => setNaturalGas(pS => ({...pS, parameters: {...pS.parameters, money: (e.target.valueAsNumber)}}))} /> per month
+                min="0"
+                value={naturalGas === 0 ? "" : Math.max(0, naturalGas)} 
+                onChange={e => setNaturalGas(pS => ({...pS, parameters: {...pS.parameters, money: Number(e.target.value)}}))} /> per month
         </div>
     );
 }

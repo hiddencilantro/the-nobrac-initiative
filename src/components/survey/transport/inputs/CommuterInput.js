@@ -8,7 +8,8 @@ function CommuterInput({display, checked, distance, setPublicTransit}) {
                     type="number" 
                     id="commuter-miles-input" 
                     placeholder="0"
-                    value={(distance === 0 || isNaN(distance)) ? "" : distance} 
+                    min="0"
+                    value={distance === 0 ? "" : Math.max(0, distance)} 
                     onChange={e => {
                         setPublicTransit(pS => ({
                             ...pS, 
@@ -16,7 +17,7 @@ function CommuterInput({display, checked, distance, setPublicTransit}) {
                                 ...pS.commuter,
                                 parameters: {
                                     ...pS.commuter.parameters, 
-                                    distance: e.target.valueAsNumber
+                                    distance: Number(e.target.value)
                                 }
                             }
                         }));

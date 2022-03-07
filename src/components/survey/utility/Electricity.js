@@ -14,8 +14,9 @@ function Electricity({setActiveStep, electricity, setElectricity}) {
                 type="number" 
                 id="electricity-money-input" 
                 placeholder="0"
-                value={(electricity === 0 || isNaN(electricity)) ? "" : electricity} 
-                onChange={e => setElectricity(pS => ({...pS, parameters: {...pS.parameters, money: (e.target.valueAsNumber)}}))} /> per month
+                min="0"
+                value={electricity === 0 ? "" : Math.max(0, electricity)} 
+                onChange={e => setElectricity(pS => ({...pS, parameters: {...pS.parameters, money: Number(e.target.value)}}))} /> per month
         </div>
     );
 }

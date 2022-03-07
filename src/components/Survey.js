@@ -437,26 +437,25 @@ function Survey() {
 
     const sanitizeInputConditionally = (state, setter, unit) => {
         Object.entries(state).forEach(([type, obj]) => {
-            if(!checked[type] || isNaN(obj.parameters[unit])) {
-                setter(pS => (
-                    {...pS, 
+            if(!checked[type]) {
+                setter(pS => ({
+                    ...pS, 
                     [type]: {
                         ...pS[type], 
                         parameters: {
                             ...pS[type].parameters, 
                             [unit]: 0
-                            }
                         }
                     }
-                ));
+                }));
             };
         });
     };
-    
+
     const handleNext = () => {
         switch(activeStep) {
             case 0:
-                if(toggle === "false" || isNaN(vehicle.parameters.distance)) {
+                if(toggle === "false") {
                     setVehicle(pS => ({...pS, parameters: {...pS.parameters, distance: 0}}));
                 };
                 navigate('/survey/public-transit');
@@ -478,21 +477,12 @@ function Survey() {
                 navigate('/survey/electricity');
                 break;
             case 3:
-                if(isNaN(electricity.parameters.money)) {
-                    setElectricity(pS => ({...pS, parameters: {...pS.parameters, money: 0}}));
-                };
                 navigate('/survey/natural-gas');
                 break;
             case 4:
-                if(isNaN(naturalGas.parameters.money)) {
-                    setNaturalGas(pS => ({...pS, parameters: {...pS.parameters, money: 0}}));
-                };
                 navigate('/survey/water');
                 break;
             case 5:
-                if(isNaN(water.parameters.money)) {
-                    setWater(pS => ({...pS, parameters: {...pS.parameters, money: 0}}));
-                };
                 navigate('/survey/food');
                 break;
             case 6:
@@ -512,7 +502,7 @@ function Survey() {
                 navigate('/survey/tobacco');
                 break;
             case 9:
-                if(toggle === "false" || isNaN(tobacco.parameters.money)) {
+                if(toggle === "false") {
                     setTobacco(pS => ({...pS, parameters: {...pS.parameters, money: 0}}));
                 };
                 navigate('/survey/goods');

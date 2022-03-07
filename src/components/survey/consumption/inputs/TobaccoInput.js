@@ -8,8 +8,9 @@ function TobaccoInput({display, tobacco, setTobacco}) {
                     type="number" 
                     id="tobacco-money-input" 
                     placeholder="0"
-                    value={(tobacco === 0 || isNaN(tobacco)) ? "" : tobacco} 
-                    onChange={e => setTobacco(pS => ({...pS, parameters: {...pS.parameters, money: e.target.valueAsNumber}}))} /> per month
+                    min="0"
+                    value={tobacco === 0 ? "" : Math.max(0, tobacco)} 
+                    onChange={e => setTobacco(pS => ({...pS, parameters: {...pS.parameters, money: Number(e.target.value)}}))} /> per month
             </div>
         );
     } else {

@@ -8,8 +8,9 @@ function VehicleInput({display, vehicle, setVehicle}) {
                     type="number" 
                     id="vehicle-miles-input" 
                     placeholder="0"
-                    value={(vehicle === 0 || isNaN(vehicle)) ? "" : vehicle} 
-                    onChange={e => setVehicle(pS => ({...pS, parameters: {...pS.parameters, distance: e.target.valueAsNumber}}))} /> miles
+                    min="0"
+                    value={vehicle === 0 ? "" : Math.max(0, vehicle)} 
+                    onChange={e => setVehicle(pS => ({...pS, parameters: {...pS.parameters, distance: Number(e.target.value)}}))} /> miles
             </div>
         );
     } else {
