@@ -30,10 +30,10 @@ function PublicTransit({setActiveStep, toggle, setToggle, checked, setChecked, p
             {toggle === "true" ? 
                 (<div>
                     <p>Which public transit do you use? (Select all that apply)</p>
-                    <input type="checkbox" name="bus" onChange={handleCheckbox} /> Bus<br />
-                    <input type="checkbox" name="rapid" onChange={handleCheckbox} /> Rapid Transit (Subway/Metro/Tram)<br />
-                    <input type="checkbox" name="commuter" onChange={handleCheckbox} /> Commuter Rail (Train)<br />
-                    <input type="checkbox" name="intercity" onChange={handleCheckbox} /> Intercity Rail (Amtrak)
+                    <input type="checkbox" name="bus" checked={checked.bus} onChange={handleCheckbox} /> Bus<br />
+                    <input type="checkbox" name="rapid" checked={checked.rapid} onChange={handleCheckbox} /> Rapid Transit (Subway/Metro/Tram)<br />
+                    <input type="checkbox" name="commuter" checked={checked.commuter} onChange={handleCheckbox} /> Commuter Rail (Train)<br />
+                    <input type="checkbox" name="intercity" checked={checked.intercity} onChange={handleCheckbox} /> Intercity Rail (Amtrak)
                 </div>) 
                 : null}
             <br />

@@ -26,13 +26,15 @@ function Beverage({setActiveStep, checked, setChecked, beverages, setBeverages})
                 <tbody>
                     <tr>
                         <td style={{width: '45%'}}>
-                            <div>
-                                <input type="checkbox" name="coffeeAndTea" onChange={handleCheckbox} /> <label htmlFor='coffeeAndTea'>Coffee And Tea</label><br />
-                                <input type="checkbox" name="softDrinksAndBottledWater" onChange={handleCheckbox} /> <label htmlFor='softDrinksAndBottledWater'>Soft Drinks and Bottled Water</label><br />
-                                <input type="checkbox" name="beer" onChange={handleCheckbox} /> <label htmlFor='beer'>Beer</label><br />
-                                <input type="checkbox" name="spirits" onChange={handleCheckbox} /> <label htmlFor='spirits'>Spirits</label><br />
-                                <input type="checkbox" name="wine" onChange={handleCheckbox} /> <label htmlFor='wine'>Wine</label><br />
-                            </div>
+                            {checked.hasOwnProperty('coffeeAndTea') ? 
+                                (<div>
+                                    <input type="checkbox" name="coffeeAndTea" checked={checked.coffeeAndTea} onChange={handleCheckbox} /> <label htmlFor='coffeeAndTea'>Coffee And Tea</label><br />
+                                    <input type="checkbox" name="softDrinksAndBottledWater" checked={checked.softDrinksAndBottledWater} onChange={handleCheckbox} /> <label htmlFor='softDrinksAndBottledWater'>Soft Drinks and Bottled Water</label><br />
+                                    <input type="checkbox" name="beer" checked={checked.beer} onChange={handleCheckbox} /> <label htmlFor='beer'>Beer</label><br />
+                                    <input type="checkbox" name="spirits" checked={checked.spirits} onChange={handleCheckbox} /> <label htmlFor='spirits'>Spirits</label><br />
+                                    <input type="checkbox" name="wine" checked={checked.wine} onChange={handleCheckbox} /> <label htmlFor='wine'>Wine</label><br />
+                                </div>)
+                                : null}
                         </td>
                         <td style={{width: '55%', verticalAlign: 'top'}}>
                             {inputFields}

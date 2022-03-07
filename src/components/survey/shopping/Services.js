@@ -25,12 +25,14 @@ function Services({setActiveStep, checked, setChecked, services, setServices}) {
                 <tbody>
                     <tr>
                         <td style={{width: '50%'}}>
-                            <div>
-                                <input type="checkbox" name="dryCleaning" onChange={handleCheckbox} /> <label htmlFor='dryCleaning'>Dry Cleaning/Laundry</label><br />
-                                <input type="checkbox" name="subscriptions" onChange={handleCheckbox} /> <label htmlFor='subscriptions'>Cable/Subscriptions</label><br />
-                                <input type="checkbox" name="vehicleRepair" onChange={handleCheckbox} /> <label htmlFor='vehicleRepair'>Vehicle Repair</label><br />
-                                <input type="checkbox" name="otherServices" onChange={handleCheckbox} /> <label htmlFor='otherServices'>Other Services (i.e. pet care, parking)</label><br />
-                            </div>
+                            {checked.hasOwnProperty('dryCleaning') ? 
+                                (<div>
+                                    <input type="checkbox" name="dryCleaning" checked={checked.dryCleaning} onChange={handleCheckbox} /> <label htmlFor='dryCleaning'>Dry Cleaning/Laundry</label><br />
+                                    <input type="checkbox" name="subscriptions" checked={checked.subscriptions} onChange={handleCheckbox} /> <label htmlFor='subscriptions'>Cable/Subscriptions</label><br />
+                                    <input type="checkbox" name="vehicleRepair" checked={checked.vehicleRepair} onChange={handleCheckbox} /> <label htmlFor='vehicleRepair'>Vehicle Repair</label><br />
+                                    <input type="checkbox" name="otherServices" checked={checked.otherServices} onChange={handleCheckbox} /> <label htmlFor='otherServices'>Other Services (i.e. pet care, parking)</label><br />
+                                </div>)
+                                : null}
                         </td>
                         <td style={{width: '50%', verticalAlign: 'top'}}>
                             {inputFields}

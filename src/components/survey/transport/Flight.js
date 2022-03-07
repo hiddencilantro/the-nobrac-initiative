@@ -28,9 +28,9 @@ function Flight({setActiveStep, toggle, setToggle, checked, setChecked, flight, 
             {toggle === "true" ? 
                 (<div>
                     <p>What type of flights do you take? (Select all that apply)</p>
-                    <input type="checkbox" name="short" onChange={handleCheckbox} /> {"Short (< 300 miles)"}<br />
-                    <input type="checkbox" name="medium" onChange={handleCheckbox} /> {"Medium (>= 300 miles, < 2300 miles)"}<br />
-                    <input type="checkbox" name="long" onChange={handleCheckbox} /> {"Long (>= 2300 miles)"}<br />
+                    <input type="checkbox" name="short" checked={checked.short} onChange={handleCheckbox} /> {"Short (< 300 miles)"}<br />
+                    <input type="checkbox" name="medium" checked={checked.medium} onChange={handleCheckbox} /> {"Medium (>= 300 miles, < 2300 miles)"}<br />
+                    <input type="checkbox" name="long" checked={checked.long} onChange={handleCheckbox} /> {"Long (>= 2300 miles)"}<br />
                 </div>) 
                 : null}
             <br />

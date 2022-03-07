@@ -28,9 +28,9 @@ function Dining({setActiveStep, toggle, setToggle, checked, setChecked, dining, 
             {toggle === "true" ? 
                 (<div>
                     <p>What type of dining experience do you take part in? (Select all that apply)</p>
-                    <input type="checkbox" name="limited" onChange={handleCheckbox} /> Limited-service Restaurants (i.e. fast food, casual restaurants, cafes)<br />
-                    <input type="checkbox" name="full" onChange={handleCheckbox} /> Full-service Restaurants (i.e. typical sit-and-dine restaurants with wait staff)<br />
-                    <input type="checkbox" name="other" onChange={handleCheckbox} /> All other food and drinking places<br />
+                    <input type="checkbox" name="limited" checked={checked.limited} onChange={handleCheckbox} /> Limited-service Restaurants (i.e. fast food, casual restaurants, cafes)<br />
+                    <input type="checkbox" name="full" checked={checked.full} onChange={handleCheckbox} /> Full-service Restaurants (i.e. typical sit-and-dine restaurants with wait staff)<br />
+                    <input type="checkbox" name="other" checked={checked.other} onChange={handleCheckbox} /> All other food and drinking places<br />
                 </div>) 
                 : null}
             <br />

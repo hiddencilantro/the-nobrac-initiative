@@ -35,22 +35,24 @@ function Food({setActiveStep, checked, setChecked, foods, setFoods}) {
                 <tbody>
                     <tr>
                         <td style={{width: '50%'}}>
-                            <div>
-                                <input type="checkbox" name="meat" onChange={handleCheckbox} /> <label htmlFor='meat'>Meat</label><br />
-                                <input type="checkbox" name="poultry" onChange={handleCheckbox} /> <label htmlFor='poultry'>Poultry</label><br />
-                                <input type="checkbox" name="seafood" onChange={handleCheckbox} /> <label htmlFor='seafood'>Seafood</label><br />
-                                <input type="checkbox" name="bread" onChange={handleCheckbox} /> <label htmlFor='bread'>Bread and other baked goods</label><br />
-                                <input type="checkbox" name="cereal" onChange={handleCheckbox} /> <label htmlFor='cereal'>Cereal</label><br />
-                                <input type="checkbox" name="cheese" onChange={handleCheckbox} /> <label htmlFor='cheese'>Cheese</label><br />
-                                <input type="checkbox" name="pasta" onChange={handleCheckbox} /> <label htmlFor='pasta'>Pasta/Tortillas</label><br />
-                                <input type="checkbox" name="milkAndButter" onChange={handleCheckbox} /> <label htmlFor='milkAndButter'>Milk and Butter</label><br />
-                                <input type="checkbox" name="oils" onChange={handleCheckbox} /> <label htmlFor='oils'>Vegetable/Olive/Seed Oils</label><br />
-                                <input type="checkbox" name="seasonings" onChange={handleCheckbox} /> <label htmlFor='seasonings'>Seasonings and Dressings</label><br />
-                                <input type="checkbox" name="frozenFood" onChange={handleCheckbox} /> <label htmlFor='frozenFood'>Frozen Food</label><br />
-                                <input type="checkbox" name="iceCream" onChange={handleCheckbox} /> <label htmlFor='iceCream'>Ice Cream and Frozen Desserts</label><br />
-                                <input type="checkbox" name="snacks" onChange={handleCheckbox} /> <label htmlFor='snacks'>Snacks</label><br />
-                                <input type="checkbox" name="other" onChange={handleCheckbox} /> <label htmlFor='other'>All Other</label><br />
-                            </div>
+                            {checked.hasOwnProperty('meat') ? 
+                                (<div>
+                                    <input type="checkbox" name="meat" checked={checked.meat} onChange={handleCheckbox} /> <label htmlFor='meat'>Meat</label><br />
+                                    <input type="checkbox" name="poultry" checked={checked.poultry} onChange={handleCheckbox} /> <label htmlFor='poultry'>Poultry</label><br />
+                                    <input type="checkbox" name="seafood" checked={checked.seafood} onChange={handleCheckbox} /> <label htmlFor='seafood'>Seafood</label><br />
+                                    <input type="checkbox" name="bread" checked={checked.bread} onChange={handleCheckbox} /> <label htmlFor='bread'>Bread and other baked goods</label><br />
+                                    <input type="checkbox" name="cereal" checked={checked.cereal} onChange={handleCheckbox} /> <label htmlFor='cereal'>Cereal</label><br />
+                                    <input type="checkbox" name="cheese" checked={checked.cheese} onChange={handleCheckbox} /> <label htmlFor='cheese'>Cheese</label><br />
+                                    <input type="checkbox" name="pasta" checked={checked.pasta} onChange={handleCheckbox} /> <label htmlFor='pasta'>Pasta/Tortillas</label><br />
+                                    <input type="checkbox" name="milkAndButter" checked={checked.milkAndButter} onChange={handleCheckbox} /> <label htmlFor='milkAndButter'>Milk and Butter</label><br />
+                                    <input type="checkbox" name="oils" checked={checked.oils} onChange={handleCheckbox} /> <label htmlFor='oils'>Vegetable/Olive/Seed Oils</label><br />
+                                    <input type="checkbox" name="seasonings" checked={checked.seasonings} onChange={handleCheckbox} /> <label htmlFor='seasonings'>Seasonings and Dressings</label><br />
+                                    <input type="checkbox" name="frozenFood" checked={checked.frozenFood} onChange={handleCheckbox} /> <label htmlFor='frozenFood'>Frozen Food</label><br />
+                                    <input type="checkbox" name="iceCream" checked={checked.iceCream} onChange={handleCheckbox} /> <label htmlFor='iceCream'>Ice Cream and Frozen Desserts</label><br />
+                                    <input type="checkbox" name="snacks" checked={checked.snacks} onChange={handleCheckbox} /> <label htmlFor='snacks'>Snacks</label><br />
+                                    <input type="checkbox" name="other" checked={checked.other} onChange={handleCheckbox} /> <label htmlFor='other'>All Other</label><br />
+                                </div>)
+                                :null}
                         </td>
                         <td style={{width: '50%', verticalAlign: 'top'}}>
                             {inputFields}

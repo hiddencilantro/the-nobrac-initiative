@@ -30,17 +30,19 @@ function Goods({setActiveStep, checked, setChecked, goods, setGoods}) {
                 <tbody>
                     <tr>
                         <td style={{width: '50%'}}>
-                            <div>
-                                <input type="checkbox" name="clothing" onChange={handleCheckbox} /> <label htmlFor='clothing'>Clothing</label><br />
-                                <input type="checkbox" name="booksAndOtherPrint" onChange={handleCheckbox} /> <label htmlFor='booksAndOtherPrint'>Books/Newspapers/Magazines</label><br />
-                                <input type="checkbox" name="toysAndGames" onChange={handleCheckbox} /> <label htmlFor='toysAndGames'>Toys/Games</label><br />
-                                <input type="checkbox" name="sportingGoods" onChange={handleCheckbox} /> <label htmlFor='sportingGoods'>Sporting/Athletic Goods</label><br />
-                                <input type="checkbox" name="dogAndCatFood" onChange={handleCheckbox} /> <label htmlFor='dogAndCatFood'>Dog/Cat Food</label><br />
-                                <input type="checkbox" name="health" onChange={handleCheckbox} /> <label htmlFor='health'>Health/Personal Care</label><br />
-                                <input type="checkbox" name="generalMerchandise" onChange={handleCheckbox} /> <label htmlFor='generalMerchandise'>General Merchandise</label><br />
-                                <input type="checkbox" name="nonstoreRetailers" onChange={handleCheckbox} /> <label htmlFor='nonstoreRetailers'>Nonstore Retailers (i.e. e-commerce, street vendors)</label><br />
-                                <input type="checkbox" name="otherRetail" onChange={handleCheckbox} /> <label htmlFor='otherRetail'>All Other Retail</label><br />
-                            </div>
+                            {checked.hasOwnProperty('clothing') ? 
+                                (<div>
+                                    <input type="checkbox" name="clothing" checked={checked.clothing} onChange={handleCheckbox} /> <label htmlFor='clothing'>Clothing</label><br />
+                                    <input type="checkbox" name="booksAndOtherPrint" checked={checked.booksAndOtherPrint} onChange={handleCheckbox} /> <label htmlFor='booksAndOtherPrint'>Books/Newspapers/Magazines</label><br />
+                                    <input type="checkbox" name="toysAndGames" checked={checked.toysAndGames} onChange={handleCheckbox} /> <label htmlFor='toysAndGames'>Toys/Games</label><br />
+                                    <input type="checkbox" name="sportingGoods" checked={checked.sportingGoods} onChange={handleCheckbox} /> <label htmlFor='sportingGoods'>Sporting/Athletic Goods</label><br />
+                                    <input type="checkbox" name="dogAndCatFood" checked={checked.dogAndCatFood} onChange={handleCheckbox} /> <label htmlFor='dogAndCatFood'>Dog/Cat Food</label><br />
+                                    <input type="checkbox" name="health" checked={checked.health} onChange={handleCheckbox} /> <label htmlFor='health'>Health/Personal Care</label><br />
+                                    <input type="checkbox" name="generalMerchandise" checked={checked.generalMerchandise} onChange={handleCheckbox} /> <label htmlFor='generalMerchandise'>General Merchandise</label><br />
+                                    <input type="checkbox" name="nonstoreRetailers" checked={checked.nonstoreRetailers} onChange={handleCheckbox} /> <label htmlFor='nonstoreRetailers'>Nonstore Retailers (i.e. e-commerce, street vendors)</label><br />
+                                    <input type="checkbox" name="otherRetail" checked={checked.otherRetail} onChange={handleCheckbox} /> <label htmlFor='otherRetail'>All Other Retail</label><br />
+                                </div>)
+                                : null}
                         </td>
                         <td style={{width: '50%', verticalAlign: 'top'}}>
                             {inputFields}

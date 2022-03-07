@@ -27,14 +27,16 @@ function Recreation({setActiveStep, checked, setChecked, recreation, setRecreati
                 <tbody>
                     <tr>
                         <td style={{width: '40%'}}>
-                            <div>
-                                <input type="checkbox" name="moviesAndFilm" onChange={handleCheckbox} /> <label htmlFor='moviesAndFilm'>Movies/Film</label><br />
-                                <input type="checkbox" name="performances" onChange={handleCheckbox} /> <label htmlFor='performances'>Performances</label><br />
-                                <input type="checkbox" name="museumsAndZoos" onChange={handleCheckbox} /> <label htmlFor='museumsAndZoos'>Museums/Historical Sites/Zoos/Parks</label><br />
-                                <input type="checkbox" name="amusementParksAndArcades" onChange={handleCheckbox} /> <label htmlFor='amusementParksAndArcades'>Amusement Parks/Arcades</label><br />
-                                <input type="checkbox" name="casinos" onChange={handleCheckbox} /> <label htmlFor='casinos'>Casinos</label><br />
-                                <input type="checkbox" name="variousRecreation" onChange={handleCheckbox} /> <label htmlFor='variousRecreation'>Golf/Marinas/Ski Resorts/Fitness/Other</label><br />
-                            </div>
+                            {checked.hasOwnProperty('moviesAndFilm') ? 
+                                (<div>
+                                    <input type="checkbox" name="moviesAndFilm" checked={checked.moviesAndFilm} onChange={handleCheckbox} /> <label htmlFor='moviesAndFilm'>Movies/Film</label><br />
+                                    <input type="checkbox" name="performances" checked={checked.performances} onChange={handleCheckbox} /> <label htmlFor='performances'>Performances</label><br />
+                                    <input type="checkbox" name="museumsAndZoos" checked={checked.museumsAndZoos} onChange={handleCheckbox} /> <label htmlFor='museumsAndZoos'>Museums/Historical Sites/Zoos/Parks</label><br />
+                                    <input type="checkbox" name="amusementParksAndArcades" checked={checked.amusementParksAndArcades} onChange={handleCheckbox} /> <label htmlFor='amusementParksAndArcades'>Amusement Parks/Arcades</label><br />
+                                    <input type="checkbox" name="casinos" checked={checked.casinos} onChange={handleCheckbox} /> <label htmlFor='casinos'>Casinos</label><br />
+                                    <input type="checkbox" name="variousRecreation" checked={checked.variousRecreation} onChange={handleCheckbox} /> <label htmlFor='variousRecreation'>Golf/Marinas/Ski Resorts/Fitness/Other</label><br />
+                                </div>)
+                                : null}
                         </td>
                         <td style={{width: '60%', verticalAlign: 'top'}}>
                             {inputFields}
