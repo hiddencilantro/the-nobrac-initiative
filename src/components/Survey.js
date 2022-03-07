@@ -17,6 +17,7 @@ import Tobacco from './survey/consumption/Tobacco';
 import Goods from './survey/shopping/Goods';
 import Services from './survey/shopping/Services';
 import Recreation from './survey/shopping/Recreation';
+import Results from './survey/Results';
 import NotFound from './NotFound';
 
 function Survey() {
@@ -436,7 +437,7 @@ function Survey() {
     };
 
     const sanitizeInputConditionally = (state, setter, unit) => {
-        Object.entries(state).forEach(([type, obj]) => {
+        Object.keys(state).forEach(type => {
             if(!checked[type]) {
                 setter(pS => ({
                     ...pS, 
@@ -569,11 +570,84 @@ function Survey() {
 
     // const dispatch = useDispatch();
 
-    // const userInput = [vehicle, bus, rapid, commuter, intercity, shortFlight, mediumFlight, longFlight];
+    const userInput = [
+        vehicle,
+        ...Object.values(publicTransit),
+        ...Object.values(flight),
+        electricity,
+        naturalGas,
+        water,
+        ...Object.values(foods),
+        ...Object.values(beverages),
+        ...Object.values(dining),
+        tobacco,
+        ...Object.values(goods),
+        ...Object.values(services),
+        ...Object.values(recreation)
+    ];
 
-    // const sendDispatch = () => {
-    //   dispatch(calculateFootprint(userInput));
-    // };
+    const sendDispatch = () => {
+        const newArr = userInput.map(obj => {
+            const conditions = [
+                obj.emission_factor === "electricity-energy_source_electricity",
+                obj.emission_factor === "fuel_type_natural_gas-fuel_use_na",
+                obj.emission_factor === "water-supply_wastewater_treatment",
+                obj.emission_factor === "consumer_goods-type_packaged_meat_except_poultry",
+                obj.emission_factor === "consumer_goods-type_packaged_poultry",
+                obj.emission_factor === "consumer_goods-type_seafood",
+                obj.emission_factor === "consumer_goods-type_bread_other_baked_goods",
+                obj.emission_factor === "consumer_goods-type_breakfast_cereals",
+                obj.emission_factor === "consumer_goods-type_cheese",
+                obj.emission_factor === "consumer_goods-type_cookies_crackers_pastas_tortillas",
+                obj.emission_factor === "consumer_goods-type_fluid_milk_butter",
+                obj.emission_factor === "consumer_goods-type_refined_vegetable_olive_seed_oils",
+                obj.emission_factor === "consumer_goods-type_seasonings_dressings",
+                obj.emission_factor === "consumer_goods-type_frozen_food",
+                obj.emission_factor === "consumer_goods-type_ice_cream_frozen_desserts",
+                obj.emission_factor === "consumer_goods-type_snack_foods",
+                obj.emission_factor === "consumer_goods-type_all_other_foods",
+                obj.emission_factor === "consumer_goods-type_coffee_tea",
+                obj.emission_factor === "consumer_goods-type_soft_drinks_bottled_water_ice",
+                obj.emission_factor === "consumer_goods-type_breweries_beer",
+                obj.emission_factor === "consumer_goods-type_distilleries_spirits",
+                obj.emission_factor === "consumer_goods-type_wineries_wine",
+                obj.emission_factor === "consumer_services-type_limited_service_restaurants",
+                obj.emission_factor === "consumer_services-type_full_service_restaurants",
+                obj.emission_factor === "consumer_services-type_all_other_food_drinking_places",
+                obj.emission_factor === "consumer_goods-type_tobacco_products",
+                obj.emission_factor === "consumer_goods-type_clothing",
+                obj.emission_factor === "consumer_goods-type_books_newspapers_magazines_other_print_media",
+                obj.emission_factor === "consumer_goods-type_dolls_toys_games",
+                obj.emission_factor === "consumer_goods-type_sporting_athletic_goods",
+                obj.emission_factor === "consumer_goods-type_dog_cat_food",
+                obj.emission_factor === "health_care-type_health_personal_care_stores",
+                obj.emission_factor === "general_retail-type_general_merchandise_stores",
+                obj.emission_factor === "general_retail-type_nonstore_retailers",
+                obj.emission_factor === "general_retail-type_all_other_retail",
+                obj.emission_factor === "consumer_goods-type_dry_cleaning_laundry",
+                obj.emission_factor === "consumer_goods-type_cable_subscription_programming",
+                obj.emission_factor === "consumer_goods-type_vehicle_repair",
+                obj.emission_factor === "domestic_services-type_pet_care_photofinishing_parking_other_sundry_services",
+                obj.emission_factor === "consumer_goods-type_movies_film",
+                obj.emission_factor === "consumer_goods-type_performances",
+                obj.emission_factor === "consumer_goods-type_museums_historical_sites_zoos_parks",
+                obj.emission_factor === "consumer_goods-type_amusement_parks_arcades",
+                obj.emission_factor === "consumer_goods-type_gambling_establishments_except_casino_hotels",
+                obj.emission_factor === "consumer_goods-type_golf_courses_marinas_ski_resorts_fitness_other_rec_centers_industries"
+            ]
+            if(conditions.includes(true)) {
+                return {
+                    ...obj,
+                    parameters: {
+                        ...obj.parameters,
+                        money: obj.parameters.money * 12
+                    }
+                };
+            };
+            return obj;
+        })
+    //   dispatch(calculateFootprint(newArr));
+    };
 
     return (
         <>
@@ -634,6 +708,7 @@ function Survey() {
                     setActiveStep={setActiveStep} 
                     checked={checked} setChecked={setChecked} 
                     recreation={recreation} setRecreation={setRecreation} />} />
+                <Route path="results" element={<Results />} />
                 <Route path="*" element={<NotFound />} />
             </Routes>
             <MobileStepper 
