@@ -436,7 +436,7 @@ function Survey() {
         });
     };
 
-    const sanitizeInputConditionally = (state, setter, unit) => {
+    const sanitizeInputForUncheckedFields = (state, setter, unit) => {
         Object.keys(state).forEach(type => {
             if(!checked[type]) {
                 setter(pS => ({
@@ -465,7 +465,7 @@ function Survey() {
                 if(toggle === "false") {
                     sanitizeInput(publicTransit, setPublicTransit, "distance");
                 } else {
-                    sanitizeInputConditionally(publicTransit, setPublicTransit, "distance");
+                    sanitizeInputForUncheckedFields(publicTransit, setPublicTransit, "distance");
                 };
                 navigate('/survey/flight');
                 break;
@@ -473,7 +473,7 @@ function Survey() {
                 if(toggle === "false") {
                     sanitizeInput(flight, setFlight, "distance");
                 } else {
-                    sanitizeInputConditionally(flight, setFlight, "distance");
+                    sanitizeInputForUncheckedFields(flight, setFlight, "distance");
                 };
                 navigate('/survey/electricity');
                 break;
@@ -487,18 +487,18 @@ function Survey() {
                 navigate('/survey/food');
                 break;
             case 6:
-                sanitizeInputConditionally(foods, setFoods, "money");
+                sanitizeInputForUncheckedFields(foods, setFoods, "money");
                 navigate('/survey/beverage');
                 break;
             case 7:
-                sanitizeInputConditionally(beverages, setBeverages, "money");
+                sanitizeInputForUncheckedFields(beverages, setBeverages, "money");
                 navigate('/survey/dining');
                 break;
             case 8:
                 if(toggle === "false") {
                     sanitizeInput(dining, setDining, "money");
                 } else {
-                    sanitizeInputConditionally(dining, setDining, "money");
+                    sanitizeInputForUncheckedFields(dining, setDining, "money");
                 };
                 navigate('/survey/tobacco');
                 break;
@@ -509,15 +509,15 @@ function Survey() {
                 navigate('/survey/goods');
                 break;
             case 10:
-                sanitizeInputConditionally(goods, setGoods, "money");
+                sanitizeInputForUncheckedFields(goods, setGoods, "money");
                 navigate('/survey/services');
                 break;
             case 11:
-                sanitizeInputConditionally(services, setServices, "money");
+                sanitizeInputForUncheckedFields(services, setServices, "money");
                 navigate('/survey/recreation');
                 break;
             case 12:
-                sanitizeInputConditionally(recreation, setRecreation, "money");
+                sanitizeInputForUncheckedFields(recreation, setRecreation, "money");
                 navigate('/survey/results');
                 break;
             default:
