@@ -1,8 +1,9 @@
 import { useEffect } from 'react';
 
-function Electricity({setActiveStep, electricity, setElectricity}) {
+function Electricity({setActiveStep, setToggle, electricity, setElectricity}) {
     useEffect(() => {
         setActiveStep(3);
+        setToggle(true)
     }, []);
 
     return (

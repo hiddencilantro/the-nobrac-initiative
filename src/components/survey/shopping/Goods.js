@@ -1,9 +1,10 @@
 import { useEffect } from 'react';
 import ItemInput from '../consumption/inputs/ItemInput';
 
-function Goods({setActiveStep, checked, setChecked, goods, setGoods}) {
+function Goods({setActiveStep, setToggle, checked, setChecked, goods, setGoods}) {
     useEffect(() => {
         setActiveStep(10);
+        setToggle(true);
         setChecked({
             clothing: false,
             booksAndOtherPrint: false,

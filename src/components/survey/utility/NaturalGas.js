@@ -1,8 +1,9 @@
 import { useEffect } from 'react';
 
-function NaturalGas({setActiveStep, naturalGas, setNaturalGas}) {
+function NaturalGas({setActiveStep, setToggle, naturalGas, setNaturalGas}) {
     useEffect(() => {
         setActiveStep(4);
+        setToggle(true);
     }, []);
 
     return (

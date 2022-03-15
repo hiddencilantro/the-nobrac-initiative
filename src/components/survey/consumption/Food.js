@@ -1,9 +1,10 @@
 import { useEffect } from 'react';
 import ItemInput from './inputs/ItemInput';
 
-function Food({setActiveStep, checked, setChecked, foods, setFoods}) {    
+function Food({setActiveStep, setToggle, checked, setChecked, foods, setFoods}) {    
     useEffect(() => {
         setActiveStep(6);
+        setToggle(true);
         setChecked({
             meat: false,
             poultry: false,

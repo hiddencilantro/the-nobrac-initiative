@@ -1,9 +1,10 @@
 import { useEffect } from 'react';
 import ItemInput from '../consumption/inputs/ItemInput';
 
-function Services({setActiveStep, checked, setChecked, services, setServices}) {
+function Services({setActiveStep, setToggle, checked, setChecked, services, setServices}) {
     useEffect(() => {
         setActiveStep(11);
+        setToggle(true);
         setChecked({
             dryCleaning: false,
             subscriptions: false,

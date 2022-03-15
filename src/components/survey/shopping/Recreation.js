@@ -1,9 +1,10 @@
 import { useEffect } from 'react';
 import ItemInput from '../consumption/inputs/ItemInput';
 
-function Recreation({setActiveStep, checked, setChecked, recreation, setRecreation}) {
+function Recreation({setActiveStep, setToggle, checked, setChecked, recreation, setRecreation}) {
     useEffect(() => {
         setActiveStep(12);
+        setToggle(true);
         setChecked({
             moviesAndFilm: false,
             performances: false,

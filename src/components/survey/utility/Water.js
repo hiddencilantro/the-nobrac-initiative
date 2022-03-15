@@ -1,8 +1,9 @@
 import { useEffect } from 'react';
 
-function Water({setActiveStep, water, setWater}) {
+function Water({setActiveStep, setToggle, water, setWater}) {
     useEffect(() => {
         setActiveStep(5);
+        setToggle(true);
     }, []);
 
     return (
