@@ -1,9 +1,12 @@
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 // import { useDispatch } from 'react-redux';
+import axios from 'axios';
+
 import { MobileStepper, Button } from '@mui/material';
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
+
 import Vehicle from './survey/transport/Vehicle';
 import PublicTransit from './survey/transport/PublicTransit';
 import Flight from './survey/transport/Flight';
@@ -25,6 +28,7 @@ function Survey() {
     const [activeStep, setActiveStep] = useState(0);
     const [toggle, setToggle] = useState(null);
     const [checked, setChecked] = useState({});
+    const [results, setResults] = useState([]);
     const [vehicle, setVehicle] = useState({
         "emission_factor": "passenger_vehicle-vehicle_type_car-fuel_source_na-engine_size_na-vehicle_age_na-vehicle_weight_na",
         "parameters": {
@@ -518,7 +522,7 @@ function Survey() {
                 break;
             case 12:
                 sanitizeInputForUncheckedFields(recreation, setRecreation, "money");
-                navigate('/survey/results');
+                navigate('/survey/results', { state: 'completed' });
                 break;
             default:
                 break;
@@ -586,8 +590,8 @@ function Survey() {
         ...Object.values(recreation)
     ];
 
-    const sendDispatch = () => {
-        const newArr = userInput.map(obj => {
+    const calculateFootprint = () => {
+        const annualizedInput = userInput.map(obj => {
             const conditions = [
                 obj.emission_factor === "electricity-energy_source_electricity",
                 obj.emission_factor === "fuel_type_natural_gas-fuel_use_na",
@@ -634,7 +638,7 @@ function Survey() {
                 obj.emission_factor === "consumer_goods-type_amusement_parks_arcades",
                 obj.emission_factor === "consumer_goods-type_gambling_establishments_except_casino_hotels",
                 obj.emission_factor === "consumer_goods-type_golf_courses_marinas_ski_resorts_fitness_other_rec_centers_industries"
-            ]
+            ];
             if(conditions.includes(true)) {
                 return {
                     ...obj,
@@ -645,8 +649,10 @@ function Survey() {
                 };
             };
             return obj;
-        })
-    //   dispatch(calculateFootprint(newArr));
+        });
+        axios.get('http://localhost:8000/climatiq', {params: {annualizedInput}})
+            .then(resp => setResults(resp.data))
+            .catch(err => console.error(err));
     };
 
     return (
@@ -672,19 +678,24 @@ function Survey() {
                     flight={flight} setFlight={setFlight} />} />
                 <Route path="electricity" element={<Electricity 
                     setActiveStep={setActiveStep} 
+                    setToggle={setToggle} 
                     electricity={electricity.parameters.money} setElectricity={setElectricity} />} />
                 <Route path="natural-gas" element={<NaturalGas 
                     setActiveStep={setActiveStep} 
+                    setToggle={setToggle} 
                     naturalGas={naturalGas.parameters.money} setNaturalGas={setNaturalGas} />} />
                 <Route path="water" element={<Water 
                     setActiveStep={setActiveStep} 
+                    setToggle={setToggle} 
                     water={water.parameters.money} setWater={setWater} />} />
                 <Route path="food" element={<Food 
                     setActiveStep={setActiveStep} 
+                    setToggle={setToggle} 
                     checked={checked} setChecked={setChecked} 
                     foods={foods} setFoods={setFoods} />} />
                 <Route path="beverage" element={<Beverage 
                     setActiveStep={setActiveStep} 
+                    setToggle={setToggle} 
                     checked={checked} setChecked={setChecked} 
                     beverages={beverages} setBeverages={setBeverages} />} />
                 <Route path="dining" element={<Dining 
@@ -698,37 +709,45 @@ function Survey() {
                     tobacco={tobacco.parameters.money} setTobacco={setTobacco} />} />
                 <Route path="goods" element={<Goods 
                     setActiveStep={setActiveStep} 
+                    setToggle={setToggle} 
                     checked={checked} setChecked={setChecked} 
                     goods={goods} setGoods={setGoods} />} />
                 <Route path="services" element={<Services 
                     setActiveStep={setActiveStep} 
+                    setToggle={setToggle} 
                     checked={checked} setChecked={setChecked} 
                     services={services} setServices={setServices} />} />
                 <Route path="recreation" element={<Recreation 
                     setActiveStep={setActiveStep} 
+                    setToggle={setToggle} 
                     checked={checked} setChecked={setChecked} 
                     recreation={recreation} setRecreation={setRecreation} />} />
-                <Route path="results" element={<Results />} />
+                <Route path="results" element={<Results 
+                    setActiveStep={setActiveStep} 
+                    calculateFootprint={calculateFootprint} 
+                    results={results} />} />
                 <Route path="*" element={<NotFound />} />
             </Routes>
-            <MobileStepper 
-                variant="dots" 
-                steps={13} 
-                position="static" 
-                activeStep={activeStep} 
-                nextButton={
-                    toggle !== null ? 
-                    <Button size="small" onClick={handleNext}>
-                        Next<KeyboardArrowRight />
-                    </Button> 
-                    : null
-                } 
-                backButton={
-                    <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
-                        <KeyboardArrowLeft />Back
-                    </Button>
-                } 
-            />
+            {activeStep !== 13 ? 
+                <MobileStepper 
+                    variant="dots" 
+                    steps={13} 
+                    position="static" 
+                    activeStep={activeStep} 
+                    nextButton={
+                        toggle !== null ? 
+                        <Button size="small" onClick={handleNext}>
+                            Next<KeyboardArrowRight />
+                        </Button> 
+                        : null
+                    } 
+                    backButton={
+                        <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
+                            <KeyboardArrowLeft />Back
+                        </Button>
+                    } 
+                />
+                : null}
         </>
     );
 }
