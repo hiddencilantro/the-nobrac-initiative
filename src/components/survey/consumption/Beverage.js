@@ -1,9 +1,10 @@
 import { useEffect } from 'react';
 import ItemInput from './inputs/ItemInput';
 
-function Beverage({setActiveStep, checked, setChecked, beverages, setBeverages}) {
+function Beverage({setActiveStep, setToggle, checked, setChecked, beverages, setBeverages}) {
     useEffect(() => {
         setActiveStep(7);
+        setToggle(true);
         setChecked({
             coffeeAndTea: false,
             softDrinksAndBottledWater: false,
