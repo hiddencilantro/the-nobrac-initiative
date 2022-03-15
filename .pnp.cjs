@@ -40,7 +40,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@testing-library/jest-dom", "npm:5.16.2"],\
             ["@testing-library/react", "virtual:71bff9dce15a6e6987204de0c5661e4798bb9a4dc5ce169bee6a24beb4b2ab819f6a397c380142bce8454ebcfd425ae0d7c6c79c696273d018a92522f4543100#npm:12.1.3"],\
             ["@testing-library/user-event", "virtual:71bff9dce15a6e6987204de0c5661e4798bb9a4dc5ce169bee6a24beb4b2ab819f6a397c380142bce8454ebcfd425ae0d7c6c79c696273d018a92522f4543100#npm:13.5.0"],\
+            ["axios", "npm:0.26.1"],\
+            ["chart.js", "npm:3.7.1"],\
             ["react", "npm:17.0.2"],\
+            ["react-chartjs-2", "virtual:71bff9dce15a6e6987204de0c5661e4798bb9a4dc5ce169bee6a24beb4b2ab819f6a397c380142bce8454ebcfd425ae0d7c6c79c696273d018a92522f4543100#npm:4.0.1"],\
             ["react-dom", "virtual:71bff9dce15a6e6987204de0c5661e4798bb9a4dc5ce169bee6a24beb4b2ab819f6a397c380142bce8454ebcfd425ae0d7c6c79c696273d018a92522f4543100#npm:17.0.2"],\
             ["react-router-dom", "virtual:71bff9dce15a6e6987204de0c5661e4798bb9a4dc5ce169bee6a24beb4b2ab819f6a397c380142bce8454ebcfd425ae0d7c6c79c696273d018a92522f4543100#npm:6.2.1"],\
             ["react-scripts", "virtual:71bff9dce15a6e6987204de0c5661e4798bb9a4dc5ce169bee6a24beb4b2ab819f6a397c380142bce8454ebcfd425ae0d7c6c79c696273d018a92522f4543100#npm:5.0.0"],\
@@ -5750,6 +5753,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["axios", [\
+        ["npm:0.26.1", {\
+          "packageLocation": "./.yarn/cache/axios-npm-0.26.1-a6641ce4e3-d9eb58ff4b.zip/node_modules/axios/",\
+          "packageDependencies": [\
+            ["axios", "npm:0.26.1"],\
+            ["follow-redirects", "virtual:a6641ce4e3bdcc0997f8f53d9481b67c5d38e21276de8eeee7bf92881685b3ad5600bae416c2af904ceab8132bac649e7efd0af93f18e158e0e65ee05a263d72#npm:1.14.9"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["axobject-query", [\
         ["npm:2.2.0", {\
           "packageLocation": "./.yarn/cache/axobject-query-npm-2.2.0-6553738f52-96b8c7d807.zip/node_modules/axobject-query/",\
@@ -6451,6 +6464,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/charcodes-npm-0.2.0-bb93ba6b42-972443ed35.zip/node_modules/charcodes/",\
           "packageDependencies": [\
             ["charcodes", "npm:0.2.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["chart.js", [\
+        ["npm:3.7.1", {\
+          "packageLocation": "./.yarn/cache/chart.js-npm-3.7.1-d41a8d2375-f9d118d3b7.zip/node_modules/chart.js/",\
+          "packageDependencies": [\
+            ["chart.js", "npm:3.7.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -8931,10 +8953,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:a313c479c5c7e54d9ec8fbeeea69ff640f56b8989ea2dff42351a3fa5c4061fb80a52d8ede0f0826a181a216820c2d2c3f15da881e7fdf31cef1c446e42f0c45#npm:1.14.9", {\
-          "packageLocation": "./.yarn/__virtual__/follow-redirects-virtual-0b008d299e/0/cache/follow-redirects-npm-1.14.9-522f191631-f5982e0eb4.zip/node_modules/follow-redirects/",\
+        ["virtual:a6641ce4e3bdcc0997f8f53d9481b67c5d38e21276de8eeee7bf92881685b3ad5600bae416c2af904ceab8132bac649e7efd0af93f18e158e0e65ee05a263d72#npm:1.14.9", {\
+          "packageLocation": "./.yarn/__virtual__/follow-redirects-virtual-2db68225c5/0/cache/follow-redirects-npm-1.14.9-522f191631-f5982e0eb4.zip/node_modules/follow-redirects/",\
           "packageDependencies": [\
-            ["follow-redirects", "virtual:a313c479c5c7e54d9ec8fbeeea69ff640f56b8989ea2dff42351a3fa5c4061fb80a52d8ede0f0826a181a216820c2d2c3f15da881e7fdf31cef1c446e42f0c45#npm:1.14.9"],\
+            ["follow-redirects", "virtual:a6641ce4e3bdcc0997f8f53d9481b67c5d38e21276de8eeee7bf92881685b3ad5600bae416c2af904ceab8132bac649e7efd0af93f18e158e0e65ee05a263d72#npm:1.14.9"],\
             ["@types/debug", null],\
             ["debug", null]\
           ],\
@@ -9585,7 +9607,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["http-proxy", "npm:1.18.1"],\
             ["eventemitter3", "npm:4.0.7"],\
-            ["follow-redirects", "virtual:a313c479c5c7e54d9ec8fbeeea69ff640f56b8989ea2dff42351a3fa5c4061fb80a52d8ede0f0826a181a216820c2d2c3f15da881e7fdf31cef1c446e42f0c45#npm:1.14.9"],\
+            ["follow-redirects", "virtual:a6641ce4e3bdcc0997f8f53d9481b67c5d38e21276de8eeee7bf92881685b3ad5600bae416c2af904ceab8132bac649e7efd0af93f18e158e0e65ee05a263d72#npm:1.14.9"],\
             ["requires-port", "npm:1.0.0"]\
           ],\
           "linkType": "HARD"\
@@ -14257,6 +14279,32 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["react-chartjs-2", [\
+        ["npm:4.0.1", {\
+          "packageLocation": "./.yarn/cache/react-chartjs-2-npm-4.0.1-983e91d0ad-c22e994c73.zip/node_modules/react-chartjs-2/",\
+          "packageDependencies": [\
+            ["react-chartjs-2", "npm:4.0.1"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:71bff9dce15a6e6987204de0c5661e4798bb9a4dc5ce169bee6a24beb4b2ab819f6a397c380142bce8454ebcfd425ae0d7c6c79c696273d018a92522f4543100#npm:4.0.1", {\
+          "packageLocation": "./.yarn/__virtual__/react-chartjs-2-virtual-d7d07b433e/0/cache/react-chartjs-2-npm-4.0.1-983e91d0ad-c22e994c73.zip/node_modules/react-chartjs-2/",\
+          "packageDependencies": [\
+            ["react-chartjs-2", "virtual:71bff9dce15a6e6987204de0c5661e4798bb9a4dc5ce169bee6a24beb4b2ab819f6a397c380142bce8454ebcfd425ae0d7c6c79c696273d018a92522f4543100#npm:4.0.1"],\
+            ["@types/chart.js", null],\
+            ["@types/react", null],\
+            ["chart.js", "npm:3.7.1"],\
+            ["react", "npm:17.0.2"]\
+          ],\
+          "packagePeers": [\
+            "@types/chart.js",\
+            "@types/react",\
+            "chart.js",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["react-dev-utils", [\
         ["npm:12.0.0", {\
           "packageLocation": "./.yarn/cache/react-dev-utils-npm-12.0.0-d1d89d289f-d3be371c8e.zip/node_modules/react-dev-utils/",\
@@ -16012,7 +16060,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@testing-library/jest-dom", "npm:5.16.2"],\
             ["@testing-library/react", "virtual:71bff9dce15a6e6987204de0c5661e4798bb9a4dc5ce169bee6a24beb4b2ab819f6a397c380142bce8454ebcfd425ae0d7c6c79c696273d018a92522f4543100#npm:12.1.3"],\
             ["@testing-library/user-event", "virtual:71bff9dce15a6e6987204de0c5661e4798bb9a4dc5ce169bee6a24beb4b2ab819f6a397c380142bce8454ebcfd425ae0d7c6c79c696273d018a92522f4543100#npm:13.5.0"],\
+            ["axios", "npm:0.26.1"],\
+            ["chart.js", "npm:3.7.1"],\
             ["react", "npm:17.0.2"],\
+            ["react-chartjs-2", "virtual:71bff9dce15a6e6987204de0c5661e4798bb9a4dc5ce169bee6a24beb4b2ab819f6a397c380142bce8454ebcfd425ae0d7c6c79c696273d018a92522f4543100#npm:4.0.1"],\
             ["react-dom", "virtual:71bff9dce15a6e6987204de0c5661e4798bb9a4dc5ce169bee6a24beb4b2ab819f6a397c380142bce8454ebcfd425ae0d7c6c79c696273d018a92522f4543100#npm:17.0.2"],\
             ["react-router-dom", "virtual:71bff9dce15a6e6987204de0c5661e4798bb9a4dc5ce169bee6a24beb4b2ab819f6a397c380142bce8454ebcfd425ae0d7c6c79c696273d018a92522f4543100#npm:6.2.1"],\
             ["react-scripts", "virtual:71bff9dce15a6e6987204de0c5661e4798bb9a4dc5ce169bee6a24beb4b2ab819f6a397c380142bce8454ebcfd425ae0d7c6c79c696273d018a92522f4543100#npm:5.0.0"],\
