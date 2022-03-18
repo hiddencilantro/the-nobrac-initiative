@@ -14,10 +14,20 @@ export const createUser = newUser => {
     return dispatch => {
         axios.post(baseURL+'/users', newUser)
         .then(res => {
+            if(res.status !== 201) {
+                throw Error("Something went wrong.");
+            }; // for any 2xx status code that wasn't intended
             localStorage.setItem("jwt", res.data.jwt);
             dispatch(setUser(res.data.user));
+            alert("Your account was created!"); // poor UX
         })
-        .catch(err => console.error(err));
+        .catch(err => {
+            if(err.response.status === 422) {
+                alert(err.response.data.join(', '));
+            } else {
+                console.error(err);
+            };
+        });
     };
 };
 
@@ -25,10 +35,19 @@ export const findUser = user => {
     return dispatch => {
         axios.post(baseURL+'/login', user)
         .then(res => {
+            if(res.status !== 201) {
+                throw Error("Something went wrong.");
+            };
             localStorage.setItem("jwt", res.data.jwt);
             dispatch(setUser(res.data.user));
         })
-        .catch(err => console.error(err));
+        .catch(err => {
+            if(err.response.status === 401 || err.response.status === 404) {
+                alert(err.response.data.message);
+            } else {
+                console.error(err);
+            };
+        });
     };
 };
 
@@ -40,8 +59,19 @@ export const getFootprints = id => {
                 Authorization: `Bearer ${token}`
             }
         })
-        .then(res => dispatch(setFootprints(res.data.footprints)))
-        .catch(err => console.error(err));
+        .then(res => {
+            if(res.status !== 202) {
+                throw Error("Something went wrong.");
+            };
+            dispatch(setFootprints(res.data.footprints));
+        })
+        .catch(err => {
+            if(err.response.status === 401) {
+                alert(err.response.data.message);
+            } else {
+                console.error(err);
+            };
+        });
     };
 }
 
@@ -53,7 +83,20 @@ export const createFootprint = result => {
                 Authorization: `Bearer ${token}`
             }
         })
-        .then(res => dispatch(addFootprint(res.data.footprint)))
-        .catch(err => console.error(err));
+        .then(res => {
+            if(res.status !== 201) {
+                throw Error("Something went wrong.");
+            };
+            dispatch(addFootprint(res.data.footprint));
+        })
+        .catch(err => {
+            if(err.response.status === 422) {
+                alert(err.response.data.join(', '));
+            } else if (err.response.status === 401) {
+                alert(err.response.data.message);
+            } else {
+                console.error(err);
+            };
+        });
     };
 };
