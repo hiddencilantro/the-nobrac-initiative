@@ -49,6 +49,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-router-dom", "virtual:71bff9dce15a6e6987204de0c5661e4798bb9a4dc5ce169bee6a24beb4b2ab819f6a397c380142bce8454ebcfd425ae0d7c6c79c696273d018a92522f4543100#npm:6.2.1"],\
             ["react-scripts", "virtual:71bff9dce15a6e6987204de0c5661e4798bb9a4dc5ce169bee6a24beb4b2ab819f6a397c380142bce8454ebcfd425ae0d7c6c79c696273d018a92522f4543100#npm:5.0.0"],\
             ["redux", "npm:4.1.2"],\
+            ["redux-persist", "virtual:71bff9dce15a6e6987204de0c5661e4798bb9a4dc5ce169bee6a24beb4b2ab819f6a397c380142bce8454ebcfd425ae0d7c6c79c696273d018a92522f4543100#npm:6.0.0"],\
             ["redux-thunk", "virtual:71bff9dce15a6e6987204de0c5661e4798bb9a4dc5ce169bee6a24beb4b2ab819f6a397c380142bce8454ebcfd425ae0d7c6c79c696273d018a92522f4543100#npm:2.4.1"],\
             ["web-vitals", "npm:2.1.4"]\
           ],\
@@ -14690,6 +14691,32 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["redux-persist", [\
+        ["npm:6.0.0", {\
+          "packageLocation": "./.yarn/cache/redux-persist-npm-6.0.0-56dad69feb-edaf10dbf1.zip/node_modules/redux-persist/",\
+          "packageDependencies": [\
+            ["redux-persist", "npm:6.0.0"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:71bff9dce15a6e6987204de0c5661e4798bb9a4dc5ce169bee6a24beb4b2ab819f6a397c380142bce8454ebcfd425ae0d7c6c79c696273d018a92522f4543100#npm:6.0.0", {\
+          "packageLocation": "./.yarn/__virtual__/redux-persist-virtual-48d467f140/0/cache/redux-persist-npm-6.0.0-56dad69feb-edaf10dbf1.zip/node_modules/redux-persist/",\
+          "packageDependencies": [\
+            ["redux-persist", "virtual:71bff9dce15a6e6987204de0c5661e4798bb9a4dc5ce169bee6a24beb4b2ab819f6a397c380142bce8454ebcfd425ae0d7c6c79c696273d018a92522f4543100#npm:6.0.0"],\
+            ["@types/react", null],\
+            ["@types/redux", null],\
+            ["react", "npm:17.0.2"],\
+            ["redux", "npm:4.1.2"]\
+          ],\
+          "packagePeers": [\
+            "@types/react",\
+            "@types/redux",\
+            "react",\
+            "redux"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["redux-thunk", [\
         ["npm:2.4.1", {\
           "packageLocation": "./.yarn/cache/redux-thunk-npm-2.4.1-2ba08bf615-af5abb425f.zip/node_modules/redux-thunk/",\
@@ -16172,6 +16199,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-router-dom", "virtual:71bff9dce15a6e6987204de0c5661e4798bb9a4dc5ce169bee6a24beb4b2ab819f6a397c380142bce8454ebcfd425ae0d7c6c79c696273d018a92522f4543100#npm:6.2.1"],\
             ["react-scripts", "virtual:71bff9dce15a6e6987204de0c5661e4798bb9a4dc5ce169bee6a24beb4b2ab819f6a397c380142bce8454ebcfd425ae0d7c6c79c696273d018a92522f4543100#npm:5.0.0"],\
             ["redux", "npm:4.1.2"],\
+            ["redux-persist", "virtual:71bff9dce15a6e6987204de0c5661e4798bb9a4dc5ce169bee6a24beb4b2ab819f6a397c380142bce8454ebcfd425ae0d7c6c79c696273d018a92522f4543100#npm:6.0.0"],\
             ["redux-thunk", "virtual:71bff9dce15a6e6987204de0c5661e4798bb9a4dc5ce169bee6a24beb4b2ab819f6a397c380142bce8454ebcfd425ae0d7c6c79c696273d018a92522f4543100#npm:2.4.1"],\
             ["web-vitals", "npm:2.1.4"]\
           ],\
