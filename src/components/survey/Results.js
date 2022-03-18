@@ -1,11 +1,15 @@
 import { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 import 'chart.js/auto';
 import { Doughnut } from 'react-chartjs-2';
+import { createFootprint } from '../../redux/actions/actionCreators';
 
-function Results({setActiveStep, calculateFootprint, results}) {
+function Results({setActiveStep, calculateFootprint, results, setSignup}) {
     const location = useLocation();
     const navigate = useNavigate();
+    const user = useSelector(state => state.user);
+    const dispatch = useDispatch();
 
     useEffect(() => {
         setActiveStep(13);
@@ -13,11 +17,11 @@ function Results({setActiveStep, calculateFootprint, results}) {
         if(location.state !== 'completed') {
             navigate('/survey/vehicle');
         };
-    }, [])
+    }, []);
 
     const co2eTotal = parseFloat((results.reduce((pV, cV) => pV + cV.co2e, 0) / 1000).toFixed(1));
-    const compareToAvgUS = Math.round((co2eTotal - 20)/20*100)
-    const compareToAvgWorld = Math.round((co2eTotal - 4)/4*100)
+    const compareToAvgUS = Math.round((co2eTotal - 14)/14*100)
+    const compareToAvgWorld = Math.round((co2eTotal - 4.5)/4.5*100)
 
     const co2eVehicle = parseFloat((results.slice(0, 1).reduce((pV, cV) => pV + cV.co2e, 0) / 1000).toFixed(1));
     const co2ePublicTransit = parseFloat((results.slice(1, 5).reduce((pV, cV) => pV + cV.co2e, 0) / 1000).toFixed(1));
@@ -207,6 +211,32 @@ function Results({setActiveStep, calculateFootprint, results}) {
         }
     };
 
+    const handleSave = () => {
+        if(user) {
+            dispatch(createFootprint({
+                footprint: {
+                    total: co2eTotal,
+                    vehicle: co2eVehicle,
+                    publictransit: co2ePublicTransit,
+                    flight: co2eFlight,
+                    electricity: co2eFlight,
+                    naturalgas: co2eNaturalGas,
+                    water: co2eWater,
+                    food: co2eFood,
+                    beverages: co2eBeverages,
+                    dining: co2eDining,
+                    tobacco: co2eTobacco,
+                    goods: co2eGoods,
+                    services: co2eServices,
+                    recreation: co2eRecreation
+                }
+            }));
+            navigate('/footprints')
+        } else {
+            setSignup(pS => !pS)
+        };
+    };
+
     return (
         <div>
             <p>Your total CO₂e (carbon dioxide equivalent): {co2eTotal} metric tons.</p>
@@ -223,7 +253,7 @@ function Results({setActiveStep, calculateFootprint, results}) {
             <div style={{width: "600px"}}>
                 <Doughnut data={data} options={options} />
             </div>
-            <button type="button">Save My Result</button>
+            <button type="button" onClick={handleSave} >Save My Result</button>
             <h3>How can I reduce my carbon footprint?</h3>
             <ul>
                 <li>
