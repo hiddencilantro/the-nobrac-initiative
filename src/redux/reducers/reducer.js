@@ -1,9 +1,11 @@
-import { SET_USER, SET_FOOTPRINTS, ADD_FOOTPRINT } from '../actions/actionTypes';
+import { SET_USER, SET_FOOTPRINTS, ADD_FOOTPRINT, LOGOUT } from '../actions/actionTypes';
 
-export default function reducer(state = {
+const initialState = {
     user: null,
     footprints: []
-}, action) {
+}
+
+export default function reducer(state = initialState, action) {
     switch(action.type) {
         case SET_USER:
             return {
@@ -20,6 +22,8 @@ export default function reducer(state = {
                 ...state,
                 footprints: [...state.footprints, action.payload]
             };
+        case LOGOUT:
+            return initialState;
         default:
             return state;
     };

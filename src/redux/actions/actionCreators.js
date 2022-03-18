@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { SET_USER, SET_FOOTPRINTS, ADD_FOOTPRINT } from './actionTypes';
+import { SET_USER, SET_FOOTPRINTS, ADD_FOOTPRINT, LOGOUT } from './actionTypes';
 
 const baseURL = 'http://localhost:3001/api/v1';
 
@@ -7,6 +7,7 @@ const baseURL = 'http://localhost:3001/api/v1';
 export const setUser = user => ({type: SET_USER, payload: user});
 export const setFootprints = footprints => ({type: SET_FOOTPRINTS, payload: footprints})
 export const addFootprint = footprint => ({type: ADD_FOOTPRINT, payload: footprint});
+export const logout = () => ({type: LOGOUT});
 
 //thunk
 export const createUser = newUser => {

@@ -17,9 +17,9 @@ function App() {
 
   return (
     <div className="App">
-      <NavBar />
       <Signup signup={signup} setSignup={setSignup} setLogin={setLogin} />
       <Login login={login} setLogin={setLogin} setSignup={setSignup} />
+      <NavBar setLogin={setLogin} />
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="mission" element={<Mission />} />
