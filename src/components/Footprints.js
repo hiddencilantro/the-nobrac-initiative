@@ -17,7 +17,7 @@ function Footprints({setLogin}) {
     
         return (
             <div>
-                <h3>My Carbon Footprints</h3>
+                <h3>{user.first_name}'s Carbon Footprints</h3>
                 <div>
                     <ul>
                         {previousFootprints}
