@@ -9,7 +9,7 @@ function Mission() {
     const [more, setMore] = useState(false);
     return (
         <div>
-            <h3>Every change begins with awareness</h3>
+            <h3>It starts with awareness</h3>
             <p>
                 Climate change is real. In fact, the term is often used interchangeably with global warming even though they have distinct meanings.
             </p>
