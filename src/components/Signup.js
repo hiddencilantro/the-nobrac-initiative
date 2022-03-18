@@ -22,7 +22,6 @@ function Signup({signup, setSignup, setLogin}) {
     const handleSubmit = e => {
         e.preventDefault();
         dispatch(createUser({user: newUser}));
-        alert("Your account was created!");
         setSignup(pS => !pS);
     };
 
