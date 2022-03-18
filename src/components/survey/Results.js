@@ -96,10 +96,7 @@ function Results({setActiveStep, calculateFootprint, results, setSignup}) {
             {
                 label: 'GHG emission by sub-sector',
                 data: [
-                    null,
-                    null,
-                    null,
-                    null,
+                    null, null, null, null,
                     co2eVehicle, 
                     co2ePublicTransit, 
                     co2eFlight, 
