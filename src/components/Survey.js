@@ -1,6 +1,5 @@
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-// import { useDispatch } from 'react-redux';
 import axios from 'axios';
 
 import { MobileStepper, Button } from '@mui/material';
@@ -23,7 +22,7 @@ import Recreation from './survey/shopping/Recreation';
 import Results from './survey/Results';
 import NotFound from './NotFound';
 
-function Survey() {
+function Survey({setSignup}) {
     const navigate = useNavigate();
     const [activeStep, setActiveStep] = useState(0);
     const [toggle, setToggle] = useState(null);
@@ -572,8 +571,6 @@ function Survey() {
         };
     };
 
-    // const dispatch = useDispatch();
-
     const userInput = [
         vehicle,
         ...Object.values(publicTransit),
@@ -725,7 +722,8 @@ function Survey() {
                 <Route path="results" element={<Results 
                     setActiveStep={setActiveStep} 
                     calculateFootprint={calculateFootprint} 
-                    results={results} />} />
+                    results={results}
+                    setSignup={setSignup} />} />
                 <Route path="*" element={<NotFound />} />
             </Routes>
             {activeStep !== 13 ? 
