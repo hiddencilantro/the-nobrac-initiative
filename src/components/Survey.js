@@ -728,16 +728,14 @@ function Survey({setSignup}) {
             </Routes>
             {activeStep !== 13 ? 
                 <MobileStepper 
-                    variant="dots" 
+                    variant="text" 
                     steps={13} 
                     position="static" 
                     activeStep={activeStep} 
                     nextButton={
-                        toggle !== null ? 
-                        <Button size="small" onClick={handleNext}>
+                        <Button size="small" onClick={handleNext} disabled={toggle === null} >
                             Next<KeyboardArrowRight />
                         </Button> 
-                        : null
                     } 
                     backButton={
                         <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
