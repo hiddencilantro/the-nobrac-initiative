@@ -228,9 +228,9 @@ function Results({setActiveStep, calculateFootprint, results, setSignup}) {
                     recreation: co2eRecreation
                 }
             }));
-            navigate('/footprints')
+            navigate('/footprints');
         } else {
-            setSignup(pS => !pS)
+            setSignup(pS => !pS);
         };
     };
 
