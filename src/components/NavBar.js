@@ -22,9 +22,6 @@ function NavBar({setLogin}) {
                 <NavLink to="/footprints">My Carbon Footprints</NavLink>
                 : null}
             {user ? 
-                null
-                : <button type="button">Sign up</button>}
-            {user ? 
                 <button type="button" onClick={handleLogout} >Logout</button>
                 : <button type="button" onClick={() => setLogin(pS => !pS)}>Log in</button>}
         </nav>
