@@ -216,7 +216,7 @@ function Results({setActiveStep, calculateFootprint, results, setSignup}) {
                     vehicle: co2eVehicle,
                     publictransit: co2ePublicTransit,
                     flight: co2eFlight,
-                    electricity: co2eFlight,
+                    electricity: co2eElectricity,
                     naturalgas: co2eNaturalGas,
                     water: co2eWater,
                     food: co2eFood,
