@@ -10,7 +10,7 @@ export const addFootprint = footprint => ({type: ADD_FOOTPRINT, payload: footpri
 export const logout = () => ({type: LOGOUT});
 
 //thunk
-export const createUser = newUser => {
+export const createUser = (newUser, setSuccess, setError, setSignup) => {
     return dispatch => {
         axios.post(baseURL+'/users', newUser)
         .then(res => {
@@ -19,11 +19,12 @@ export const createUser = newUser => {
             }; // for any 2xx status code that wasn't intended
             localStorage.setItem("jwt", res.data.jwt);
             dispatch(setUser(res.data.user));
-            alert("Your account was created!"); // poor UX
+            setSuccess(pS => !pS);
+            setSignup(pS => !pS);
         })
         .catch(err => {
             if(err.response.status === 422) {
-                alert(err.response.data.join(', '));
+                setError(pS => ({open: !pS.open, msg: err.response.data}));
             } else {
                 console.error(err);
             };
@@ -31,7 +32,7 @@ export const createUser = newUser => {
     };
 };
 
-export const findUser = user => {
+export const findUser = (user, setSuccess, setError, setLogin) => {
     return dispatch => {
         axios.post(baseURL+'/login', user)
         .then(res => {
@@ -40,10 +41,12 @@ export const findUser = user => {
             };
             localStorage.setItem("jwt", res.data.jwt);
             dispatch(setUser(res.data.user));
+            setSuccess(pS => !pS);
+            setLogin(pS => !pS);
         })
         .catch(err => {
             if(err.response.status === 401 || err.response.status === 404) {
-                alert(err.response.data.message);
+                setError(pS => ({open: !pS.open, msg: err.response.data.message}));
             } else {
                 console.error(err);
             };
