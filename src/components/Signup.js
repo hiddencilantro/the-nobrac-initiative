@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { Modal, Dialog, Alert } from '@mui/material'
+import { Drawer, Dialog, Snackbar, Alert } from '@mui/material'
 import { createUser } from '../redux/actions/actionCreators';
 
 function Signup({signup, setSignup, setLogin}) {
@@ -31,9 +31,16 @@ function Signup({signup, setSignup, setLogin}) {
         setLogin(pS => !pS);
     }
 
+    const handleSnackbar = (e, reason) => {
+        if(reason === 'clickaway') {
+            return;
+        };
+        setSuccess(pS => !pS);
+    };
+
     return (
         <>
-            <Modal open={signup}>
+            <Drawer anchor={"right"} open={signup} >
                 <div>
                     <button type="button" onClick={() => setSignup(pS => !pS)}>X</button>
                     <form onSubmit={handleSubmit} >
@@ -45,12 +52,12 @@ function Signup({signup, setSignup, setLogin}) {
                     </form>
                     <span>Already have an account?</span><button type="button" onClick={handleLogin} >Log in</button>
                 </div>
-            </Modal>
-            <Dialog open={success} >
-                <Alert severity="success" onClose={() => setSuccess(pS => !pS)} >
+            </Drawer>
+            <Snackbar open={success} autoHideDuration={3000} onClose={handleSnackbar} anchorOrigin={{vertical: "top", horizontal: "center"}} >
+                <Alert severity="success" onClose={handleSnackbar} >
                     Account successfully created
                 </Alert>
-            </Dialog>
+            </Snackbar>
             <Dialog open={error.open} >
                 <Alert severity="error" onClose={() => setError(pS => ({open: !pS.open, msg: []}))} >
                     <ul>
