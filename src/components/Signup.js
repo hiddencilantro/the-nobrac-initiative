@@ -54,7 +54,7 @@ function Signup({signup, setSignup, setLogin}) {
             <Dialog open={error.open} >
                 <Alert severity="error" onClose={() => setError(pS => ({open: !pS.open, msg: []}))} >
                     <ul>
-                        {error.msg.map(msg => <li>{msg}</li>)}
+                        {error.msg.map((msg, idx) => <li key={idx}>{msg}</li>)}
                     </ul>
                 </Alert>
             </Dialog>
