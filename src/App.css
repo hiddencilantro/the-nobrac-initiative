@@ -4,3 +4,7 @@
   align-items: center;
   text-align: center;
 }
+
+.navbar a {
+    margin: 5px;
+}
