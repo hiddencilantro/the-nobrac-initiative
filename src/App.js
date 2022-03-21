@@ -23,7 +23,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="mission" element={<Mission />} />
-        <Route path="survey/*" element={<Survey setSignup={setSignup} />} />
+        <Route path="survey/*" element={<Survey setLogin={setLogin} />} />
         <Route path="footprints" element={<Footprints setLogin={setLogin} />} >
           <Route path=":emissionId" element={<EmissionData />} />
         </Route>

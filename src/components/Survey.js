@@ -22,7 +22,7 @@ import Recreation from './survey/shopping/Recreation';
 import Results from './survey/Results';
 import NotFound from './NotFound';
 
-function Survey({setSignup}) {
+function Survey({setLogin}) {
     const navigate = useNavigate();
     const [activeStep, setActiveStep] = useState(0);
     const [toggle, setToggle] = useState(null);
@@ -723,7 +723,7 @@ function Survey({setSignup}) {
                     setActiveStep={setActiveStep} 
                     calculateFootprint={calculateFootprint} 
                     results={results}
-                    setSignup={setSignup} />} />
+                    setLogin={setLogin} />} />
                 <Route path="*" element={<NotFound />} />
             </Routes>
             {activeStep !== 13 ? 

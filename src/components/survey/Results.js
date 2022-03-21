@@ -5,7 +5,7 @@ import 'chart.js/auto';
 import { Doughnut } from 'react-chartjs-2';
 import { createFootprint } from '../../redux/actions/actionCreators';
 
-function Results({setActiveStep, calculateFootprint, results, setSignup}) {
+function Results({setActiveStep, calculateFootprint, results, setLogin}) {
     const location = useLocation();
     const navigate = useNavigate();
     const user = useSelector(state => state.user);
@@ -230,7 +230,7 @@ function Results({setActiveStep, calculateFootprint, results, setSignup}) {
             }));
             navigate('/footprints');
         } else {
-            setSignup(pS => !pS);
+            setLogin(pS => !pS);
         };
     };
 
