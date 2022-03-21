@@ -1,12 +1,13 @@
 import axios from 'axios';
-import { SET_USER, SET_FOOTPRINTS, ADD_FOOTPRINT, LOGOUT } from './actionTypes';
+import { SET_USER, SET_FOOTPRINTS, ADD_FOOTPRINT, LOGOUT, DELETE_FOOTPRINT } from './actionTypes';
 
 const baseURL = 'http://localhost:3001/api/v1';
 
 //POJO actions
 export const setUser = user => ({type: SET_USER, payload: user});
-export const setFootprints = footprints => ({type: SET_FOOTPRINTS, payload: footprints})
+export const setFootprints = footprints => ({type: SET_FOOTPRINTS, payload: footprints});
 export const addFootprint = footprint => ({type: ADD_FOOTPRINT, payload: footprint});
+export const deleteFootprint = id => ({type: DELETE_FOOTPRINT, payload: id});
 export const logout = () => ({type: LOGOUT});
 
 //thunk
@@ -76,9 +77,9 @@ export const getFootprints = id => {
             };
         });
     };
-}
+};
 
-export const createFootprint = result => {
+export const createFootprint = (result, setSuccess) => {
     const token = localStorage.getItem("jwt");
     return dispatch => {
         axios.post(baseURL+'/footprints', result, {
@@ -91,11 +92,34 @@ export const createFootprint = result => {
                 throw Error("Something went wrong.");
             };
             dispatch(addFootprint(res.data.footprint));
+            setSuccess(pS => !pS);
         })
         .catch(err => {
             if(err.response.status === 422) {
                 alert(err.response.data.join(', '));
             } else if (err.response.status === 401) {
+                alert(err.response.data.message);
+            } else {
+                console.error(err);
+            };
+        });
+    };
+};
+
+export const destroyFootprint = (id, setSuccess) => {
+    const token = localStorage.getItem("jwt");
+    return dispatch => {
+        axios.delete(baseURL+`/footprints/${id}`, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+        .then(res => {
+            dispatch(deleteFootprint(id));
+            setSuccess(pS => !pS);
+        })
+        .catch(err => {
+            if(err.response.status === 401 || err.response.status === 404) {
                 alert(err.response.data.message);
             } else {
                 console.error(err);

@@ -1,4 +1,4 @@
-import { SET_USER, SET_FOOTPRINTS, ADD_FOOTPRINT, LOGOUT } from '../actions/actionTypes';
+import { SET_USER, SET_FOOTPRINTS, ADD_FOOTPRINT, DELETE_FOOTPRINT, LOGOUT } from '../actions/actionTypes';
 
 const initialState = {
     user: null,
@@ -21,6 +21,12 @@ export default function reducer(state = initialState, action) {
             return {
                 ...state,
                 footprints: [...state.footprints, action.payload]
+            };
+        case DELETE_FOOTPRINT:
+            const idx = state.footprints.findIndex(f => f.id === action.payload);
+            return {
+                ...state,
+                footprints: [...state.footprints.slice(0, idx), ...state.footprints.slice(idx + 1)]
             };
         case LOGOUT:
             return initialState;

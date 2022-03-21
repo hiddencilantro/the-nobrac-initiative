@@ -14,6 +14,8 @@ import NotFound from './components/NotFound';
 function App() {
   const [signup, setSignup] = useState(false);
   const [login, setLogin] = useState(false);
+  const [createSuccess, setCreateSuccess] = useState(false);
+  const [deleteSuccess, setDeleteSuccess] = useState(false);
 
   return (
     <div className="App">
@@ -23,9 +25,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="mission" element={<Mission />} />
-        <Route path="survey/*" element={<Survey setLogin={setLogin} />} />
-        <Route path="footprints" element={<Footprints setLogin={setLogin} />} >
-          <Route path=":emissionId" element={<EmissionData />} />
+        <Route path="survey/*" element={<Survey setLogin={setLogin} setCreateSuccess={setCreateSuccess} />} />
+        <Route path="footprints" element={<Footprints setLogin={setLogin} 
+            createSuccess={createSuccess} setCreateSuccess={setCreateSuccess} 
+            deleteSuccess={deleteSuccess} setDeleteSuccess={setDeleteSuccess} />} >
+          <Route path=":emissionId" element={<EmissionData setDeleteSuccess={setDeleteSuccess} />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>

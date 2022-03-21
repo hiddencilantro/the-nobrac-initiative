@@ -5,7 +5,7 @@ import 'chart.js/auto';
 import { Doughnut } from 'react-chartjs-2';
 import { createFootprint } from '../../redux/actions/actionCreators';
 
-function Results({setActiveStep, calculateFootprint, results, setLogin}) {
+function Results({setActiveStep, calculateFootprint, results, setLogin, setCreateSuccess}) {
     const location = useLocation();
     const navigate = useNavigate();
     const user = useSelector(state => state.user);
@@ -227,7 +227,7 @@ function Results({setActiveStep, calculateFootprint, results, setLogin}) {
                     services: co2eServices,
                     recreation: co2eRecreation
                 }
-            }));
+            }, setCreateSuccess));
             navigate('/footprints');
         } else {
             setLogin(pS => !pS);
