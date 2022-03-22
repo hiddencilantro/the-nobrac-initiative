@@ -8,14 +8,12 @@ import Landing from './components/Landing';
 import Mission from './components/Mission';
 import Survey from './components/Survey';
 import Footprints from './components/Footprints';
-import EmissionData from './components/EmissionData';
 import NotFound from './components/NotFound';
 
 function App() {
   const [signup, setSignup] = useState(false);
   const [login, setLogin] = useState(false);
   const [createSuccess, setCreateSuccess] = useState(false);
-  const [deleteSuccess, setDeleteSuccess] = useState(false);
 
   return (
     <div className="App">
@@ -27,9 +25,7 @@ function App() {
         <Route path="mission" element={<Mission />} />
         <Route path="survey/*" element={<Survey setLogin={setLogin} setCreateSuccess={setCreateSuccess} />} />
         <Route path="footprints" element={<Footprints setLogin={setLogin} 
-            createSuccess={createSuccess} setCreateSuccess={setCreateSuccess} 
-            deleteSuccess={deleteSuccess} setDeleteSuccess={setDeleteSuccess} />} >
-          <Route path=":emissionId" element={<EmissionData setDeleteSuccess={setDeleteSuccess} />} />
+            createSuccess={createSuccess} setCreateSuccess={setCreateSuccess} />} >
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>

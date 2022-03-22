@@ -1,11 +1,16 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
-import { Outlet, useNavigate, NavLink } from 'react-router-dom';
-import { Snackbar, Alert } from '@mui/material'
-import { getFootprints } from '../redux/actions/actionCreators';
+import { useNavigate } from 'react-router-dom';
+import { Collapse, Snackbar, Alert, IconButton, Dialog, DialogContent, DialogActions, Button } from '@mui/material'
+import DeleteIcon from '@mui/icons-material/Delete';
+import { getFootprints, destroyFootprint } from '../redux/actions/actionCreators';
+import EmissionData from './EmissionData';
 
-function Footprints({setLogin, createSuccess, setCreateSuccess, deleteSuccess, setDeleteSuccess}) {
+function Footprints({setLogin, createSuccess, setCreateSuccess}) {
     if(localStorage.getItem('jwt')) {
+        const [expanded, setExpanded] = useState({});
+        const [confirm, setConfirm] = useState({});
+        const [deleteSuccess, setDeleteSuccess] = useState(false);
         const user = useSelector(state => state.user);
         const footprints = useSelector(state => state.footprints);
         const dispatch = useDispatch();
@@ -13,6 +18,19 @@ function Footprints({setLogin, createSuccess, setCreateSuccess, deleteSuccess, s
         useEffect(() => {
             dispatch(getFootprints(user.id));
         }, []);
+
+        useEffect(() => {
+            resetState();
+        }, [footprints]);
+
+        const resetState = () => {
+            setExpanded({});
+            setConfirm({});
+            footprints.forEach(footprint => {
+                setExpanded(pS => ({...pS, [footprint.id]: false}));
+                setConfirm(pS => ({...pS, [footprint.id]: false}));
+            });
+        };
 
         const handleCreateSnackbar = (e, reason) => {
             if(reason === 'clickaway') {
@@ -28,7 +46,28 @@ function Footprints({setLogin, createSuccess, setCreateSuccess, deleteSuccess, s
             setDeleteSuccess(pS => !pS);
         };
 
-        const footprintsList = footprints.map(footprint => <li key={footprint.id}><NavLink to={`${footprint.id}`}>{footprint.date}</NavLink></li>);
+        const handleDelete = id => {
+            setConfirm(pS => ({...pS, [id]: !pS[id]}));
+            dispatch(destroyFootprint(id, setDeleteSuccess));
+        };
+
+        const footprintsList = footprints.map(footprint => (
+            <li key={footprint.id}>
+                <button onClick={() => setExpanded(pS => ({...pS, [footprint.id]: !pS[footprint.id]}))}>{footprint.date}</button>
+                <IconButton size="small" onClick={() => setConfirm(pS => ({...pS, [footprint.id]: !pS[footprint.id]}))} >
+                    <DeleteIcon />
+                </IconButton>
+                <Dialog open={Object.keys(confirm).length === footprints.length ? confirm[footprint.id] : false} >
+                    <DialogContent>Are you sure you want to delete this footprint?</DialogContent>
+                    <DialogActions>
+                        <Button onClick={() => handleDelete(footprint.id)} variant="outlined" startIcon={<DeleteIcon />}>Delete</Button>
+                        <Button onClick={() => setConfirm(pS => ({...pS, [footprint.id]: !pS[footprint.id]}))}>Cancel</Button>
+                    </DialogActions>
+                </Dialog>
+                <Collapse in={expanded[footprint.id]} timeout={1000} >
+                    <EmissionData footprint={footprint} />
+                </Collapse>
+            </li>));
     
         return (
             <div>
@@ -39,9 +78,6 @@ function Footprints({setLogin, createSuccess, setCreateSuccess, deleteSuccess, s
                             {footprintsList}
                         </ul>
                         : "You have no saved footprints"}
-                </div>
-                <div>
-                    <Outlet />
                 </div>
                 <Snackbar open={createSuccess} autoHideDuration={3000} onClose={handleCreateSnackbar} anchorOrigin={{vertical: "top", horizontal: "center"}} >
                     <Alert severity="success" onClose={handleCreateSnackbar} >

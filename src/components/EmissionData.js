@@ -1,17 +1,6 @@
-import { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { useParams, useNavigate } from 'react-router-dom';
 import { Doughnut } from 'react-chartjs-2';
-import { Dialog, DialogContent, DialogActions, Button } from '@mui/material';
-import { destroyFootprint } from '../redux/actions/actionCreators';
 
-function EmissionData({setDeleteSuccess}) {
-    const [open, setOpen] = useState(false);
-    const { emissionId } = useParams();
-    const footprint = useSelector(state => state.footprints.find(footprint => footprint.id === parseInt(emissionId)));
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
-
+function EmissionData({footprint}) {
     const co2eTotal = footprint.total;
     const compareToAvgUS = Math.round((co2eTotal - 14)/14*100);
     const compareToAvgWorld = Math.round((co2eTotal - 4.5)/4.5*100);
@@ -197,12 +186,6 @@ function EmissionData({setDeleteSuccess}) {
         }
     };
 
-    const handleDelete = () => {
-        setOpen(pS => !pS);
-        dispatch(destroyFootprint(footprint.id, setDeleteSuccess));
-        navigate('/footprints');
-    };
-
     return (
         <div>
             <p>Total CO₂e (carbon dioxide equivalent): {co2eTotal} metric tons</p>
@@ -219,14 +202,6 @@ function EmissionData({setDeleteSuccess}) {
             <div style={{width: "600px"}}>
                 <Doughnut data={data} options={options} />
             </div>
-            <button type="button" onClick={() => setOpen(pS => !pS)} >DELETE THIS FOOTPRINT</button>
-            <Dialog open={open} >
-                <DialogContent>Are you sure you want to delete this footprint?</DialogContent>
-                <DialogActions>
-                    <Button onClick={handleDelete}>Delete</Button>
-                    <Button onClick={() => setOpen(pS => !pS)}>Cancel</Button>
-                </DialogActions>
-            </Dialog>
         </div>
     );
 }
