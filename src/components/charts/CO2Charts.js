@@ -4,18 +4,14 @@ import CO2ByShare from './co2charts/CO2ByShare';
 import CO2ByRegion from './co2charts/CO2ByRegion';
 
 function CO2Charts({display}) {
-    if(display) {
-        return (
-            <>
-                <CO2PerCountry />
-                <CO2PerCapita />
-                <CO2ByShare />
-                <CO2ByRegion />
-            </>
-        );
-    } else {
-        return null;
-    }
+    return (
+        <>
+            <CO2PerCountry />
+            <CO2PerCapita />
+            <CO2ByShare />
+            <CO2ByRegion />
+        </>
+    );
 }
 
 export default CO2Charts;

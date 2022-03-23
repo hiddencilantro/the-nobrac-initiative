@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Collapse } from '@mui/material';
 import GHGPerCapita from './charts/GHGPerCapita';
 import GHGBySector from './charts/GHGBySector';
 import GlobalAvgTemp from './charts/GlobalAvgTemp';
@@ -23,9 +24,11 @@ function Mission() {
             </p>
             <GlobalAvgTemp />
             <br />
-            <button type="button" onClick={() => setMore(pS => !pS)} >{more ? "See Less" : "See More Charts"}</button>
-            <br />
-            <CO2Charts display={more} />
+            <button type="button" onClick={() => setMore(pS => !pS)} style={more ? {display: "none"} : null} >See more charts</button>
+            <Collapse in={more} timeout={1250} >
+                <CO2Charts />
+            </Collapse>
+            <button type="button" onClick={() => setMore(pS => !pS)} style={more ? null : {display: "none"}} >See less charts</button>
             <h3>So what does this have to do with us as individuals and how can we help?</h3>
             <p>
                 On the macro level, using cleaner and alternative renewable energies are great and definitely something mankind must continue to innovate and work together to achieve, but in the meantime, there are still plenty of ways we can micromanage our total energy use -- and thereby our carbon emissions -- simply by pledging certain changes to our lifestyle.
