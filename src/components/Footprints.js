@@ -5,6 +5,7 @@ import { Collapse, Snackbar, Alert, IconButton, Dialog, DialogContent, DialogAct
 import DeleteIcon from '@mui/icons-material/Delete';
 import { getFootprints, destroyFootprint } from '../redux/actions/actionCreators';
 import EmissionData from './EmissionData';
+import Tips from './survey/Tips';
 
 function Footprints({setLogin, createSuccess, setCreateSuccess}) {
     if(localStorage.getItem('jwt')) {
@@ -79,6 +80,7 @@ function Footprints({setLogin, createSuccess, setCreateSuccess}) {
                         </ul>
                         : "You have no saved footprints"}
                 </div>
+                <Tips />
                 <Snackbar open={createSuccess} autoHideDuration={3000} onClose={handleCreateSnackbar} anchorOrigin={{vertical: "top", horizontal: "center"}} >
                     <Alert severity="success" onClose={handleCreateSnackbar} >
                         Carbon footprint saved
