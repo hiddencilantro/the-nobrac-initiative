@@ -54,7 +54,7 @@ function Footprints({setLogin, createSuccess, setCreateSuccess}) {
         const footprintsList = footprints.map(footprint => (
             <li key={footprint.id}>
                 <button onClick={() => setExpanded(pS => ({...pS, [footprint.id]: !pS[footprint.id]}))}>{footprint.date}</button>
-                <IconButton size="small" onClick={() => setConfirm(pS => ({...pS, [footprint.id]: !pS[footprint.id]}))} >
+                <IconButton size="small" onClick={() => setConfirm(pS => ({...pS, [footprint.id]: !pS[footprint.id]}))} style={expanded[footprint.id] ? null : {display: "none"}} >
                     <DeleteIcon />
                 </IconButton>
                 <Dialog open={Object.keys(confirm).length === footprints.length ? confirm[footprint.id] : false} >
