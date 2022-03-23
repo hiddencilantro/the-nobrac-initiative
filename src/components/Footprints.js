@@ -65,7 +65,7 @@ function Footprints({setLogin, createSuccess, setCreateSuccess}) {
                         <Button onClick={() => setConfirm(pS => ({...pS, [footprint.id]: !pS[footprint.id]}))}>Cancel</Button>
                     </DialogActions>
                 </Dialog>
-                <Collapse in={expanded[footprint.id]} timeout={1000} >
+                <Collapse in={expanded[footprint.id]} timeout={800} >
                     <EmissionData footprint={footprint} />
                 </Collapse>
             </li>));
