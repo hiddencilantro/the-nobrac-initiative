@@ -39,14 +39,16 @@ function Login({login, setLogin, setSignup}) {
     return (
         <>
             <Drawer anchor={"right"} open={login} >
-                <div>
-                    <button type="button" onClick={() => setLogin(pS => !pS)}>X</button>
+                <div className='drawer'>
+                    <button type="button" onClick={() => setLogin(pS => !pS)}></button>
+                    <h2>Log in</h2>
                     <form onSubmit={handleSubmit} >
                         <input type="text" id="email" name="email" placeholder="Email" onChange={handleChange} /><br />
                         <input type="password" id="password" name="password" placeholder="Password" onChange={handleChange} /><br />
                         <input type="submit" value="Log in" />
                     </form>
-                    <span>Don't have an account?</span><button type="button" onClick={handleSignup} >Sign up</button>
+                    <span>Don't have an account yet?</span>
+                    <button type="button" onClick={handleSignup} >Create account</button>
                 </div>
             </Drawer>
             <Snackbar open={success} autoHideDuration={3000} onClose={handleSnackbar} anchorOrigin={{vertical: "top", horizontal: "center"}} >

@@ -3,7 +3,7 @@ function GlobalAvgTemp() {
         <iframe 
             src="https://ourworldindata.org/grapher/temperature-anomaly?country=~Global" 
             loading="lazy" 
-            style={{width: "800px", height: "600px", border: "none"}} />
+            style={{width: "620px", height: "400px", border: "none", margin: "60px 0 20px"}} />
     );
 }
 

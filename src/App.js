@@ -5,8 +5,8 @@ import NavBar from './components/NavBar';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import Landing from './components/Landing';
-import Mission from './components/Mission';
-import Survey from './components/Survey';
+import Issues from './components/Issues';
+import Quiz from './components/Quiz';
 import Footprints from './components/Footprints';
 import NotFound from './components/NotFound';
 
@@ -22,8 +22,8 @@ function App() {
       <NavBar setLogin={setLogin} />
       <Routes>
         <Route path="/" element={<Landing />} />
-        <Route path="mission" element={<Mission />} />
-        <Route path="survey/*" element={<Survey setLogin={setLogin} setCreateSuccess={setCreateSuccess} />} />
+        <Route path="issues" element={<Issues />} />
+        <Route path="quiz/*" element={<Quiz setLogin={setLogin} setCreateSuccess={setCreateSuccess} />} />
         <Route path="footprints" element={<Footprints setLogin={setLogin} 
             createSuccess={createSuccess} setCreateSuccess={setCreateSuccess} />} >
         </Route>

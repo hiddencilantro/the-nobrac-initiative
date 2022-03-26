@@ -3,7 +3,7 @@ function CO2PerCountry() {
         <iframe 
             src="https://ourworldindata.org/grapher/annual-co2-emissions-per-country?tab=chart&country=~USA" 
             loading="lazy" 
-            style={{width: "600px", height: "500px", border: "none"}} />
+            style={{width: "460px", height: "400px", border: "none", margin: "10px 10px"}} />
     );
 }
 

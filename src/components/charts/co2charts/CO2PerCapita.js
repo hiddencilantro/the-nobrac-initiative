@@ -3,7 +3,7 @@ function CO2PerCapita() {
         <iframe 
             src="https://ourworldindata.org/grapher/co-emissions-per-capita?tab=chart&country=~USA" 
             loading="lazy" 
-            style={{width: "600px", height: "500px", border: "none"}} />
+            style={{width: "460px", height: "400px", border: "none", margin: "10px 10px"}} />
     );
 }
 

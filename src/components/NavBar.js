@@ -14,12 +14,12 @@ function NavBar({setLogin}) {
     };
 
     return (
-        <nav className="navbar">
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/mission">Mission</NavLink>
-            <NavLink to="survey/vehicle">Survey</NavLink>
+        <nav className="Navbar">
+            <NavLink to="/">About NOBRAC</NavLink>
+            <NavLink to="/issues">Issues</NavLink>
+            <NavLink to="quiz/vehicle">Take a Quiz</NavLink>
             {user ? 
-                <NavLink to="/footprints">My Carbon Footprints</NavLink>
+                <NavLink to="/footprints">My Footprints</NavLink>
                 : null}
             {user ? 
                 <button type="button" onClick={handleLogout} >Logout</button>

@@ -52,22 +52,22 @@ function EmissionData({footprint}) {
                     co2eShopping
                 ],
                 backgroundColor: [
-                    'rgba(54, 162, 235, 0.6)',
-                    'rgba(255, 99, 132, 0.6)',
-                    'rgba(255, 206, 86, 0.6)',
-                    'rgba(75, 192, 192, 0.6)'
+                    'rgba(47, 72, 77, 0.9)',
+                    'rgba(114, 151, 141, 0.9)',
+                    'rgba(190, 132, 50, 0.9)',
+                    'rgba(141, 76, 46, 0.9)'
                 ],
                 borderColor: [
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)'
+                    'rgba(47, 72, 77, 1)',
+                    'rgba(114, 151, 141, 1)',
+                    'rgba(190, 132, 50, 1)',
+                    'rgba(141, 76, 46, 1)'
                 ],
                 hoverBackgroundColor: [
-                    'rgba(54, 162, 235)',
-                    'rgba(255, 99, 132)',
-                    'rgba(255, 206, 86)',
-                    'rgba(75, 192, 192)'
+                    'rgba(47, 72, 77, 1)',
+                    'rgba(114, 151, 141, 1)',
+                    'rgba(190, 132, 50, 1)',
+                    'rgba(141, 76, 46, 1)'
                 ],
                 cutout: '42%'
             },
@@ -91,51 +91,51 @@ function EmissionData({footprint}) {
                 ],
                 backgroundColor: [
                     '', '', '', '',
-                    'rgba(54, 162, 235, 0.3)',
-                    'rgba(54, 162, 235, 0.3)',
-                    'rgba(54, 162, 235, 0.3)',
-                    'rgba(255, 99, 132, 0.3)',
-                    'rgba(255, 99, 132, 0.3)',
-                    'rgba(255, 99, 132, 0.3)',
-                    'rgba(255, 206, 86, 0.3)',
-                    'rgba(255, 206, 86, 0.3)',
-                    'rgba(255, 206, 86, 0.3)',
-                    'rgba(255, 206, 86, 0.3)',
-                    'rgba(75, 192, 192, 0.3)',
-                    'rgba(75, 192, 192, 0.3)',
-                    'rgba(75, 192, 192, 0.3)'
+                    'rgba(47, 72, 77, 0.7)',
+                    'rgba(47, 72, 77, 0.7)',
+                    'rgba(47, 72, 77, 0.7)',
+                    'rgba(114, 151, 141, 0.7)',
+                    'rgba(114, 151, 141, 0.7)',
+                    'rgba(114, 151, 141, 0.7)',
+                    'rgba(190, 132, 50, 0.7)',
+                    'rgba(190, 132, 50, 0.7)',
+                    'rgba(190, 132, 50, 0.7)',
+                    'rgba(190, 132, 50, 0.7)',
+                    'rgba(141, 76, 46, 0.7)',
+                    'rgba(141, 76, 46, 0.7)',
+                    'rgba(141, 76, 46, 0.7)'
                 ],
                 borderColor: [
                     '', '', '', '',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(75, 192, 192, 1)'
+                    'rgba(47, 72, 77, 1)',
+                    'rgba(47, 72, 77, 1)',
+                    'rgba(47, 72, 77, 1)',
+                    'rgba(114, 151, 141, 1)',
+                    'rgba(114, 151, 141, 1)',
+                    'rgba(114, 151, 141, 1)',
+                    'rgba(190, 132, 50, 1)',
+                    'rgba(190, 132, 50, 1)',
+                    'rgba(190, 132, 50, 1)',
+                    'rgba(190, 132, 50, 1)',
+                    'rgba(141, 76, 46, 1)',
+                    'rgba(141, 76, 46, 1)',
+                    'rgba(141, 76, 46, 1)'
                 ],
                 hoverBackgroundColor: [
                     '', '', '', '',
-                    'rgba(54, 162, 235)',
-                    'rgba(54, 162, 235)',
-                    'rgba(54, 162, 235)',
-                    'rgba(255, 99, 132)',
-                    'rgba(255, 99, 132)',
-                    'rgba(255, 99, 132)',
-                    'rgba(255, 206, 86)',
-                    'rgba(255, 206, 86)',
-                    'rgba(255, 206, 86)',
-                    'rgba(255, 206, 86)',
-                    'rgba(75, 192, 192)',
-                    'rgba(75, 192, 192)',
-                    'rgba(75, 192, 192)'
+                    'rgba(47, 72, 77)',
+                    'rgba(47, 72, 77)',
+                    'rgba(47, 72, 77)',
+                    'rgba(114, 151, 141)',
+                    'rgba(114, 151, 141)',
+                    'rgba(114, 151, 141)',
+                    'rgba(190, 132, 50)',
+                    'rgba(190, 132, 50)',
+                    'rgba(190, 132, 50)',
+                    'rgba(190, 132, 50)',
+                    'rgba(141, 76, 46)',
+                    'rgba(141, 76, 46)',
+                    'rgba(141, 76, 46)'
                 ],
                 cutout: '35%'
             }
@@ -153,7 +153,7 @@ function EmissionData({footprint}) {
         plugins: {
             title: {
                 display: true,
-                text: 'Breakdown Of Your GHG Emissions',
+                text: 'Breakdown of your GHG Emissions',
                 color: '#3A3B3C',
                 font: {
                     size: 24
@@ -187,19 +187,22 @@ function EmissionData({footprint}) {
     };
 
     return (
-        <div>
-            <p>Total CO₂e (carbon dioxide equivalent): {co2eTotal} metric tons</p>
-            <p>This figure is  
-                {Math.sign(compareToAvgUS) === 1 ? 
-                    " " + compareToAvgUS + "% more " 
-                    : " " + Math.abs(compareToAvgUS) + "% less "} 
-                than the U.S. average and 
-                {Math.sign(compareToAvgWorld) === 1 ? 
-                    " " + compareToAvgWorld + "% more " 
-                    : " " + Math.abs(compareToAvgWorld) + "% less "} 
-                than the global average.
-            </p>
-            <div style={{width: "600px"}}>
+        <div className='EmissionData'>
+            <div className='data'>
+                <h2>Total CO₂e: <span>{co2eTotal} metric tons</span></h2>
+                <p>
+                    This figure is  
+                    <span>{Math.sign(compareToAvgUS) === 1 ? 
+                        " " + compareToAvgUS + "% more " 
+                        : " " + Math.abs(compareToAvgUS) + "% less "}</span> 
+                    than the U.S. average and 
+                    <span>{Math.sign(compareToAvgWorld) === 1 ? 
+                        " " + compareToAvgWorld + "% more " 
+                        : " " + Math.abs(compareToAvgWorld) + "% less "}</span> 
+                    than the global average.
+                </p>
+            </div>
+            <div className='chart'>
                 <Doughnut data={data} options={options} />
             </div>
         </div>

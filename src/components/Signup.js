@@ -41,16 +41,18 @@ function Signup({signup, setSignup, setLogin}) {
     return (
         <>
             <Drawer anchor={"right"} open={signup} >
-                <div>
-                    <button type="button" onClick={() => setSignup(pS => !pS)}>X</button>
+                <div className='drawer'>
+                    <button type="button" onClick={() => setSignup(pS => !pS)}></button>
+                    <h2>Create an account</h2>
                     <form onSubmit={handleSubmit} >
-                        <input type="text" id="first" name="first_name" placeholder="First Name" onChange={handleChange} /><br />
-                        <input type="text" id="last" name="last_name" placeholder="Last Name" onChange={handleChange} /><br />
+                        <input type="text" id="first" name="first_name" placeholder="First name" onChange={handleChange} /><br />
+                        <input type="text" id="last" name="last_name" placeholder="Last lame" onChange={handleChange} /><br />
                         <input type="text" id="email" name="email" placeholder="Email" onChange={handleChange} /><br />
                         <input type="password" id="password" name="password" placeholder="Password" onChange={handleChange} /><br />
                         <input type="submit" value="Sign up" />
                     </form>
-                    <span>Already have an account?</span><button type="button" onClick={handleLogin} >Log in</button>
+                    <span>Already have an account?</span>
+                    <button type="button" onClick={handleLogin} >Log in</button>
                 </div>
             </Drawer>
             <Snackbar open={success} autoHideDuration={3000} onClose={handleSnackbar} anchorOrigin={{vertical: "top", horizontal: "center"}} >
