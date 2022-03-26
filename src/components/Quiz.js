@@ -1,7 +1,6 @@
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-
 import { MobileStepper } from '@mui/material';
 
 import Vehicle from './quiz/transport/Vehicle';
