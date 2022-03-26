@@ -1,6 +1,5 @@
 import { Collapse } from '@mui/material';
 import { useState } from 'react';
-import MinusIcon from '../../images/tips/icon-minus.svg';
 
 function Tips() {
     const [expand, setExpand] = useState({

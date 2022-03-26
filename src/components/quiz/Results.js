@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import 'chart.js/auto';
 import { Doughnut } from 'react-chartjs-2';
 import { createFootprint } from '../../redux/actions/actionCreators';
-import Tips from './Tips';
+import Tips from '../Tips';
 
 function Results({setActiveStep, calculateFootprint, results, setLogin, setCreateSuccess}) {
     const location = useLocation();

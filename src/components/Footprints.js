@@ -5,7 +5,7 @@ import { Collapse, Snackbar, Alert, IconButton, Dialog, DialogContent, DialogAct
 import DeleteIcon from '@mui/icons-material/Delete';
 import { getFootprints, destroyFootprint } from '../redux/actions/actionCreators';
 import EmissionData from './EmissionData';
-import Tips from './quiz/Tips';
+import Tips from './Tips';
 
 function Footprints({setLogin, createSuccess, setCreateSuccess}) {
     if(localStorage.getItem('jwt')) {
