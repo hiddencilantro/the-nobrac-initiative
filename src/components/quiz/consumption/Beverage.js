@@ -28,43 +28,45 @@ function Beverage({setActiveStep, setToggle, checked, setChecked, beverages, set
     return (
         <>
             <h3>How much do you spend on beverages?</h3>
-            <div className='checkbox-container'>
-                <div>
-                    <input type="checkbox" name="coffeeAndTea" id="coffeeAndTea" checked={checked.coffeeAndTea} onChange={handleCheckbox} />
-                    <label htmlFor="coffeeAndTea">
-                        <span>Coffee/Tea</span>
-                    </label>
-                    {inputFields[0]}
-                </div>
-                <div>
-                    <input type="checkbox" name="softDrinksAndBottledWater" id="softDrinksAndBottledWater" checked={checked.softDrinksAndBottledWater} onChange={handleCheckbox} />
-                    <label htmlFor="softDrinksAndBottledWater">
-                        <span>Soft Drinks/Bottled Water</span>
-                    </label>
-                    {inputFields[1]}
-                </div>
-                <div>
-                    <input type="checkbox" name="beer" id="beer" checked={checked.beer} onChange={handleCheckbox} />
-                    <label htmlFor="beer">
-                        <span>Beer</span>
-                    </label>
-                    {inputFields[2]}
-                </div>
-                <div>
-                    <input type="checkbox" name="spirits" id="spirits" checked={checked.spirits} onChange={handleCheckbox} />
-                    <label htmlFor="spirits">
-                        <span>Spirits</span>
-                    </label>
-                    {inputFields[3]}
-                </div>
-                <div>
-                    <input type="checkbox" name="wine" id="wine" checked={checked.wine} onChange={handleCheckbox} />
-                    <label htmlFor="wine">
-                        <span>Wine</span>
-                    </label>
-                    {inputFields[4]}
-                </div>
-            </div>
+            {checked.hasOwnProperty('coffeeAndTea') ? 
+                (<div className='checkbox-container'>
+                    <div>
+                        <input type="checkbox" name="coffeeAndTea" id="coffeeAndTea" checked={checked.coffeeAndTea} onChange={handleCheckbox} />
+                        <label htmlFor="coffeeAndTea">
+                            <span>Coffee/Tea</span>
+                        </label>
+                        {inputFields[0]}
+                    </div>
+                    <div>
+                        <input type="checkbox" name="softDrinksAndBottledWater" id="softDrinksAndBottledWater" checked={checked.softDrinksAndBottledWater} onChange={handleCheckbox} />
+                        <label htmlFor="softDrinksAndBottledWater">
+                            <span>Soft Drinks/Bottled Water</span>
+                        </label>
+                        {inputFields[1]}
+                    </div>
+                    <div>
+                        <input type="checkbox" name="beer" id="beer" checked={checked.beer} onChange={handleCheckbox} />
+                        <label htmlFor="beer">
+                            <span>Beer</span>
+                        </label>
+                        {inputFields[2]}
+                    </div>
+                    <div>
+                        <input type="checkbox" name="spirits" id="spirits" checked={checked.spirits} onChange={handleCheckbox} />
+                        <label htmlFor="spirits">
+                            <span>Spirits</span>
+                        </label>
+                        {inputFields[3]}
+                    </div>
+                    <div>
+                        <input type="checkbox" name="wine" id="wine" checked={checked.wine} onChange={handleCheckbox} />
+                        <label htmlFor="wine">
+                            <span>Wine</span>
+                        </label>
+                        {inputFields[4]}
+                    </div>
+                </div>)
+                : null}
         </>
     );
 }
