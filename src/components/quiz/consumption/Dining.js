@@ -52,8 +52,8 @@ function Dining({setActiveStep, toggle, setToggle, checked, setChecked, dining, 
                             <FullServiceInput display={toggle} checked={checked.full} money={dining.full.parameters.money} setDining={setDining} />
                         </div>
                         <div>
-                            <input type="checkbox" name="other" id="otherDining" checked={checked.other} onChange={handleCheckbox} />
-                            <label htmlFor="otherDining">
+                            <input type="checkbox" name="other" id="other-dining" checked={checked.other} onChange={handleCheckbox} />
+                            <label htmlFor="other-dining">
                                 <span>Other</span><br />
                                 <span>(food and drinking places)</span>
                             </label>

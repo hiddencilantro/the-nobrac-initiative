@@ -31,15 +31,15 @@ function Beverage({setActiveStep, setToggle, checked, setChecked, beverages, set
             {checked.hasOwnProperty('coffeeAndTea') ? 
                 (<div className='checkbox-container'>
                     <div>
-                        <input type="checkbox" name="coffeeAndTea" id="coffeeAndTea" checked={checked.coffeeAndTea} onChange={handleCheckbox} />
-                        <label htmlFor="coffeeAndTea">
+                        <input type="checkbox" name="coffeeAndTea" id="coffee-and-tea" checked={checked.coffeeAndTea} onChange={handleCheckbox} />
+                        <label htmlFor="coffee-and-tea">
                             <span>Coffee/Tea</span>
                         </label>
                         {inputFields[0]}
                     </div>
                     <div>
-                        <input type="checkbox" name="softDrinksAndBottledWater" id="softDrinksAndBottledWater" checked={checked.softDrinksAndBottledWater} onChange={handleCheckbox} />
-                        <label htmlFor="softDrinksAndBottledWater">
+                        <input type="checkbox" name="softDrinksAndBottledWater" id="drinks-and-water" checked={checked.softDrinksAndBottledWater} onChange={handleCheckbox} />
+                        <label htmlFor="drinks-and-water">
                             <span>Soft Drinks/Bottled Water</span>
                         </label>
                         {inputFields[1]}

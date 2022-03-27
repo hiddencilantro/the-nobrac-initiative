@@ -42,29 +42,29 @@ function Goods({setActiveStep, setToggle, checked, setChecked, goods, setGoods})
                         {inputFields[0]}
                     </div>
                     <div>
-                        <input type="checkbox" name="booksAndOtherPrint" id="booksAndOtherPrint" checked={checked.booksAndOtherPrint} onChange={handleCheckbox} />
-                        <label htmlFor="booksAndOtherPrint">
+                        <input type="checkbox" name="booksAndOtherPrint" id="print" checked={checked.booksAndOtherPrint} onChange={handleCheckbox} />
+                        <label htmlFor="print">
                             <span>Books/Newspapers/ Magazines</span>
                         </label>
                         {inputFields[1]}
                     </div>
                     <div>
-                        <input type="checkbox" name="toysAndGames" id="toysAndGames" checked={checked.toysAndGames} onChange={handleCheckbox} />
-                        <label htmlFor="toysAndGames">
+                        <input type="checkbox" name="toysAndGames" id="toys-and-games" checked={checked.toysAndGames} onChange={handleCheckbox} />
+                        <label htmlFor="toys-and-games">
                             <span>Toys/Games</span>
                         </label>
                         {inputFields[2]}
                     </div>
                     <div>
-                        <input type="checkbox" name="sportingGoods" id="sportingGoods" checked={checked.sportingGoods} onChange={handleCheckbox} />
-                        <label htmlFor="sportingGoods">
+                        <input type="checkbox" name="sportingGoods" id="sporting-goods" checked={checked.sportingGoods} onChange={handleCheckbox} />
+                        <label htmlFor="sporting-goods">
                             <span>Sporting/Athletic Goods</span>
                         </label>
                         {inputFields[3]}
                     </div>
                     <div>
-                        <input type="checkbox" name="dogAndCatFood" id="dogAndCatFood" checked={checked.dogAndCatFood} onChange={handleCheckbox} />
-                        <label htmlFor="dogAndCatFood">
+                        <input type="checkbox" name="dogAndCatFood" id="pet-food" checked={checked.dogAndCatFood} onChange={handleCheckbox} />
+                        <label htmlFor="pet-food">
                             <span>Dog/Cat Food</span>
                         </label>
                         {inputFields[4]}
@@ -77,23 +77,23 @@ function Goods({setActiveStep, setToggle, checked, setChecked, goods, setGoods})
                         {inputFields[5]}
                     </div>
                     <div>
-                        <input type="checkbox" name="generalMerchandise" id="generalMerchandise" checked={checked.generalMerchandise} onChange={handleCheckbox} />
-                        <label htmlFor="generalMerchandise">
+                        <input type="checkbox" name="generalMerchandise" id="general-merchandise" checked={checked.generalMerchandise} onChange={handleCheckbox} />
+                        <label htmlFor="general-merchandise">
                             <span>General Merchandise</span>
                         </label>
                         {inputFields[6]}
                     </div>
                     <div>
-                        <input type="checkbox" name="nonstoreRetailers" id="nonstoreRetailers" checked={checked.nonstoreRetailers} onChange={handleCheckbox} />
-                        <label htmlFor="nonstoreRetailers">
+                        <input type="checkbox" name="nonstoreRetailers" id="nonstore-retailers" checked={checked.nonstoreRetailers} onChange={handleCheckbox} />
+                        <label htmlFor="nonstore-retailers">
                             <span>Nonstore Retailers</span><br />
                             <span>(e-commerce, street vendors)</span>
                         </label>
                         {inputFields[7]}
                     </div>
                     <div>
-                        <input type="checkbox" name="otherRetail" id="otherRetail" checked={checked.otherRetail} onChange={handleCheckbox} />
-                        <label htmlFor="otherRetail">
+                        <input type="checkbox" name="otherRetail" id="other-retail" checked={checked.otherRetail} onChange={handleCheckbox} />
+                        <label htmlFor="other-retail">
                             <span>All Other Retail</span>
                         </label>
                         {inputFields[8]}

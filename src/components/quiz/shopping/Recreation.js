@@ -32,8 +32,8 @@ function Recreation({setActiveStep, setToggle, checked, setChecked, recreation, 
             {checked.hasOwnProperty('moviesAndFilm') ? 
                 (<div className='checkbox-container'>
                     <div>
-                        <input type="checkbox" name="moviesAndFilm" id="moviesAndFilm" checked={checked.moviesAndFilm} onChange={handleCheckbox} />
-                        <label htmlFor="moviesAndFilm">
+                        <input type="checkbox" name="moviesAndFilm" id="movies-and-film" checked={checked.moviesAndFilm} onChange={handleCheckbox} />
+                        <label htmlFor="movies-and-film">
                             <span>Movies/Film</span>
                         </label>
                         {inputFields[0]}
@@ -46,15 +46,15 @@ function Recreation({setActiveStep, setToggle, checked, setChecked, recreation, 
                         {inputFields[1]}
                     </div>
                     <div>
-                        <input type="checkbox" name="museumsAndZoos" id="museumsAndZoos" checked={checked.museumsAndZoos} onChange={handleCheckbox} />
-                        <label htmlFor="museumsAndZoos">
+                        <input type="checkbox" name="museumsAndZoos" id="museums" checked={checked.museumsAndZoos} onChange={handleCheckbox} />
+                        <label htmlFor="museums">
                             <span>Museums/Historical Sites/Zoos/Parks</span>
                         </label>
                         {inputFields[2]}
                     </div>
                     <div>
-                        <input type="checkbox" name="amusementParksAndArcades" id="amusementParksAndArcades" checked={checked.amusementParksAndArcades} onChange={handleCheckbox} />
-                        <label htmlFor="amusementParksAndArcades">
+                        <input type="checkbox" name="amusementParksAndArcades" id="arcades" checked={checked.amusementParksAndArcades} onChange={handleCheckbox} />
+                        <label htmlFor="arcades">
                             <span>Amusement Parks/Arcades</span>
                         </label>
                         {inputFields[3]}
@@ -67,8 +67,8 @@ function Recreation({setActiveStep, setToggle, checked, setChecked, recreation, 
                         {inputFields[4]}
                     </div>
                     <div>
-                        <input type="checkbox" name="variousRecreation" id="variousRecreation" checked={checked.variousRecreation} onChange={handleCheckbox} />
-                        <label htmlFor="variousRecreation">
+                        <input type="checkbox" name="variousRecreation" id="various-recreation" checked={checked.variousRecreation} onChange={handleCheckbox} />
+                        <label htmlFor="various-recreation">
                             <span>Golf/Marinas/Ski Resorts/Fitness/Other</span>
                         </label>
                         {inputFields[5]}

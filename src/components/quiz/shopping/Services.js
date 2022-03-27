@@ -30,8 +30,8 @@ function Services({setActiveStep, setToggle, checked, setChecked, services, setS
             {checked.hasOwnProperty('dryCleaning') ? 
                 (<div className='checkbox-container'>
                     <div>
-                        <input type="checkbox" name="dryCleaning" id="dryCleaning" checked={checked.dryCleaning} onChange={handleCheckbox} />
-                        <label htmlFor="dryCleaning">
+                        <input type="checkbox" name="dryCleaning" id="laundry" checked={checked.dryCleaning} onChange={handleCheckbox} />
+                        <label htmlFor="laundry">
                             <span>Dry Cleaning/Laundry</span>
                         </label>
                         {inputFields[0]}
@@ -44,15 +44,15 @@ function Services({setActiveStep, setToggle, checked, setChecked, services, setS
                         {inputFields[1]}
                     </div>
                     <div>
-                        <input type="checkbox" name="vehicleRepair" id="vehicleRepair" checked={checked.vehicleRepair} onChange={handleCheckbox} />
-                        <label htmlFor="vehicleRepair">
+                        <input type="checkbox" name="vehicleRepair" id="vehicle-repair" checked={checked.vehicleRepair} onChange={handleCheckbox} />
+                        <label htmlFor="vehicle-repair">
                             <span>Vehicle Repair</span>
                         </label>
                         {inputFields[2]}
                     </div>
                     <div>
-                        <input type="checkbox" name="otherServices" id="otherServices" checked={checked.otherServices} onChange={handleCheckbox} />
-                        <label htmlFor="otherServices">
+                        <input type="checkbox" name="otherServices" id="other-services" checked={checked.otherServices} onChange={handleCheckbox} />
+                        <label htmlFor="other-services">
                             <span>Other Services</span><br />
                             <span>(pet care, parking)</span>
                         </label>

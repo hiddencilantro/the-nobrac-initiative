@@ -89,8 +89,8 @@ function Food({setActiveStep, setToggle, checked, setChecked, foods, setFoods}) 
                         {inputFields[6]}
                     </div>
                     <div>
-                        <input type="checkbox" name="milkAndButter" id="milkAndButter" checked={checked.milkAndButter} onChange={handleCheckbox} />
-                        <label htmlFor="milkAndButter">
+                        <input type="checkbox" name="milkAndButter" id="milk" checked={checked.milkAndButter} onChange={handleCheckbox} />
+                        <label htmlFor="milk">
                             <span>Milk/Butter</span>
                         </label>
                         {inputFields[7]}
@@ -111,15 +111,15 @@ function Food({setActiveStep, setToggle, checked, setChecked, foods, setFoods}) 
                         {inputFields[9]}
                     </div>
                     <div>
-                        <input type="checkbox" name="frozenFood" id="frozenFood" checked={checked.frozenFood} onChange={handleCheckbox} />
-                        <label htmlFor="frozenFood">
+                        <input type="checkbox" name="frozenFood" id="frozen-food" checked={checked.frozenFood} onChange={handleCheckbox} />
+                        <label htmlFor="frozen-food">
                             <span>Frozen Food</span>
                         </label>
                         {inputFields[10]}
                     </div>
                     <div>
-                        <input type="checkbox" name="iceCream" id="iceCream" checked={checked.iceCream} onChange={handleCheckbox} />
-                        <label htmlFor="iceCream">
+                        <input type="checkbox" name="iceCream" id="ice-cream" checked={checked.iceCream} onChange={handleCheckbox} />
+                        <label htmlFor="ice-cream">
                             <span>Ice Cream</span><br />
                             <span>(Frozen Desserts)</span>
                         </label>
@@ -133,8 +133,8 @@ function Food({setActiveStep, setToggle, checked, setChecked, foods, setFoods}) 
                         {inputFields[12]}
                     </div>
                     <div>
-                        <input type="checkbox" name="other" id="other" checked={checked.other} onChange={handleCheckbox} />
-                        <label htmlFor="other">
+                        <input type="checkbox" name="other" id="other-food" checked={checked.other} onChange={handleCheckbox} />
+                        <label htmlFor="other-food">
                             <span>All Other</span>
                         </label>
                         {inputFields[13]}
