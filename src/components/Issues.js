@@ -20,7 +20,7 @@ function Issues() {
                     Climate change is real. In fact, the term is often used interchangeably with global warming even though they have distinct meanings.
                 </p>
                 <p>
-                    <strong>Global warming</strong> is specific to the long-term heating of Earth's climate system induced by human activities -- most notably the burning of fossil fuels. Such activities release carbon dioxide and various gases (commonly referred to as greenhouse gases) into our planet's atomosphere which in turn traps heat from escaping and thereby <em>contributes</em> to climate change. To such end, global warming is often measured as the average increase in Earth's surface temperature.
+                    <strong>Global warming</strong> is specific to the long-term heating of Earth's climate system induced by human activities -- most notably the burning of fossil fuels. Such activities release carbon dioxide and various gases (commonly referred to as greenhouse gases) into our planet's atomosphere which in turn traps the heat from escaping and thereby <em>contributes</em> to climate change. As a result, global warming is often measured as the average increase in Earth's surface temperature.
                 </p>
             </div>
             <div className='charts-container'>
@@ -28,7 +28,7 @@ function Issues() {
                 <GHGBySector />
             </div>
             <p>
-                Climate change, on the other hand, (as described by NASA) is "a long-term change in the average weather patterns that have come to define Earth's local, regional and global cimates." That is to say, climate change is to an extent a <em>natural</em> phenomenon but the dilemma lies in the fact that "the changes observed in Earth's climate since the early 20th century are primarily driven by human activities" where the average global surface temperature is currently rising at an alarming rate.
+                Climate change, on the other hand, (as described by NASA) is "a long-term change in the average weather patterns that have come to define Earth's local, regional and global cimates." That is to say, climate change is to an extent a <em>natural</em> phenomenon but the dilemma lies with the fact that "the changes observed in Earth's climate since the early 20th century are primarily driven by human activities" where the average global surface temperature is currently rising at an alarming rate.
             </p>
             <GlobalAvgTemp />
             <button type="button" onClick={() => setMore(pS => !pS)} style={more ? {display: "none"} : null} >
@@ -42,7 +42,7 @@ function Issues() {
                 See less
                 <br /><span className='icon-arrow-up' />
             </button>
-            <h3 className='header'>So what does this have to do with us as individuals and how can we help?</h3>
+            <h3 className='header'>So what does this have to do with us and how can we help?</h3>
             <p>
                 On the macro level, using cleaner and alternative renewable energies are great and definitely something mankind must continue to innovate and work together to achieve, but in the meantime, there are still plenty of ways we can micromanage our total energy use -- and thereby our carbon emissions -- simply by pledging certain changes to our lifestyle.
             </p>
