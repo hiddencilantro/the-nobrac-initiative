@@ -31,7 +31,7 @@ function Flight({setActiveStep, toggle, setToggle, checked, setChecked, flight, 
                 <input type="radio" name="flight" value={false} />
             </div>
             {toggle === "true" ? 
-                (<div>
+                (<div className='Flight'>
                     <h4>What type of flights do you take?</h4>
                     <p>(Select all that apply)</p>
                     <div className='checkbox-container'>

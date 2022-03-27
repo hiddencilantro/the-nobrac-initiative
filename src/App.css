@@ -423,11 +423,14 @@
   color: #303030;
 }
 .Quiz .checkbox-container {
+  width: 968px;
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
-  justify-content: center;
   flex-wrap: wrap;
+  margin-top: 30px;
+}
+.Flight .checkbox-container, .Dining .checkbox-container {
+  justify-content: center;
 }
 .Quiz .checkbox-container input[type="checkbox"] {
   display: none;
@@ -437,7 +440,7 @@
   min-height: 160px;
   border: solid 1px #72978d;
   border-radius: 6px;
-  margin: 40px 10px 10px;
+  margin: 10px;
 }
 .Quiz .checkbox-container label {
   width: 220px;
@@ -473,9 +476,6 @@
 .Quiz .checkbox-container input[type="checkbox"]:checked + label {
   background-image: url('./images/quiz/icon-checkmark.svg');
   background-size: inherit;
-}
-.Quiz .checkbox-container div:nth-of-type(n+5) {
-  margin: 10px 10px;
 }
 .Quiz .checkbox-container label[for="bus"] {
   background-image: url('./images/quiz/icon-bus.svg');

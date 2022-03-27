@@ -31,7 +31,7 @@ function Dining({setActiveStep, toggle, setToggle, checked, setChecked, dining, 
                 <input type="radio" name="dining" value={false} />
             </div>
             {toggle === "true" ? 
-                (<div>
+                (<div className='Dining'>
                     <h4>What type of dining experience do you take part in?</h4>
                     <p>(Select all that apply)</p>
                     <div className='checkbox-container'>
