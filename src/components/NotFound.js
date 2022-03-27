@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function NotFound({setActiveStep}) {
     useEffect(() => {
         document.body.style.backgroundColor = "#f1f1ed";
-        setActiveStep ? setActiveStep(13) : null;
+        setActiveStep ? setActiveStep(null) : null;
     }, [])
 
     return (

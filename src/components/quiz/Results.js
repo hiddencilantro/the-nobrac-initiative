@@ -13,7 +13,7 @@ function Results({setActiveStep, calculateFootprint, results, setLogin, setCreat
     const dispatch = useDispatch();
 
     useEffect(() => {
-        setActiveStep(13);
+        setActiveStep(null);
         calculateFootprint();
         if(location.state !== 'completed') {
             navigate('/quiz/vehicle');

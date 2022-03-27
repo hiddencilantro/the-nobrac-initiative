@@ -25,7 +25,7 @@ function Quiz({setLogin, setCreateSuccess}) {
     }, []);
 
     const navigate = useNavigate();
-    const [activeStep, setActiveStep] = useState(0);
+    const [activeStep, setActiveStep] = useState(null);
     const [toggle, setToggle] = useState(null);
     const [checked, setChecked] = useState({});
     const [results, setResults] = useState([]);
@@ -728,7 +728,7 @@ function Quiz({setLogin, setCreateSuccess}) {
                     setCreateSuccess={setCreateSuccess} />} />
                 <Route path="*" element={<NotFound setActiveStep={setActiveStep} />} />
             </Routes>
-            {activeStep !== 13 ? 
+            {activeStep !== null ? 
                 <MobileStepper 
                     className="stepper"
                     variant="text" 
