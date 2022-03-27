@@ -726,7 +726,7 @@ function Quiz({setLogin, setCreateSuccess}) {
                     results={results}
                     setLogin={setLogin} 
                     setCreateSuccess={setCreateSuccess} />} />
-                <Route path="*" element={<NotFound />} />
+                <Route path="*" element={<NotFound setActiveStep={setActiveStep} />} />
             </Routes>
             {activeStep !== 13 ? 
                 <MobileStepper 

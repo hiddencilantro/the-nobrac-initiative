@@ -45,6 +45,35 @@
   color: rgba(48, 48, 48, 0.5);
   margin-bottom: 40px;
 }
+.link-wrapper {
+  display: inline-block;
+}
+
+/* 404 */
+.NotFound h1 {
+  height: 55px;
+  font-family: 'TitanOne';
+  font-size: 48px;
+  color: #686230;
+  font-weight: normal;
+}
+.NotFound p > span {
+  font-family: 'Roboto-Bold';
+}
+.NotFound a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 220px;
+  height: 50px;
+  padding: 0;
+  border-radius: 25px;
+  background-color: #686230;
+  text-decoration: none;
+  color: #fff;
+  line-height: 1.33;
+  margin-top: 30px;
+}
 
 /* login/signup */
 .drawer {
@@ -185,9 +214,6 @@
 }
 .Landing a:hover {
   background-color: rgba(141, 76, 46, 0.8);
-}
-.link-wrapper {
-  display: inline-block;
 }
 .Landing .quiz-link {
   display: inline-block;
