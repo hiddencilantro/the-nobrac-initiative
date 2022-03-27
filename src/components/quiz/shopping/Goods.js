@@ -44,7 +44,7 @@ function Goods({setActiveStep, setToggle, checked, setChecked, goods, setGoods})
                     <div>
                         <input type="checkbox" name="booksAndOtherPrint" id="print" checked={checked.booksAndOtherPrint} onChange={handleCheckbox} />
                         <label htmlFor="print">
-                            <span>Books/Newspapers/ Magazines</span>
+                            <span>Books/Newspapers/<br />Magazines</span>
                         </label>
                         {inputFields[1]}
                     </div>
@@ -87,7 +87,7 @@ function Goods({setActiveStep, setToggle, checked, setChecked, goods, setGoods})
                         <input type="checkbox" name="nonstoreRetailers" id="nonstore-retailers" checked={checked.nonstoreRetailers} onChange={handleCheckbox} />
                         <label htmlFor="nonstore-retailers">
                             <span>Nonstore Retailers</span><br />
-                            <span>(e-commerce, street vendors)</span>
+                            <span>(E-commerce/Street Vendors)</span>
                         </label>
                         {inputFields[7]}
                     </div>

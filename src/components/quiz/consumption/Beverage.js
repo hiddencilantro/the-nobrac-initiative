@@ -40,7 +40,7 @@ function Beverage({setActiveStep, setToggle, checked, setChecked, beverages, set
                     <div>
                         <input type="checkbox" name="softDrinksAndBottledWater" id="drinks-and-water" checked={checked.softDrinksAndBottledWater} onChange={handleCheckbox} />
                         <label htmlFor="drinks-and-water">
-                            <span>Soft Drinks/Bottled Water</span>
+                            <span>Soft Drinks/<br />Bottled Water</span>
                         </label>
                         {inputFields[1]}
                     </div>

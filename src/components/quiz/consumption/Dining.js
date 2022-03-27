@@ -39,7 +39,7 @@ function Dining({setActiveStep, toggle, setToggle, checked, setChecked, dining, 
                             <input type="checkbox" name="limited" id="limited" checked={checked.limited} onChange={handleCheckbox} />
                             <label htmlFor="limited">
                                 <span>Limited-service</span><br />
-                                <span>(fast food, casual restaurants, cafes)</span>
+                                <span>(Fast Food/Cafes)</span>
                             </label>
                             <LimitedServiceInput display={toggle} checked={checked.limited} money={dining.limited.parameters.money} setDining={setDining} />
                         </div>
@@ -47,15 +47,15 @@ function Dining({setActiveStep, toggle, setToggle, checked, setChecked, dining, 
                             <input type="checkbox" name="full" id="full" checked={checked.full} onChange={handleCheckbox} />
                             <label htmlFor="full">
                                 <span>Full-service</span><br />
-                                <span>(typical sit-and-dine restaurants with wait staff)</span>
+                                <span>(Dine-in Restaurants)</span>
                             </label>
                             <FullServiceInput display={toggle} checked={checked.full} money={dining.full.parameters.money} setDining={setDining} />
                         </div>
                         <div>
                             <input type="checkbox" name="other" id="other-dining" checked={checked.other} onChange={handleCheckbox} />
                             <label htmlFor="other-dining">
-                                <span>Other</span><br />
-                                <span>(food and drinking places)</span>
+                                <span>Other Eateries</span><br />
+                                <span>(Food/Drinks)</span>
                             </label>
                             <OtherInput display={toggle} checked={checked.other} money={dining.other.parameters.money} setDining={setDining} />
                         </div>

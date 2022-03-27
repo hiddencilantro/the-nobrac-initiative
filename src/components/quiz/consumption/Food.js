@@ -63,7 +63,8 @@ function Food({setActiveStep, setToggle, checked, setChecked, foods, setFoods}) 
                     <div>
                         <input type="checkbox" name="bread" id="bread" checked={checked.bread} onChange={handleCheckbox} />
                         <label htmlFor="bread">
-                            <span>Bread/Baked Goods</span>
+                            <span>Bread</span><br />
+                            <span>(Baked Goods)</span>
                         </label>
                         {inputFields[3]}
                     </div>

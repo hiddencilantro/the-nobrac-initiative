@@ -48,14 +48,16 @@ function Recreation({setActiveStep, setToggle, checked, setChecked, recreation, 
                     <div>
                         <input type="checkbox" name="museumsAndZoos" id="museums" checked={checked.museumsAndZoos} onChange={handleCheckbox} />
                         <label htmlFor="museums">
-                            <span>Museums/Historical Sites/Zoos/Parks</span>
+                            <span>Museums/Parks</span><br />
+                            <span>(Historical Sites/Zoos)</span>
                         </label>
                         {inputFields[2]}
                     </div>
                     <div>
                         <input type="checkbox" name="amusementParksAndArcades" id="arcades" checked={checked.amusementParksAndArcades} onChange={handleCheckbox} />
                         <label htmlFor="arcades">
-                            <span>Amusement Parks/Arcades</span>
+                            <span>Amusement Parks</span><br />
+                            <span>(Arcades)</span>
                         </label>
                         {inputFields[3]}
                     </div>
@@ -69,7 +71,8 @@ function Recreation({setActiveStep, setToggle, checked, setChecked, recreation, 
                     <div>
                         <input type="checkbox" name="variousRecreation" id="various-recreation" checked={checked.variousRecreation} onChange={handleCheckbox} />
                         <label htmlFor="various-recreation">
-                            <span>Golf/Marinas/Ski Resorts/Fitness/Other</span>
+                            <span>Other Recreation</span><br />
+                            <span>(Fitness/Golf/Ski Resorts)</span>
                         </label>
                         {inputFields[5]}
                     </div>

@@ -54,7 +54,7 @@ function Services({setActiveStep, setToggle, checked, setChecked, services, setS
                         <input type="checkbox" name="otherServices" id="other-services" checked={checked.otherServices} onChange={handleCheckbox} />
                         <label htmlFor="other-services">
                             <span>Other Services</span><br />
-                            <span>(pet care, parking)</span>
+                            <span>(Pet Care/Parking)</span>
                         </label>
                         {inputFields[3]}
                     </div>
