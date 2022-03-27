@@ -724,7 +724,7 @@
   margin: 20px 20px 20px 30px;
 }
 .Tips li > span:nth-of-type(2) {
-  width: 580px;
+  width: 578px;
   font-family: 'Roboto-Bold';
   font-size: 18px;
   line-height: 1.33;
@@ -732,16 +732,16 @@
   margin: 43px 0;
 }
 .Tips .icon-plus {
-  width: 20px;
-  height: 20px;
-  margin: 45px 30px;
+  width: 22px;
+  height: 22px;
+  margin: 44px 30px;
   background-image: url('./images/tips/icon-plus.svg');
   background-repeat: no-repeat;
 }
 .Tips .icon-minus {
-  width: 20px;
-  height: 3px;
-  margin: 54px 30px;
+  width: 22px;
+  height: 4px;
+  margin: 53px 30px;
   background-image: url('./images/tips/icon-minus.svg');
   background-repeat: no-repeat;
 }
