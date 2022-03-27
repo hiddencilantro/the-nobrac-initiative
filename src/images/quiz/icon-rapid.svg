@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>A2031072-615B-4108-A924-D1E99A8F240D</title>
+    <g id="Site" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icons" transform="translate(-360.000000, -105.000000)">
+            <g id="icon-subway" transform="translate(360.000000, 105.000000)">
+                <rect id="Rectangle" x="0" y="0" width="64" height="64"></rect>
+                <path d="M18.9333496,58.6666667 C14.4000161,58.6666667 10.6666667,54.9599838 10.6666667,50.3999837 L10.6666667,13.6000163 C10.6666667,9.06668282 14.3733495,5.33333333 18.9333496,5.33333333 L45.0666504,5.33333333 C49.5999839,5.33333333 53.3333333,9.04001617 53.3333333,13.6000163 L53.3333333,50.3999837 C53.3333333,54.9599838 49.6266505,58.6666667 45.0666504,58.6666667 L18.9333496,58.6666667 Z" id="Vector" stroke="#2F484D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0,0" fill-rule="nonzero"></path>
+                <path d="M14.6666667,34.6666667 C12.4533334,34.6666667 10.6666667,32.88 10.6666667,30.6666667 L10.6666667,25.3333333 C10.6666667,23.12 12.4533334,21.3333333 14.6666667,21.3333333 L49.3333333,21.3333333 C51.5466666,21.3333333 53.3333333,23.12 53.3333333,25.3333333 L53.3333333,30.6666667 C53.3333333,32.88 51.5466666,34.6666667 49.3333333,34.6666667 L14.6666667,34.6666667 Z" id="Vector" stroke="#2F484D" stroke-width="2" fill="#9EBABA" fill-rule="nonzero" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0,0"></path>
+                <line x1="25.3333333" y1="13.3333333" x2="38.6666667" y2="13.3333333" id="Vector" stroke="#BE8432" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0,0"></line>
+                <line x1="22.6520195" y1="47.2005208" x2="22.6759714" y2="47.2005208" id="Vector" stroke="#BE8432" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0,0"></line>
+                <line x1="41.3186862" y1="47.2005208" x2="41.3426381" y2="47.2005208" id="Vector" stroke="#BE8432" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0,0"></line>
+            </g>
+        </g>
+    </g>
+</svg>

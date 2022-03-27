@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>F3FA671D-60B8-4FF3-B0B9-D04A110A88A7</title>
+    <g id="Site" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icons" transform="translate(-600.000000, -105.000000)">
+            <g id="icon-train" transform="translate(600.000000, 105.000000)">
+                <rect id="Rectangle-Copy-2" x="0" y="0" width="64" height="64"></rect>
+                <rect id="Rectangle" fill="#9EBABA" x="11" y="21" width="43" height="11"></rect>
+                <path d="M10.8,21.4 L10.8,17.8 C10.8,11.8353246 15.6353246,7 21.6,7 L43.2,7 C49.1646758,7 54,11.8353246 54,17.8 L54,21.4 M10.8,21.4 L10.8,32.2 M10.8,21.4 L54,21.4 M10.8,32.2 L10.8,39.4 C10.8,45.3646757 15.6353246,50.2 21.6,50.2 L25.2,50.2 M10.8,32.2 L54,32.2 M18,61 L25.2,50.2 M25.2,50.2 L39.6,50.2 M54,21.4 L54,32.2 M54,32.2 L54,39.4 C54,45.3646757 49.164675,50.2 43.2,50.2 L39.6,50.2 M39.6,50.2 L46.8,61 M23.4,41.2 L41.4,41.2" id="Rectangle_18287" stroke="#2F484D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <line x1="22.5" y1="55.5" x2="42.5" y2="55.5" id="Line" stroke="#2F484D" stroke-width="2" stroke-linecap="round"></line>
+            </g>
+        </g>
+    </g>
+</svg>

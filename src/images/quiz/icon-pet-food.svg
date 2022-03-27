@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>A7FF7E56-1A47-40E7-97AC-27AE03ACFF39</title>
+    <g id="Site" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icons" transform="translate(-120.000000, -2377.000000)">
+            <g id="icon-dogfood" transform="translate(120.000000, 2377.000000)">
+                <rect id="Rectangle" x="0" y="0" width="64" height="64"></rect>
+                <g id="pet" transform="translate(2.000000, 2.000000)">
+                    <path d="M23.1266057,55 L35.1016068,55 C43.2516068,55 48.851607,48.4249991 47.5016069,40.374999 C46.076607,31.9249988 37.9266053,25 29.3516052,25 C20.0516051,25 11.8016056,32.5999999 11.0266056,41.875 C10.4266056,49.1000003 15.8766055,55 23.1266057,55 Z" id="Vector" stroke="#2F484D" stroke-width="2" fill-opacity="0.7" fill="#BE8432" fill-rule="nonzero" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0,0"></path>
+                    <path d="M26.176759,18.75 C22.7249792,18.75 19.9267578,15.9517798 19.9267578,12.5 C19.9267578,9.04822022 22.7249792,6.25 26.176759,6.25 C29.6285388,6.25 32.4267578,9.04822022 32.4267578,12.5 C32.4267578,15.9517798 29.6285388,18.75 26.176759,18.75 Z" id="Vector" stroke="#2F484D" stroke-width="2" fill-opacity="0.7" fill="#BE8432" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0,0"></path>
+                    <path d="M43.2519531,21.7504883 C40.4905269,21.7504883 38.2519531,19.5119122 38.2519531,16.7504883 C38.2519531,13.9890644 40.4905269,11.7504883 43.2519531,11.7504883 C46.0133746,11.7504883 48.2519531,13.9890644 48.2519531,16.7504883 C48.2519531,19.5119122 46.0133746,21.7504883 43.2519531,21.7504883 Z" id="Vector" stroke="#2F484D" stroke-width="2" fill-opacity="0.7" fill="#BE8432" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0,0"></path>
+                    <path d="M52.5,31.7504883 C50.4289322,31.7504883 48.75,30.0715561 48.75,28.0004883 C48.75,25.9294204 50.4289322,24.2504883 52.5,24.2504883 C54.5710678,24.2504883 56.25,25.9294204 56.25,28.0004883 C56.25,30.0715561 54.5710678,31.7504883 52.5,31.7504883 Z" id="Vector" stroke="#2F484D" stroke-width="2" fill-opacity="0.7" fill="#BE8432" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0,0"></path>
+                    <path d="M9.92675781,26.7504883 C7.16533393,26.7504883 4.92675781,24.5119122 4.92675781,21.7504883 C4.92675781,18.9890644 7.16533393,16.7504883 9.92675781,16.7504883 C12.6881817,16.7504883 14.9267578,18.9890644 14.9267578,21.7504883 C14.9267578,24.5119122 12.6881817,26.7504883 9.92675781,26.7504883 Z" id="Vector" stroke="#2F484D" stroke-width="2" fill-opacity="0.7" fill="#BE8432" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0,0"></path>
+                    <path d="M60,0 L60,60 L0,60 L0,0 L60,0 Z" id="Vector" opacity="0"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

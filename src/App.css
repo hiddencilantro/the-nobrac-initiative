@@ -446,14 +446,15 @@
   position: relative;
   border-radius: 6px;
   padding: 0;
+  background-size: 55px 55px;
   background-repeat: no-repeat;
-  background-position: 50% 35%;
+  background-position: 50% 25%;
   cursor: pointer;
 }
 .Quiz .checkbox-container label > span:first-of-type {
   display: inline-block;
   line-height: 1.33;
-  margin-top: 90px;
+  margin-top: 100px;
 }
 .Quiz .checkbox-container label > span:nth-of-type(2) {
   display: inline-block;
@@ -471,6 +472,7 @@
 }
 .Quiz .checkbox-container input[type="checkbox"]:checked + label {
   background-image: url('./images/quiz/icon-checkmark.svg');
+  background-size: inherit;
 }
 .Quiz .checkbox-container div:nth-of-type(n+5) {
   margin: 10px 10px;
@@ -478,7 +480,7 @@
 .Quiz .checkbox-container label[for="bus"] {
   background-image: url('./images/quiz/icon-bus.svg');
 }
-/* .Quiz .checkbox-container label[for="rapid"] {
+.Quiz .checkbox-container label[for="rapid"] {
   background-image: url('./images/quiz/icon-rapid.svg');
 }
 .Quiz .checkbox-container label[for="commuter"] {
@@ -486,7 +488,139 @@
 }
 .Quiz .checkbox-container label[for="intercity"] {
   background-image: url('./images/quiz/icon-intercity.svg');
+}
+/* .Quiz .checkbox-container label[for="short"] {
+  background-image: url('./images/quiz/icon-short.svg');
+}
+.Quiz .checkbox-container label[for="medium"] {
+  background-image: url('./images/quiz/icon-medium.svg');
+}
+.Quiz .checkbox-container label[for="long"] {
+  background-image: url('./images/quiz/icon-long.svg');
 } */
+.Quiz .checkbox-container label[for="meat"] {
+  background-image: url('./images/quiz/icon-meat.svg');
+}
+.Quiz .checkbox-container label[for="poultry"] {
+  background-image: url('./images/quiz/icon-poultry.svg');
+}
+.Quiz .checkbox-container label[for="seafood"] {
+  background-image: url('./images/quiz/icon-seafood.svg');
+}
+.Quiz .checkbox-container label[for="bread"] {
+  background-image: url('./images/quiz/icon-bread.svg');
+}
+.Quiz .checkbox-container label[for="cereal"] {
+  background-image: url('./images/quiz/icon-cereal.svg');
+}
+.Quiz .checkbox-container label[for="cheese"] {
+  background-image: url('./images/quiz/icon-cheese.svg');
+}
+.Quiz .checkbox-container label[for="pasta"] {
+  background-image: url('./images/quiz/icon-pasta.svg');
+}
+.Quiz .checkbox-container label[for="milkAndButter"] {
+  background-image: url('./images/quiz/icon-milk-and-butter.svg');
+}
+.Quiz .checkbox-container label[for="oils"] {
+  background-image: url('./images/quiz/icon-oils.svg');
+}
+.Quiz .checkbox-container label[for="seasonings"] {
+  background-image: url('./images/quiz/icon-seasonings.svg');
+}
+.Quiz .checkbox-container label[for="frozenFood"] {
+  background-image: url('./images/quiz/icon-frozen-food.svg');
+}
+.Quiz .checkbox-container label[for="iceCream"] {
+  background-image: url('./images/quiz/icon-ice-cream.svg');
+}
+.Quiz .checkbox-container label[for="snacks"] {
+  background-image: url('./images/quiz/icon-snacks.svg');
+}
+.Quiz .checkbox-container label[for="other"] {
+  background-image: url('./images/quiz/icon-other-food.svg');
+}
+.Quiz .checkbox-container label[for="coffeeAndTea"] {
+  background-image: url('./images/quiz/icon-coffee-and-tea.svg');
+}
+.Quiz .checkbox-container label[for="softDrinksAndBottledWater"] {
+  background-image: url('./images/quiz/icon-drinks-and-water.svg');
+}
+.Quiz .checkbox-container label[for="beer"] {
+  background-image: url('./images/quiz/icon-beer.svg');
+}
+.Quiz .checkbox-container label[for="spirits"] {
+  background-image: url('./images/quiz/icon-spirits.svg');
+}
+.Quiz .checkbox-container label[for="wine"] {
+  background-image: url('./images/quiz/icon-wine.svg');
+}
+.Quiz .checkbox-container label[for="limited"] {
+  background-image: url('./images/quiz/icon-limited.svg');
+}
+.Quiz .checkbox-container label[for="full"] {
+  background-image: url('./images/quiz/icon-full.svg');
+}
+.Quiz .checkbox-container label[for="otherDining"] {
+  background-image: url('./images/quiz/icon-other-dining.svg');
+}
+.Quiz .checkbox-container label[for="clothing"] {
+  background-image: url('./images/quiz/icon-clothing.svg');
+}
+.Quiz .checkbox-container label[for="booksAndOtherPrint"] {
+  background-image: url('./images/quiz/icon-books-and-other-print.svg');
+}
+.Quiz .checkbox-container label[for="toysAndGames"] {
+  background-image: url('./images/quiz/icon-toys-and-games.svg');
+}
+.Quiz .checkbox-container label[for="sportingGoods"] {
+  background-image: url('./images/quiz/icon-sporting-goods.svg');
+}
+.Quiz .checkbox-container label[for="dogAndCatFood"] {
+  background-image: url('./images/quiz/icon-pet-food.svg');
+}
+.Quiz .checkbox-container label[for="health"] {
+  background-image: url('./images/quiz/icon-health.svg');
+}
+.Quiz .checkbox-container label[for="generalMerchandise"] {
+  background-image: url('./images/quiz/icon-general-merchandise.svg');
+}
+.Quiz .checkbox-container label[for="nonstoreRetailers"] {
+  background-image: url('./images/quiz/icon-ecommerce.svg');
+}
+.Quiz .checkbox-container label[for="otherRetail"] {
+  background-image: url('./images/quiz/icon-other-retail.svg');
+}
+.Quiz .checkbox-container label[for="dryCleaning"] {
+  background-image: url('./images/quiz/icon-laundry.svg');
+}
+.Quiz .checkbox-container label[for="subscriptions"] {
+  background-image: url('./images/quiz/icon-subscriptions.svg');
+}
+.Quiz .checkbox-container label[for="vehicleRepair"] {
+  background-image: url('./images/quiz/icon-vehicle-repair.svg');
+}
+.Quiz .checkbox-container label[for="otherServices"] {
+  background-image: url('./images/quiz/icon-other-services.svg');
+}
+.Quiz .checkbox-container label[for="moviesAndFilm"] {
+  background-image: url('./images/quiz/icon-movies-and-film.svg');
+}
+.Quiz .checkbox-container label[for="performances"] {
+  background-image: url('./images/quiz/icon-performances.svg');
+}
+.Quiz .checkbox-container label[for="museumsAndZoos"] {
+  background-image: url('./images/quiz/icon-museums.svg');
+}
+.Quiz .checkbox-container label[for="amusementParksAndArcades"] {
+  background-image: url('./images/quiz/icon-arcades.svg');
+}
+.Quiz .checkbox-container label[for="casinos"] {
+  background-image: url('./images/quiz/icon-casinos.svg');
+}
+.Quiz .checkbox-container label[for="variousRecreation"] {
+  background-image: url('./images/quiz/icon-fitness.svg');
+}
 
 .Quiz .Vehicle input[type="number"], .Tobacco input[type="number"] {
   margin: 15px 0 5px;

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>82630965-771E-4241-BD9B-3B71D215951E</title>
+    <g id="Site" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icons" transform="translate(-840.000000, -2893.000000)">
+            <g id="icon-parking" transform="translate(840.000000, 2893.000000)">
+                <rect id="Rectangle-Copy-2" x="0" y="0" width="64" height="64"></rect>
+                <g id="Vector" transform="translate(7.000000, 7.000000)" stroke="#2F484D" stroke-linecap="round" stroke-width="2">
+                    <path d="M0,24.9993863 C0.00086048875,13.0731909 8.426156,2.80839295 20.123349,0.48248962 C31.8205415,-1.84341371 43.53183,4.41736803 48.09511,15.4360174 C52.658385,26.4546673 48.80273,39.1623658 38.886088,45.7876459 C28.969445,52.4129244 15.753716,51.1105809 7.321053,42.6770504 C2.63299365,37.9885146 0,31.6296428 0,24.9993863 Z" id="Vector-38" fill="#9EBABA" stroke-linejoin="round"></path>
+                    <path d="M34.1412088,18.5711626 C33.8660686,14.5341388 30.387975,11.4736722 26.3487513,11.7143716 L19.8562271,11.7143716 L19.8562271,25.4279541 L26.3487513,25.4279541 C30.387975,25.6686524 33.8660686,22.6081859 34.1412088,18.5711626 Z" id="Vector-39" stroke-linejoin="round"></path>
+                    <line x1="19.8562271" y1="25.4280686" x2="19.8562271" y2="40.2844496" id="Vector-40"></line>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

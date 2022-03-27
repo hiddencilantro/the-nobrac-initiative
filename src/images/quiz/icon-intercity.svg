@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>AAB02ED7-6E4D-4E02-9528-0A9CCEE0AF03</title>
+    <g id="Site" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icons" transform="translate(-840.000000, -105.000000)">
+            <g id="icon-amtrak" transform="translate(840.000000, 105.000000)">
+                <rect id="Rectangle-Copy-2" x="0" y="0" width="64" height="64"></rect>
+                <line x1="18" y1="61" x2="25.2" y2="50.2" id="Rectangle_18287-path" stroke="#2F484D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></line>
+                <line x1="39.6" y1="50.2" x2="46.8" y2="61" id="Rectangle_18287-path" stroke="#2F484D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></line>
+                <line x1="22.5" y1="55.5" x2="42.5" y2="55.5" id="Line" stroke="#2F484D" stroke-width="2" stroke-linecap="round"></line>
+                <path d="M24.598105,7 C18.9956055,7 17.7581057,10.1872711 17.0381057,14.0942478 L14.4956055,28 L50.4956055,28 L47.9531074,14.0942478 C47.2331074,10.1872711 45.9956055,7 40.393106,7 L24.598105,7 Z" id="Vector" stroke="#2F484D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0,0" fill-rule="nonzero"></path>
+                <path d="M19.09375,28 C17.381875,28 16,26.794 16,25.3 L16,21.7 C16,20.206 17.381875,19 19.09375,19 L45.90625,19 C47.618125,19 49,20.206 49,21.7 L49,25.3 C49,26.794 47.618125,28 45.90625,28 L19.09375,28 Z" id="Vector" stroke="#2F484D" stroke-width="2" fill="#9EBABA" fill-rule="nonzero" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0,0"></path>
+                <path d="M50.4072084,52 L48.1772103,52 C45.7472102,52 45.4097102,50.9963621 44.9822102,49.7527258 L20.0122098,49.7527258 C19.5847098,50.9963621 19.2472102,52 16.8172101,52 L14.5872099,52 C11.8872098,52 9.77220976,49.7963629 10.0197098,47.2436357 L11.2797097,33.9563626 C11.5947097,30.6836354 12.24721,28 18.1422097,28 L46.8522086,28 C52.7472084,28 53.3997112,30.6836354 53.7147112,33.9563626 L54.97471,47.2436357 C55.22221,49.7963629 53.1072085,52 50.4072084,52 Z" id="Vector" stroke="#2F484D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0,0" fill-rule="nonzero"></path>
+                <line x1="29.1206055" y1="13" x2="35.8706055" y2="13" id="Vector" stroke="#BE8432" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0,0"></line>
+                <line x1="18.9956055" y1="39" x2="25.7456055" y2="39" id="Vector" stroke="#2F484D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0,0"></line>
+                <line x1="39.2456055" y1="39" x2="45.9956055" y2="39" id="Vector" stroke="#2F484D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0,0"></line>
+            </g>
+        </g>
+    </g>
+</svg>

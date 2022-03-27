@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>4037E4C8-B952-4C97-9FA1-2139703B1683</title>
+    <g id="Site" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icons" transform="translate(-120.000000, -2169.000000)">
+            <g id="icon-clothing" transform="translate(120.000000, 2169.000000)">
+                <rect id="Rectangle" x="0" y="0" width="64" height="64"></rect>
+                <polygon id="Path-39" fill="#9EBABA" points="32.1373571 14.0215 41.0387857 5.04078571 44.3830261 5.83781147 37.9145 18.8172143"></polygon>
+                <polygon id="Path-39" fill="#9EBABA" transform="translate(26.122834, 11.929000) scale(-1, 1) translate(-26.122834, -11.929000) " points="20 14.0215 28.9014286 5.04078571 32.245669 5.83781147 25.7771429 18.8172143"></polygon>
+                <g id="Group-7" transform="translate(2.000000, 4.000000)" stroke="#2F484D" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                    <path d="M47.3359286,28.6622143 C51.3023571,26.8900714 55.2666429,25.1179286 59.2330714,23.3457857 C56.3209286,16.8915 53.4109286,10.4372143 50.5009286,3.98078571 L39.0387857,1.04078571 L30.1373571,10.0215 L35.9145,14.8172143 L40.2816429,5.84078571" id="Stroke-1"></path>
+                    <path d="M12.9383571,28.6622143 C8.97192857,26.8900714 5.0055,25.1179286 1.04121429,23.3457857 C3.95121429,16.8915 6.86335714,10.4372143 9.77335714,3.98078571 L21.2355,1.04078571 L30.1369286,10.0215 L24.3576429,14.8172143 L19.9947857,5.84078571" id="Stroke-3"></path>
+                    <polyline id="Stroke-5" points="46.3515 19.1470714 46.3515 54.4806429 12.9379286 54.4806429 12.9379286 19.1470714"></polyline>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
