@@ -686,7 +686,7 @@
 }
 .Results .data p {
   line-height: 1.56;
-  margin: 40px 250px 80px;
+  margin: 40px 250px 60px;
 }
 .Results .charts-container {
   width: 780px;
@@ -695,7 +695,7 @@
 .Results .chart {
   display: inline-block;
   width: 600px;
-  margin-top: 80px;
+  margin-top: 60px;
 }
 .Results .charts-container button {
   width: 164px;
