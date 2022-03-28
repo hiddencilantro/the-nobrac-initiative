@@ -90,14 +90,14 @@ function Footprints({setLogin, createSuccess, setCreateSuccess}) {
                         : "You have no saved footprints"}
                 </div>
                 <Tips />
-                <Snackbar open={createSuccess} autoHideDuration={3000} onClose={handleCreateSnackbar} anchorOrigin={{vertical: "top", horizontal: "center"}} >
-                    <Alert severity="success" onClose={handleCreateSnackbar} >
-                        Carbon footprint saved
+                <Snackbar open={createSuccess} autoHideDuration={2500} onClose={handleCreateSnackbar} anchorOrigin={{vertical: "top", horizontal: "center"}} >
+                    <Alert variant="filled" severity="success" onClose={handleCreateSnackbar} >
+                        Your footprint has been saved
                     </Alert>
                 </Snackbar>
-                <Snackbar open={deleteSuccess} autoHideDuration={3000} onClose={handleDeleteSnackbar} anchorOrigin={{vertical: "top", horizontal: "center"}} >
-                    <Alert severity="success" onClose={handleDeleteSnackbar} >
-                        Carbon footprint deleted
+                <Snackbar open={deleteSuccess} autoHideDuration={2500} onClose={handleDeleteSnackbar} anchorOrigin={{vertical: "top", horizontal: "center"}} >
+                    <Alert variant="filled" severity="success" onClose={handleDeleteSnackbar} >
+                        Your footprint has been deleted
                     </Alert>
                 </Snackbar>
             </div>

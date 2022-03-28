@@ -51,9 +51,9 @@ function Login({login, setLogin, setSignup}) {
                     <button type="button" onClick={handleSignup} >Create account</button>
                 </div>
             </Drawer>
-            <Snackbar open={success} autoHideDuration={3000} onClose={handleSnackbar} anchorOrigin={{vertical: "top", horizontal: "center"}} >
-                <Alert severity="success" onClose={handleSnackbar} >
-                    Login successful
+            <Snackbar open={success} autoHideDuration={2500} onClose={handleSnackbar} anchorOrigin={{vertical: "top", horizontal: "center"}} >
+                <Alert variant="filled" severity="success" onClose={handleSnackbar} >
+                    You have successfully logged in
                 </Alert>
             </Snackbar>
             <Dialog open={error.open} >
