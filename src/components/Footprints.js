@@ -58,13 +58,19 @@ function Footprints({setLogin, createSuccess, setCreateSuccess}) {
                 <li onClick={() => setExpanded(pS => ({...pS, [footprint.id]: !pS[footprint.id]}))}>
                     <span>{footprint.date}</span>
                     <span>{footprint.total} metric tons</span>
-                    <span className='icon-trash' onClick={() => setConfirm(pS => ({...pS, [footprint.id]: !pS[footprint.id]}))} />
+                    <span className={expanded[footprint.id] ? 'icon-trash' : 'hide'} onClick={expanded[footprint.id] ? ((e) => {
+                        e.stopPropagation();
+                        setConfirm(pS => ({...pS, [footprint.id]: !pS[footprint.id]}));
+                    }) : null} />
                     <span className={expanded[footprint.id] ? 'icon-arrow-up' : 'icon-arrow-down'} />
                     <Dialog open={Object.keys(confirm).length === footprints.length ? confirm[footprint.id] : false} >
                         <DialogContent>Are you sure you want to delete this footprint?</DialogContent>
                         <DialogActions>
                             <Button onClick={() => handleDelete(footprint.id)} variant="outlined" startIcon={<DeleteIcon />}>Delete</Button>
-                            <Button onClick={() => setConfirm(pS => ({...pS, [footprint.id]: !pS[footprint.id]}))}>Cancel</Button>
+                            <Button onClick={e => {
+                                e.stopPropagation();
+                                setConfirm(pS => ({...pS, [footprint.id]: !pS[footprint.id]}));
+                                }}>Cancel</Button>
                         </DialogActions>
                     </Dialog>
                 </li>
