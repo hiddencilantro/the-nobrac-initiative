@@ -14,6 +14,7 @@ function NotFound({setActiveStep}) {
             <div className='link-wrapper'>
                 <Link to={setActiveStep ? "/quiz/vehicle" : "/"}>Take me back to Earth</Link>
             </div>
+            <div className='earth' />
         </div>
     );
 }

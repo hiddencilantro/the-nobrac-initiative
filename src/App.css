@@ -50,6 +50,11 @@
 }
 
 /* 404 */
+.NotFound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .NotFound h1 {
   height: 55px;
   font-family: 'TitanOne';
@@ -73,6 +78,13 @@
   color: #fff;
   line-height: 1.33;
   margin-top: 30px;
+}
+.NotFound .earth {
+  width: 259px;
+  height: 336px;
+  background-image: url('./images/img-earth.svg');
+  background-repeat: no-repeat;
+  margin: 50px 0;
 }
 
 /* login/signup */
