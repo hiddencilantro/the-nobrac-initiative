@@ -230,10 +230,10 @@
   font-family: 'Roboto-Bold';
   font-size: 20px;
   color: #8d4c2e;
-  margin-top: 112px;
+  margin-top: 105px;
 }
 .Landing .quiz-link a {
-  margin: 21px 232px 28px;
+  margin: 0 232px;
 }
 .Landing .img-trees {
   display: block;
