@@ -15,10 +15,10 @@ function Services({setActiveStep, setToggle, checked, setChecked, services, setS
 
     const handleCheckbox = e => {
         setChecked(pS => ({...pS, [e.target.name]: e.target.checked}));
-        if(e.target.parentElement.style.backgroundColor === "rgb(216, 226, 224)") {
-            e.target.parentElement.style.backgroundColor = "rgb(241, 245, 245)";
-        } else {
+        if(e.target.parentElement.style.backgroundColor === "") {
             e.target.parentElement.style.backgroundColor = "rgb(216, 226, 224)";
+        } else {
+            e.target.parentElement.style.backgroundColor = "";
         };
     };
 

@@ -16,10 +16,10 @@ function Beverage({setActiveStep, setToggle, checked, setChecked, beverages, set
 
     const handleCheckbox = e => {
         setChecked(pS => ({...pS, [e.target.name]: e.target.checked}));
-        if(e.target.parentElement.style.backgroundColor === "rgb(216, 226, 224)") {
-            e.target.parentElement.style.backgroundColor = "rgb(241, 245, 245)";
-        } else {
+        if(e.target.parentElement.style.backgroundColor === "") {
             e.target.parentElement.style.backgroundColor = "rgb(216, 226, 224)";
+        } else {
+            e.target.parentElement.style.backgroundColor = "";
         };
     };
 
