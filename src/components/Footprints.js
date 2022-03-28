@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { Collapse, Snackbar, Alert, IconButton, Dialog, DialogContent, DialogActions, Button } from '@mui/material'
+import { Collapse, Snackbar, Alert, Dialog, DialogContent, DialogActions, Button } from '@mui/material'
 import DeleteIcon from '@mui/icons-material/Delete';
 import { getFootprints, destroyFootprint } from '../redux/actions/actionCreators';
 import EmissionData from './EmissionData';
