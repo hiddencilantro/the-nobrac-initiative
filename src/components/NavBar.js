@@ -16,7 +16,7 @@ function NavBar({setLogin}) {
     return (
         <nav className="Navbar">
             <NavLink to="/">About NOBRAC</NavLink>
-            <NavLink to="/issues">Issues</NavLink>
+            <NavLink to="/problem">The Problem</NavLink>
             <NavLink to="quiz/vehicle">Take a Quiz</NavLink>
             {user ? 
                 <NavLink to="/footprints">My Footprints</NavLink>

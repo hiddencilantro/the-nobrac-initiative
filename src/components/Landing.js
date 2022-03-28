@@ -23,7 +23,7 @@ function Landing() {
                 Global warming is a serious matter and a global crisis that is too critical and vital to our existence and sustainability that it can no longer be ignored. Not only does it influence all domains of life and threatens the security of our food and water, but it also leads to increased flooding, extreme heat, more diseases, and economic loss.
             </p>
             <div className='link-wrapper'>
-                <Link to="/issues">Learn more</Link>
+                <Link to="/problem">Learn more</Link>
             </div>
             <div className='img-pollution' />
             <p>

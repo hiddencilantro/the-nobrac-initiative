@@ -6,14 +6,14 @@ import GlobalAvgTemp from './charts/GlobalAvgTemp';
 import CO2Charts from './charts/CO2Charts';
 import NetZeroTargets from './charts/NetZeroTargets';
 
-function Issues() {
+function Problem() {
     const [more, setMore] = useState(false);
     useEffect(() => {
         document.body.style.backgroundColor = "#f1f1ed";
     }, []);
 
     return (
-        <div className='Issues'>
+        <div className='Problem'>
             <div className='img-birds'>
                 <h2 className='header'>It starts with awareness</h2>
                 <p>
@@ -61,4 +61,4 @@ function Issues() {
     );
 }
 
-export default Issues;
+export default Problem;

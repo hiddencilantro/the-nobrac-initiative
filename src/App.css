@@ -248,12 +248,12 @@
   color: #be8432;
   margin: 40px 0 30px;
 }
-.Landing a[href="/issues"] {
+.Landing a[href="/problem"] {
   width: 134px;
   background-color: #be8432;
   margin: 22px 0 30px;
 }
-.Landing a[href="/issues"]:hover {
+.Landing a[href="/problem"]:hover {
   background-color: rgba(190, 132, 50, 0.8);
 }
 .Landing .img-pollution {
@@ -282,40 +282,40 @@
   margin: 71px 0 75px;
 }
 
-/* issues */
-.Issues {
+/* problem */
+.Problem {
   display: flex;
   flex-direction: column;
   align-items: center;
   line-height: 1.56;
 }
-.Issues p {
+.Problem p {
   margin: 0 202px;
 }
-.Issues .img-birds {
+.Problem .img-birds {
   display: inline-block;
   width: 900px;
   height: 372px;
-  background-image: url('./images/issues/img-birds.svg');
+  background-image: url('./images/problem/img-birds.svg');
   background-repeat: no-repeat;
   margin: 27px 62px 0;
 }
-.Issues .img-birds h2 {
+.Problem .img-birds h2 {
   color: #686230;
   margin: 33px 0 30px;
 }
-.Issues .img-birds p {
+.Problem .img-birds p {
   margin: 0 140px;
 }
-.Issues .img-birds p:last-of-type {
+.Problem .img-birds p:last-of-type {
   margin-top: 30px;
 }
-.Issues .charts-container {
+.Problem .charts-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
-.Issues button {
+.Problem button {
   border: none;
   width: 165px;
   height: 50px;
@@ -325,40 +325,40 @@
   cursor: pointer;
   margin: 20px 0;
 }
-.Issues button:hover {
+.Problem button:hover {
   color:rgba(48, 48, 48, 0.7)
 }
-.Issues .icon-arrow-down {
+.Problem .icon-arrow-down {
   display: inline-block;
   width: 16px;
   height: 9px;
-  background-image: url('./images/issues/icon-arrow-down.svg');
+  background-image: url('./images/problem/icon-arrow-down.svg');
   background-repeat: no-repeat;
   margin-top: 5px;
 }
-.Issues .icon-arrow-up {
+.Problem .icon-arrow-up {
   display: inline-block;
   width: 16px;
   height: 9px;
-  background-image: url('./images/issues/icon-arrow-up.svg');
+  background-image: url('./images/problem/icon-arrow-up.svg');
   background-repeat: no-repeat;
   margin-top: 5px;
 }
-.Issues h3 {
+.Problem h3 {
   color: #686230;
   font-size: 24px;
   line-height: 1.33;
   margin: 20px 0 30px;
 }
-.Issues p:last-of-type {
+.Problem p:last-of-type {
   margin-top: 30px;
   margin-bottom: 30px;
 }
-.Issues .img-save-earth {
+.Problem .img-save-earth {
   display: block;
   width: 780px;
   height: 181px;
-  background-image: url('./images/issues/img-save-earth.svg');
+  background-image: url('./images/problem/img-save-earth.svg');
   background-repeat: no-repeat;
   margin: 50px 0;
 }
@@ -870,14 +870,14 @@
   width: 20px;
   height: 10px;
   margin: 28px 10px 27px 25px;
-  background-image: url('./images/issues/icon-arrow-down.svg');
+  background-image: url('./images/problem/icon-arrow-down.svg');
   background-repeat: no-repeat;
 }
 .Footprints .icon-arrow-up {
   width: 20px;
   height: 10px;
   margin: 28px 10px 27px 25px;
-  background-image: url('./images/issues/icon-arrow-up.svg');
+  background-image: url('./images/problem/icon-arrow-up.svg');
   background-repeat: no-repeat;
 }
 
