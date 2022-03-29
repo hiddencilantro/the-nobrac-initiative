@@ -528,15 +528,18 @@
 .Quiz .checkbox-container label[for="intercity"] {
   background-image: url('./images/quiz/icon-intercity.svg');
 }
-/* .Quiz .checkbox-container label[for="short"] {
-  background-image: url('./images/quiz/icon-short.svg');
+.Quiz .checkbox-container label[for="short"] {
+  background-image: url('./images/quiz/icon-flight-short.svg');
+  background-size: 91px 55px;
 }
 .Quiz .checkbox-container label[for="medium"] {
-  background-image: url('./images/quiz/icon-medium.svg');
+  background-image: url('./images/quiz/icon-flight-medium.svg');
+  background-size: 91px 55px;
 }
 .Quiz .checkbox-container label[for="long"] {
-  background-image: url('./images/quiz/icon-long.svg');
-} */
+  background-image: url('./images/quiz/icon-flight-long.svg');
+  background-size: 91px 55px;
+}
 .Quiz .checkbox-container label[for="meat"] {
   background-image: url('./images/quiz/icon-meat.svg');
 }
