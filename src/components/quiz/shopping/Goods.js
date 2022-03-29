@@ -72,7 +72,8 @@ function Goods({setActiveStep, setToggle, checked, setChecked, goods, setGoods})
                     <div>
                         <input type="checkbox" name="health" id="health" checked={checked.health} onChange={handleCheckbox} />
                         <label htmlFor="health">
-                            <span>Health/Personal Care</span>
+                            <span>Health/Personal Care</span><br />
+                            <span>(Drugstore/Beauty)</span>
                         </label>
                         {inputFields[5]}
                     </div>

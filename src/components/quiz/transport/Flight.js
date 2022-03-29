@@ -39,7 +39,7 @@ function Flight({setActiveStep, toggle, setToggle, checked, setChecked, flight, 
                             <input type="checkbox" name="short" id="short" checked={checked.short} onChange={handleCheckbox} />
                             <label htmlFor="short">
                                 <span>Short</span><br />
-                                <span>{"(< 300 miles)"}</span>
+                                <span>(0-300 miles)</span>
                             </label>
                             <ShortFlightInput display={toggle} checked={checked.short} distance={flight.short.parameters.distance} setFlight={setFlight} />
                         </div>
@@ -47,7 +47,7 @@ function Flight({setActiveStep, toggle, setToggle, checked, setChecked, flight, 
                             <input type="checkbox" name="medium" id="medium" checked={checked.medium} onChange={handleCheckbox} />
                             <label htmlFor="medium">
                                 <span>Medium</span><br />
-                                <span>{"(>= 300 miles, < 2300 miles)"}</span>
+                                <span>(300-2300 miles)</span>
                             </label>
                             <MediumFlightInput display={toggle} checked={checked.medium} distance={flight.medium.parameters.distance} setFlight={setFlight} />
                         </div>
@@ -55,7 +55,7 @@ function Flight({setActiveStep, toggle, setToggle, checked, setChecked, flight, 
                             <input type="checkbox" name="long" id="long" checked={checked.long} onChange={handleCheckbox} />
                             <label htmlFor="long">
                                 <span>Long</span><br />
-                                <span>{"(>= 2300 miles)"}</span>
+                                <span>(2300+ miles)</span>
                             </label>
                             <LongFlightInput display={toggle} checked={checked.long} distance={flight.long.parameters.distance} setFlight={setFlight} />
                         </div>
