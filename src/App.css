@@ -704,6 +704,7 @@
 .Results .charts-container {
   width: 780px;
   background-color: #fff;
+  margin-bottom: 80px;
 }
 .Results .chart {
   display: inline-block;
@@ -725,7 +726,6 @@
 
 /* tips */
 .Tips {
-  padding-top: 70px;
   background-color: #f1f5f5;
 }
 .Tips h3 {
@@ -892,11 +892,10 @@
   background-image: url('./images/problem/icon-arrow-up.svg');
   background-repeat: no-repeat;
 }
-
-.Footprints .Tips {
-  border-top: solid 1px rgba(0, 0, 0, 0.2);
-  margin-top: 60px;
-  padding-top: 60px;
+.Footprints > div:first-of-type {
+  padding-bottom: 60px;
+  margin-bottom: 60px;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.2);
 }
 .Footprints .Tips h3 {
   margin-bottom: 30px;
