@@ -21,17 +21,19 @@ function App() {
       <Signup signup={signup} setSignup={setSignup} setLogin={setLogin} />
       <Login login={login} setLogin={setLogin} setSignup={setSignup} />
       <NavBar setLogin={setLogin} />
-      <ScrollToTop>
-        <Routes>
-          <Route path="/" element={<Landing />} />
-          <Route path="problem" element={<Problem />} />
-          <Route path="quiz/*" element={<Quiz setLogin={setLogin} setCreateSuccess={setCreateSuccess} />} />
-          <Route path="footprints" element={<Footprints setLogin={setLogin} 
-              createSuccess={createSuccess} setCreateSuccess={setCreateSuccess} />} >
-          </Route>
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </ScrollToTop>
+      <div className='content-container'>
+        <ScrollToTop>
+          <Routes>
+            <Route path="/" element={<Landing />} />
+            <Route path="problem" element={<Problem />} />
+            <Route path="quiz/*" element={<Quiz setLogin={setLogin} setCreateSuccess={setCreateSuccess} />} />
+            <Route path="footprints" element={<Footprints setLogin={setLogin} 
+                createSuccess={createSuccess} setCreateSuccess={setCreateSuccess} />} >
+            </Route>
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </ScrollToTop>
+      </div>
     </div>
   );
 }

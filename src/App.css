@@ -19,11 +19,15 @@
 /* main container */
 .App {
   /* border: solid; */
-  max-width: 1024px;
+  width: 100vw;
   text-align: center;
   font-family: 'Roboto-Regular';
   font-size: 18px;
   color: #303030;
+}
+.App .content-container {
+  display: inline-block;
+  max-width: 1024px;
 }
 
 /* shared styling */
@@ -155,13 +159,12 @@
 
 /* navbar */
 .Navbar {
-  /* border: solid; */
   min-height: 80px;
   font-size: 16px;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  /* box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.1); */
+  box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.1);
 }
 .Navbar a {
   display: inline-block;
@@ -896,6 +899,7 @@
   background-repeat: no-repeat;
 }
 .Footprints > div:first-of-type {
+  width: 780px;
   padding-bottom: 60px;
   margin-bottom: 60px;
   border-bottom: solid 1px rgba(0, 0, 0, 0.2);
@@ -928,5 +932,5 @@
 }
 .EmissionData .chart {
   width: 600px;
-  margin-top: 20px;
+  margin: 20px 0 20px;
 }
