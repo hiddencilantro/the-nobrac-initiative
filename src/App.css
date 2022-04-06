@@ -488,9 +488,6 @@
   width: 220px;
   height: 160px;
   display: inline-block;
-  position: relative;
-  border-radius: 6px;
-  padding: 0;
   background-size: 55px 55px;
   background-repeat: no-repeat;
   background-position: 50% 25%;
