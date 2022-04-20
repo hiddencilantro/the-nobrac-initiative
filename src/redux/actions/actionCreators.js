@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { SET_USER, SET_FOOTPRINTS, ADD_FOOTPRINT, LOGOUT, DELETE_FOOTPRINT } from './actionTypes';
 
-const baseURL = 'http://localhost:3001/api/v1';
+const baseURL = 'https://nobrac-rails.herokuapp.com/api/v1';
 
 //POJO actions
 export const setUser = user => ({type: SET_USER, payload: user});

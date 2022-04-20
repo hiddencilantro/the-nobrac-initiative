@@ -648,7 +648,7 @@ function Quiz({setLogin, setCreateSuccess}) {
             };
             return obj;
         });
-        axios.get('http://localhost:8000/climatiq', {params: {annualizedInput}})
+        axios.post('https://nobrac-node.herokuapp.com/climatiq', {annualizedInput})
             .then(resp => setResults(resp.data))
             .catch(err => console.error(err));
     };
