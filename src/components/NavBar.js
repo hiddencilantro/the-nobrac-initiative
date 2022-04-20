@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { logout } from '../redux/actions/actionCreators';
 import { Snackbar, Alert } from '@mui/material';
 
-function NavBar({setLogin}) {
+function NavBar({setLogin, setNewUser, setUser}) {
     const [success, setSuccess] = useState(false);
     const user = useSelector(state => state.user);
     const navigate = useNavigate();
@@ -14,6 +14,16 @@ function NavBar({setLogin}) {
         dispatch(logout());
         localStorage.removeItem('jwt');
         navigate('/');
+        setNewUser({
+            first_name: "",
+            last_name: "",
+            email: "",
+            password: ""
+        });
+        setUser({
+            email: "",
+            password: ""
+        });
         setSuccess(pS => !pS);
     };
 

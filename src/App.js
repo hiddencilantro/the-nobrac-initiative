@@ -14,13 +14,23 @@ import NotFound from './components/NotFound';
 function App() {
   const [signup, setSignup] = useState(false);
   const [login, setLogin] = useState(false);
+  const [newUser, setNewUser] = useState({
+    first_name: "",
+    last_name: "",
+    email: "",
+    password: ""
+  });
+  const [user, setUser] = useState({
+    email: "",
+    password: ""
+  });
   const [createSuccess, setCreateSuccess] = useState(false);
 
   return (
     <div className="App">
-      <Signup signup={signup} setSignup={setSignup} setLogin={setLogin} />
-      <Login login={login} setLogin={setLogin} setSignup={setSignup} />
-      <NavBar setLogin={setLogin} />
+      <Signup signup={signup} setSignup={setSignup} setLogin={setLogin} newUser={newUser} setNewUser={setNewUser} />
+      <Login login={login} setLogin={setLogin} setSignup={setSignup} user={user} setUser={setUser} />
+      <NavBar setLogin={setLogin} setNewUser={setNewUser} setUser={setUser} />
       <div className='content-container'>
         <ScrollToTop>
           <Routes>

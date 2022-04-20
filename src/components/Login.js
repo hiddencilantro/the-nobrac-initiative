@@ -3,13 +3,9 @@ import { useDispatch } from 'react-redux';
 import { Drawer, Dialog, Snackbar, Alert } from '@mui/material'
 import { findUser } from '../redux/actions/actionCreators';
 
-function Login({login, setLogin, setSignup}) {
+function Login({login, setLogin, setSignup, user, setUser}) {
     const [success, setSuccess] = useState(false);
     const [error, setError] = useState({open: false, msg: ""});
-    const [user, setUser] = useState({
-        email: "",
-        password: ""
-    });
     const dispatch = useDispatch();
 
     const handleChange = e => {
