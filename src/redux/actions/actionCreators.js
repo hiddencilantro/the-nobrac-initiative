@@ -46,7 +46,7 @@ export const findUser = (user, setSuccess, setError, setLogin) => {
             setLogin(pS => !pS);
         })
         .catch(err => {
-            if(err.response.status === 401 || err.response.status === 404) {
+            if(err.response.status === 401 || err.response.status === 404 || err.response.status === 422 ) {
                 setError(pS => ({open: !pS.open, msg: err.response.data.message}));
             } else {
                 console.error(err);
